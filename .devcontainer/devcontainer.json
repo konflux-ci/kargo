@@ -1,0 +1,35 @@
+{
+    "name": "Fedora (Go & Podman)",
+    "build": {
+        "dockerfile": "Containerfile",
+        "context": ".."
+    },
+    "updateRemoteUserUID": true,
+    "initializeCommand": "/bin/bash .devcontainer/initialize.sh",
+    "mounts": [
+        "source=${localEnv:XDG_RUNTIME_DIR}/podman/podman.sock,target=/var/run/podman.sock,type=bind"
+    ],
+    "containerEnv": {
+        "CONTAINER_HOST": "unix:///var/run/podman.sock"
+    },
+    "runArgs": [
+        "--network=host",
+        "--userns=keep-id",
+        "--env-file=.devcontainer/devcontainer.env",
+        "--cap-add=SYS_ADMIN",
+        "--security-opt=label=disable",
+        "--privileged"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.Go",
+                "github.vscode-github-actions",
+                "redhat.vscode-yaml",
+                "github.vscode-pull-request-github",
+                "exiasr.hadolint"
+            ]
+        }
+    },
+    "remoteUser": "vscode"
+}

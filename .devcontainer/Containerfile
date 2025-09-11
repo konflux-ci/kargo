@@ -1,0 +1,44 @@
+# Start from latest stable Fedora image (digest-pinned)
+FROM registry.fedoraproject.org/fedora:latest@sha256:24091860205e7d4c90930e2056c9945f76ed6b7fc94fc9b1b724d147ef41a018
+
+# DNF tuning from official Podman Containerfile for build robustness
+RUN echo -e "\\n\\n# Added during image build" >> /etc/dnf/dnf.conf && \
+    echo -e "minrate=100\\ntimeout=60\\n" >> /etc/dnf/dnf.conf
+
+# Install dependencies for the dev environment
+ARG INSTALL_RPMS="podman openssh-clients cpp git-core golang which procps-ng curl helm kustomize kubernetes1.33-client jq hadolint gh xdg-utils"
+RUN dnf -y makecache && \
+    dnf -y update && \
+    dnf -y install $INSTALL_RPMS --exclude container-selinux && \
+    dnf -y install glibc-debuginfo gcc-debuginfo libgcc-debuginfo --enablerepo=fedora-debuginfo,updates-debuginfo && \
+    dnf clean all && \
+    rm -rf /var/cache /var/log/dnf* /var/log/yum.*
+
+# Install kind, mage, ginkgo CLI, and dlv debugger 
+RUN curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.29.0/kind-linux-amd64 && \
+    chmod +x ./kind && \
+    mv ./kind /usr/local/bin/kind && \
+    GOBIN=/usr/local/bin go install github.com/magefile/mage@v1.15.0 && \
+    GOBIN=/usr/local/bin go install github.com/onsi/ginkgo/v2/ginkgo@latest && \
+    GOBIN=/usr/local/bin go install github.com/go-delve/delve/cmd/dlv@latest && \
+    GOBIN=/usr/local/bin go install github.com/sigstore/cosign/v2/cmd/cosign@v2.5.3 && \
+    GOBIN=/usr/local/bin go install github.com/sigstore/gitsign@v0.13.0
+
+# Create a non-root user 'vscode' to run as, and grant it passwordless sudo.
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+RUN groupadd --gid $USER_GID $USERNAME && \
+    useradd --uid $USER_UID --gid $USER_GID -m $USERNAME && \
+    echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
+    chmod 0440 /etc/sudoers.d/$USERNAME
+
+# Add Go bin directory to the vscode user's PATH
+# Ignoring hadolint because in this case we don't want variables expanded during
+# the container build.
+# hadolint ignore=SC2016
+RUN echo 'export PATH="$PATH:$HOME/go/bin"' >> /home/$USERNAME/.bashrc
+
+# Switch to the non-root user
+USER $USERNAME
