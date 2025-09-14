@@ -18,10 +18,17 @@ type Kind mg.Namespace
 // CertManager manages cert-manager operations
 type CertManager mg.Namespace
 
+// ArgoCD manages ArgoCD operations
+type ArgoCD mg.Namespace
+
 const (
 	clusterName        = "kargo"
 	certManagerVersion = "v1.18.2"
 	certManagerNS      = "cert-manager"
+	argocdVersion      = "7.4.0"
+	argocdNS           = "argocd"
+	argocdRepoName     = "argo"
+	argocdRepoURL      = "https://argoproj.github.io/argo-helm"
 )
 
 // Default target - shows available targets
@@ -308,6 +315,149 @@ func (CertManager) Status() error {
 		fmt.Printf("⚠️  Could not get CRD status: %v\n", err)
 	} else {
 		fmt.Printf("%s\n", crdOutput)
+	}
+
+	return nil
+}
+
+// ArgoCD:Up installs or upgrades ArgoCD using Helm
+func (ArgoCD) Up() error {
+	mg.Deps(Kind.Up)
+	fmt.Println("🚀 Setting up ArgoCD...")
+
+	// Ensure ArgoCD Helm repository is available
+	err := internal.EnsureHelmRepo(argocdRepoName, argocdRepoURL)
+	if err != nil {
+		return fmt.Errorf("failed to add ArgoCD Helm repository: %w", err)
+	}
+
+	// Update Helm repositories
+	err = sh.Run("helm", "repo", "update")
+	if err != nil {
+		return fmt.Errorf("failed to update Helm repositories: %w", err)
+	}
+
+	// Create namespace if it doesn't exist
+	err = sh.Run("kubectl", "create", "namespace", argocdNS)
+	if err != nil {
+		// Namespace might already exist, which is fine
+		fmt.Printf("ℹ️  Namespace '%s' might already exist\n", argocdNS)
+	}
+
+	// Check if ArgoCD is already installed
+	exists, err := internal.ReleaseExists("argo-cd", argocdNS)
+	if err != nil {
+		return fmt.Errorf("failed to check ArgoCD installation: %w", err)
+	}
+
+	if exists {
+		fmt.Printf("🔄 ArgoCD is already installed, upgrading to v%s...\n", argocdVersion)
+		err = internal.UpgradeHelmChart("argo-cd", argocdRepoName+"/argo-cd", argocdNS, argocdVersion)
+		if err != nil {
+			return fmt.Errorf("failed to upgrade ArgoCD: %w", err)
+		}
+		fmt.Printf("✅ ArgoCD upgraded to v%s and is ready\n", argocdVersion)
+	} else {
+		fmt.Printf("📦 Installing ArgoCD v%s...\n", argocdVersion)
+		err = internal.InstallHelmChart("argo-cd", argocdRepoName+"/argo-cd", argocdNS, argocdVersion)
+		if err != nil {
+			return fmt.Errorf("failed to install ArgoCD: %w", err)
+		}
+		fmt.Printf("✅ ArgoCD v%s is ready in namespace '%s'\n", argocdVersion, argocdNS)
+	}
+
+	return nil
+}
+
+// ArgoCD:Down removes ArgoCD and cleans up resources
+func (ArgoCD) Down() error {
+	fmt.Println("🔥 Tearing down ArgoCD...")
+
+	// Check if ArgoCD is installed
+	exists, err := internal.ReleaseExists("argo-cd", argocdNS)
+	if err != nil {
+		return fmt.Errorf("failed to check ArgoCD installation: %w", err)
+	}
+
+	if !exists {
+		fmt.Printf("ℹ️  ArgoCD is not installed\n")
+		return nil
+	}
+
+	// Uninstall the helm release
+	err = internal.UninstallHelmChart("argo-cd", argocdNS)
+	if err != nil {
+		return fmt.Errorf("failed to uninstall ArgoCD: %w", err)
+	}
+
+	fmt.Printf("✅ ArgoCD torn down successfully\n")
+	return nil
+}
+
+// ArgoCD:UpClean removes and reinstalls ArgoCD
+func (ArgoCD) UpClean() error {
+	fmt.Println("🧹 Clean setting up ArgoCD...")
+
+	// First uninstall if it exists
+	err := (ArgoCD{}).Down()
+	if err != nil {
+		return fmt.Errorf("failed to uninstall existing ArgoCD: %w", err)
+	}
+
+	// Wait a moment for cleanup
+	fmt.Printf("⏳ Waiting for cleanup to complete...\n")
+	time.Sleep(5 * time.Second)
+
+	// Then install fresh
+	err = (ArgoCD{}).Up()
+	if err != nil {
+		return fmt.Errorf("failed to install ArgoCD: %w", err)
+	}
+
+	fmt.Printf("✅ ArgoCD clean setup completed successfully\n")
+	return nil
+}
+
+// ArgoCD:Status shows the status of ArgoCD installation
+func (ArgoCD) Status() error {
+	fmt.Println("📊 Checking ArgoCD status...")
+
+	// Check if helm release exists
+	exists, err := internal.ReleaseExists("argo-cd", argocdNS)
+	if err != nil {
+		return fmt.Errorf("failed to check ArgoCD release: %w", err)
+	}
+
+	if !exists {
+		fmt.Printf("❌ ArgoCD is not installed\n")
+		return nil
+	}
+
+	fmt.Printf("✅ ArgoCD helm release exists\n")
+
+	// Get helm status
+	fmt.Printf("🔍 Helm release status:\n")
+	err = internal.GetHelmChartStatus("argo-cd", argocdNS)
+	if err != nil {
+		fmt.Printf("⚠️  Could not get helm status: %v\n", err)
+	}
+
+	// Check pod status
+	fmt.Printf("🔍 Checking ArgoCD pods...\n")
+	podOutput, err := sh.Output("kubectl", "get", "pods", "--namespace", argocdNS, "-l", "app.kubernetes.io/part-of=argocd")
+	if err != nil {
+		fmt.Printf("⚠️  Could not get pod status: %v\n", err)
+	} else {
+		fmt.Printf("%s\n", podOutput)
+	}
+
+	// Check ArgoCD services
+	fmt.Printf("🔍 Checking ArgoCD services...\n")
+	svcOutput, err := sh.Output("kubectl", "get", "svc", "--namespace", argocdNS, "-l", "app.kubernetes.io/part-of=argocd")
+	if err != nil {
+		fmt.Printf("⚠️  Could not get service status: %v\n", err)
+	} else {
+		fmt.Printf("%s\n", svcOutput)
 	}
 
 	return nil
