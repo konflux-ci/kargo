@@ -5,6 +5,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/konflux-ci/kargo/internal"
@@ -29,6 +30,9 @@ const (
 	argocdNS           = "argocd"
 	argocdRepoName     = "argo"
 	argocdRepoURL      = "https://argoproj.github.io/argo-helm"
+	argocdService      = "argo-cd-argocd-server"
+	argocdLocalPort    = 8443
+	argocdRemotePort   = 443
 )
 
 // Default target - shows available targets
@@ -108,6 +112,7 @@ func (Kind) UpClean() error {
 
 // Kind:Down tears down the kind cluster
 func (Kind) Down() error {
+	mg.Deps(ArgoCD.Disconnect)
 	fmt.Println("🔥 Tearing down kind cluster...")
 
 	// Check if cluster exists first
@@ -366,11 +371,15 @@ func (ArgoCD) Up() error {
 		fmt.Printf("✅ ArgoCD v%s is ready in namespace '%s'\n", argocdVersion, argocdNS)
 	}
 
+	// Automatically connect to ArgoCD UI
+	fmt.Println("💡 To connect to ArgoCD UI, run: mage argocd:connect")
+
 	return nil
 }
 
 // ArgoCD:Down removes ArgoCD and cleans up resources
 func (ArgoCD) Down() error {
+	mg.Deps(ArgoCD.Disconnect)
 	fmt.Println("🔥 Tearing down ArgoCD...")
 
 	// Check if ArgoCD is installed
@@ -459,6 +468,80 @@ func (ArgoCD) Status() error {
 	} else {
 		fmt.Printf("%s\n", svcOutput)
 	}
+
+	fmt.Println("💡 To connect to ArgoCD UI, run: mage argocd:connect")
+	
+	return nil
+}
+
+// ArgoCD:Connect sets up port-forwarding to ArgoCD UI and displays connection info
+func (ArgoCD) Connect() error {
+	mg.Deps(ArgoCD.Up)
+	fmt.Println("🔗 Connecting to ArgoCD UI...")
+
+	// Check if port forwarding is already running
+	running, pid, err := internal.IsPortForwardRunning(argocdService, argocdNS)
+	if err != nil {
+		return fmt.Errorf("failed to check port forwarding status: %w", err)
+	}
+
+	if running {
+		fmt.Printf("✅ Port forwarding is already running (PID: %d)\n", pid)
+	} else {
+		fmt.Printf("🚀 Starting port forwarding to ArgoCD server...\n")
+		pid, err = internal.StartPortForward(argocdService, argocdNS, argocdLocalPort, argocdRemotePort)
+		if err != nil {
+			return fmt.Errorf("failed to start port forwarding: %w", err)
+		}
+		fmt.Printf("✅ Port forwarding started (PID: %d)\n", pid)
+	}
+
+	// Get admin password
+	fmt.Printf("🔑 Retrieving admin credentials...\n")
+	adminPassword, err := internal.GetArgoCDAdminPassword(argocdNS)
+	if err != nil {
+		fmt.Printf("⚠️  Could not retrieve admin password: %v\n", err)
+		fmt.Printf("💡 You may need to wait for ArgoCD to be fully ready\n")
+		adminPassword = "<password not available>"
+	}
+
+	// Display connection information
+	fmt.Println("\n" + strings.Repeat("=", 60))
+	fmt.Println("🎉 ArgoCD UI is now accessible!")
+	fmt.Println(strings.Repeat("=", 60))
+	fmt.Printf("🌐 URL: http://localhost:%d\n", argocdLocalPort)
+	fmt.Printf("👤 Username: admin\n")
+	fmt.Printf("🔑 Password: %s\n", adminPassword)
+	fmt.Println(strings.Repeat("=", 60))
+	fmt.Println("💡 To stop port forwarding, run: mage argocd:disconnect")
+	fmt.Println(strings.Repeat("=", 60))
+
+	return nil
+}
+
+// ArgoCD:Disconnect stops the port-forwarding to ArgoCD UI
+func (ArgoCD) Disconnect() error {
+	fmt.Println("🔌 Disconnecting from ArgoCD UI...")
+
+	// Check if port forwarding is running
+	running, pid, err := internal.IsPortForwardRunning(argocdService, argocdNS)
+	if err != nil {
+		return fmt.Errorf("failed to check port forwarding status: %w", err)
+	}
+
+	if !running {
+		fmt.Printf("ℹ️  Port forwarding is not running\n")
+		return nil
+	}
+
+	// Stop the port forwarding
+	err = internal.StopPortForward(argocdService, argocdNS)
+	if err != nil {
+		return fmt.Errorf("failed to stop port forwarding: %w", err)
+	}
+
+	fmt.Printf("✅ Port forwarding stopped (was PID: %d)\n", pid)
+	fmt.Println("🔌 Disconnected from ArgoCD UI")
 
 	return nil
 }
