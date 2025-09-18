@@ -470,7 +470,7 @@ func (ArgoCD) Status() error {
 	}
 
 	fmt.Println("💡 To connect to ArgoCD UI, run: mage argocd:connect")
-	
+
 	return nil
 }
 
