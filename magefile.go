@@ -22,17 +22,27 @@ type CertManager mg.Namespace
 // ArgoCD manages ArgoCD operations
 type ArgoCD mg.Namespace
 
+// ArgoRollouts manages Argo Rollouts operations
+type ArgoRollouts mg.Namespace
+
 const (
-	clusterName        = "kargo"
-	certManagerVersion = "v1.18.2"
-	certManagerNS      = "cert-manager"
-	argocdVersion      = "7.4.0"
-	argocdNS           = "argocd"
-	argocdRepoName     = "argo"
-	argocdRepoURL      = "https://argoproj.github.io/argo-helm"
-	argocdService      = "argo-cd-argocd-server"
-	argocdLocalPort    = 8443
-	argocdRemotePort   = 443
+	clusterName            = "kargo"
+	certManagerVersion     = "v1.18.2"
+	certManagerNS          = "cert-manager"
+	argocdVersion          = "7.4.0"
+	argocdNS               = "argocd"
+	argocdRepoName         = "argo"
+	argocdRepoURL          = "https://argoproj.github.io/argo-helm"
+	argocdService          = "argo-cd-argocd-server"
+	argocdLocalPort        = 8443
+	argocdRemotePort       = 443
+	argorolloutsVersion    = "2.40.4"
+	argorolloutsNS         = "argo-rollouts"
+	argorolloutsRepoName   = "argo"
+	argorolloutsRepoURL    = "https://argoproj.github.io/argo-helm"
+	argorolloutsService    = "argo-rollouts-dashboard"
+	argorolloutsLocalPort  = 3100
+	argorolloutsRemotePort = 3100
 )
 
 // Default target - shows available targets
@@ -542,6 +552,224 @@ func (ArgoCD) Disconnect() error {
 
 	fmt.Printf("✅ Port forwarding stopped (was PID: %d)\n", pid)
 	fmt.Println("🔌 Disconnected from ArgoCD UI")
+
+	return nil
+}
+
+// ArgoRollouts:Up installs Argo Rollouts using Helm
+func (ArgoRollouts) Up() error {
+	mg.Deps(Kind.Up)
+	fmt.Println("🚀 Setting up Argo Rollouts...")
+
+	// Ensure Argo Rollouts Helm repository is available
+	err := internal.EnsureHelmRepo(argorolloutsRepoName, argorolloutsRepoURL)
+	if err != nil {
+		return fmt.Errorf("failed to add Argo Rollouts Helm repository: %w", err)
+	}
+
+	// Update Helm repositories
+	err = sh.Run("helm", "repo", "update")
+	if err != nil {
+		return fmt.Errorf("failed to update Helm repositories: %w", err)
+	}
+
+	// Create namespace if it doesn't exist
+	err = sh.Run("kubectl", "create", "namespace", argorolloutsNS)
+	if err != nil {
+		// Namespace might already exist, which is fine
+		fmt.Printf("ℹ️  Namespace '%s' might already exist\n", argorolloutsNS)
+	}
+
+	// Check if Argo Rollouts is already installed
+	exists, err := internal.ReleaseExists("argo-rollouts", argorolloutsNS)
+	if err != nil {
+		return fmt.Errorf("failed to check Argo Rollouts installation: %w", err)
+	}
+
+	if exists {
+		fmt.Printf("🔄 Argo Rollouts is already installed, upgrading to v%s...\n", argorolloutsVersion)
+		err = internal.UpgradeHelmChart("argo-rollouts", argorolloutsRepoName+"/argo-rollouts", argorolloutsNS, argorolloutsVersion, "--set", "dashboard.enabled=true")
+		if err != nil {
+			return fmt.Errorf("failed to upgrade Argo Rollouts: %w", err)
+		}
+		fmt.Printf("✅ Argo Rollouts upgraded to v%s and is ready\n", argorolloutsVersion)
+	} else {
+		fmt.Printf("📦 Installing Argo Rollouts v%s...\n", argorolloutsVersion)
+		err = internal.InstallHelmChart("argo-rollouts", argorolloutsRepoName+"/argo-rollouts", argorolloutsNS, argorolloutsVersion, "--set", "dashboard.enabled=true")
+		if err != nil {
+			return fmt.Errorf("failed to install Argo Rollouts: %w", err)
+		}
+		fmt.Printf("✅ Argo Rollouts v%s is ready in namespace '%s'\n", argorolloutsVersion, argorolloutsNS)
+	}
+
+	// Wait for Argo Rollouts to be ready
+	fmt.Printf("⏳ Waiting for Argo Rollouts to be ready...\n")
+	err = internal.WaitForArgoRolloutsReady(argorolloutsNS)
+	if err != nil {
+		return fmt.Errorf("Argo Rollouts is not ready: %w", err)
+	}
+
+	// Automatically connect to Argo Rollouts UI
+	fmt.Println("💡 To connect to Argo Rollouts UI, run: mage argorollouts:connect")
+
+	return nil
+}
+
+// ArgoRollouts:Down removes Argo Rollouts and cleans up resources
+func (ArgoRollouts) Down() error {
+	mg.Deps(ArgoRollouts.Disconnect)
+	fmt.Println("🔥 Tearing down Argo Rollouts...")
+
+	// Check if Argo Rollouts is installed
+	exists, err := internal.ReleaseExists("argo-rollouts", argorolloutsNS)
+	if err != nil {
+		return fmt.Errorf("failed to check Argo Rollouts installation: %w", err)
+	}
+
+	if !exists {
+		fmt.Printf("ℹ️  Argo Rollouts is not installed\n")
+		return nil
+	}
+
+	// Uninstall the helm release
+	err = internal.UninstallHelmChart("argo-rollouts", argorolloutsNS)
+	if err != nil {
+		return fmt.Errorf("failed to uninstall Argo Rollouts: %w", err)
+	}
+
+	fmt.Printf("✅ Argo Rollouts torn down successfully\n")
+	return nil
+}
+
+// ArgoRollouts:UpClean removes and reinstalls Argo Rollouts
+func (ArgoRollouts) UpClean() error {
+	fmt.Println("🧹 Clean setting up Argo Rollouts...")
+
+	// First uninstall if it exists
+	err := (ArgoRollouts{}).Down()
+	if err != nil {
+		return fmt.Errorf("failed to uninstall existing Argo Rollouts: %w", err)
+	}
+
+	// Wait a moment for cleanup
+	fmt.Printf("⏳ Waiting for cleanup to complete...\n")
+	time.Sleep(5 * time.Second)
+
+	// Then install fresh
+	err = (ArgoRollouts{}).Up()
+	if err != nil {
+		return fmt.Errorf("failed to install Argo Rollouts: %w", err)
+	}
+
+	fmt.Printf("✅ Argo Rollouts clean setup completed successfully\n")
+	return nil
+}
+
+// ArgoRollouts:Status shows the status of Argo Rollouts installation
+func (ArgoRollouts) Status() error {
+	fmt.Println("📊 Checking Argo Rollouts status...")
+
+	// Check if helm release exists
+	exists, err := internal.ReleaseExists("argo-rollouts", argorolloutsNS)
+	if err != nil {
+		return fmt.Errorf("failed to check Argo Rollouts release: %w", err)
+	}
+
+	if !exists {
+		fmt.Printf("❌ Argo Rollouts is not installed\n")
+		return nil
+	}
+
+	fmt.Printf("✅ Argo Rollouts helm release exists\n")
+
+	// Get helm status
+	fmt.Printf("🔍 Helm release status:\n")
+	err = internal.GetHelmChartStatus("argo-rollouts", argorolloutsNS)
+	if err != nil {
+		fmt.Printf("⚠️  Could not get helm status: %v\n", err)
+	}
+
+	// Check pod status
+	fmt.Printf("🔍 Checking Argo Rollouts pods...\n")
+	podOutput, err := sh.Output("kubectl", "get", "pods", "--namespace", argorolloutsNS, "-l", "app.kubernetes.io/name=argo-rollouts")
+	if err != nil {
+		fmt.Printf("⚠️  Could not get pod status: %v\n", err)
+	} else {
+		fmt.Printf("%s\n", podOutput)
+	}
+
+	// Check Argo Rollouts services
+	fmt.Printf("🔍 Checking Argo Rollouts services...\n")
+	svcOutput, err := sh.Output("kubectl", "get", "svc", "--namespace", argorolloutsNS, "-l", "app.kubernetes.io/name=argo-rollouts")
+	if err != nil {
+		fmt.Printf("⚠️  Could not get service status: %v\n", err)
+	} else {
+		fmt.Printf("%s\n", svcOutput)
+	}
+
+	fmt.Println("💡 To connect to Argo Rollouts UI, run: mage argorollouts:connect")
+
+	return nil
+}
+
+// ArgoRollouts:Connect sets up port-forwarding to Argo Rollouts UI and displays connection info
+func (ArgoRollouts) Connect() error {
+	mg.Deps(ArgoRollouts.Up)
+	fmt.Println("🔗 Connecting to Argo Rollouts UI...")
+
+	// Check if port forwarding is already running
+	running, pid, err := internal.IsPortForwardRunning(argorolloutsService, argorolloutsNS)
+	if err != nil {
+		return fmt.Errorf("failed to check port forwarding status: %w", err)
+	}
+
+	if running {
+		fmt.Printf("✅ Port forwarding is already running (PID: %d)\n", pid)
+	} else {
+		fmt.Printf("🚀 Starting port forwarding to Argo Rollouts dashboard...\n")
+		pid, err = internal.StartPortForward(argorolloutsService, argorolloutsNS, argorolloutsLocalPort, argorolloutsRemotePort)
+		if err != nil {
+			return fmt.Errorf("failed to start port forwarding: %w", err)
+		}
+		fmt.Printf("✅ Port forwarding started (PID: %d)\n", pid)
+	}
+
+	// Display connection information
+	fmt.Println("\n" + strings.Repeat("=", 60))
+	fmt.Println("🎉 Argo Rollouts UI is now accessible!")
+	fmt.Println(strings.Repeat("=", 60))
+	fmt.Printf("🌐 URL: http://localhost:%d\n", argorolloutsLocalPort)
+	fmt.Println("💡 The Argo Rollouts dashboard provides a web UI for managing rollouts")
+	fmt.Println(strings.Repeat("=", 60))
+	fmt.Println("💡 To stop port forwarding, run: mage argorollouts:disconnect")
+	fmt.Println(strings.Repeat("=", 60))
+
+	return nil
+}
+
+// ArgoRollouts:Disconnect stops the port-forwarding to Argo Rollouts UI
+func (ArgoRollouts) Disconnect() error {
+	fmt.Println("🔌 Disconnecting from Argo Rollouts UI...")
+
+	// Check if port forwarding is running
+	running, pid, err := internal.IsPortForwardRunning(argorolloutsService, argorolloutsNS)
+	if err != nil {
+		return fmt.Errorf("failed to check port forwarding status: %w", err)
+	}
+
+	if !running {
+		fmt.Printf("ℹ️  Port forwarding is not running\n")
+		return nil
+	}
+
+	// Stop the port forwarding
+	err = internal.StopPortForward(argorolloutsService, argorolloutsNS)
+	if err != nil {
+		return fmt.Errorf("failed to stop port forwarding: %w", err)
+	}
+
+	fmt.Printf("✅ Port forwarding stopped (was PID: %d)\n", pid)
+	fmt.Println("🔌 Disconnected from Argo Rollouts UI")
 
 	return nil
 }
