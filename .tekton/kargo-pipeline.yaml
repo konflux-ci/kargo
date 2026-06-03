@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: kargo-pipeline
-  namespace: konflux-devprod-tenant
+  namespace: rh-konflux-devprod-tenant
 spec:
   description: |
     This pipeline is ideal for building multi-arch container images from a Containerfile while maintaining trust after pipeline customization.
@@ -31,11 +31,11 @@ spec:
     description: Skip checks against built image
     name: skip-checks
     type: string
-  - default: "true"
+  - default: "false"
     description: Execute the build with network isolation
     name: hermetic
     type: string
-  - default: '[{"type": "gomod", "path": "kargo"}]'
+  - default: '[{"type": "gomod", "path": "kargo"}, {"type": "x-pnpm", "path": "kargo/ui"}, {"type": "generic", "path": "."}]'
     description: Build dependencies to be prefetched
     name: prefetch-input
     type: string
@@ -77,6 +77,10 @@ spec:
     description: List of platforms to build the container images on. The available set of values is determined by the configuration of the multi-platform-controller.
     name: build-platforms
     type: array
+  - name: enable-package-registry-proxy
+    default: 'true'
+    description: Use the package registry proxy when prefetching dependencies
+    type: string
   - name: sast-target-dirs
     type: string
     default: .
@@ -139,7 +143,7 @@ spec:
     - name: ociStorage
       value: $(params.output-image).version
     - name: SCRIPT_RUNNER_IMAGE
-      value: registry.access.redhat.com/ubi10/go-toolset@sha256:c8d35a1ae1fc7ee3adf85fe379e90faf1fe6f30820a24e3ea8973bbb524a0409
+      value: registry.access.redhat.com/ubi10/go-toolset:10.1-1780422343@sha256:473a1b6bf2af9abb7b922732eadc2b48a455c8a281950fcb9fbd75bd326e7c24
     - name: SCRIPT
       value: |
         #!/bin/bash
@@ -175,6 +179,8 @@ spec:
       value: $(params.output-image).prefetch
     - name: ociArtifactExpiresAfter
       value: $(params.image-expires-after)
+    - name: enable-package-registry-proxy
+      value: $(params.enable-package-registry-proxy)
     runAfter:
     - generate-version
     taskRef:
@@ -250,10 +256,6 @@ spec:
     params:
     - name: IMAGE
       value: $(params.output-image)
-    - name: COMMIT_SHA
-      value: $(tasks.clone-repository.results.commit)
-    - name: IMAGE_EXPIRES_AFTER
-      value: $(params.image-expires-after)
     - name: ALWAYS_BUILD_INDEX
       value: $(params.build-image-index)
     - name: IMAGES
