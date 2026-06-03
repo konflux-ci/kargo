@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: kargo-pipeline
-  namespace: konflux-devprod-tenant
+  namespace: rh-konflux-devprod-tenant
 spec:
   description: |
     This pipeline is ideal for building multi-arch container images from a Containerfile while maintaining trust after pipeline customization.
