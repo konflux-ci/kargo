@@ -29,6 +29,10 @@
 !.github/
 !.github/**
 
+# Include build support files (e.g. npm lockfile for hermetic builds)
+!build/
+!build/**
+
 # Include pipeline files
 !.tekton/
 !.tekton/**

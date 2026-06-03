@@ -35,7 +35,7 @@ spec:
     description: Execute the build with network isolation
     name: hermetic
     type: string
-  - default: '[{"type": "gomod", "path": "kargo"}]'
+  - default: '[{"type": "gomod", "path": "kargo"}, {"type": "npm", "path": "build/ui"}]'
     description: Build dependencies to be prefetched
     name: prefetch-input
     type: string

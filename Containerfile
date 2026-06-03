@@ -8,17 +8,14 @@ ARG KARGO_VERSION
 ####################################################################################################
 FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:8003fedb7ce6ad66630bcd6b5213fa0811b3353d34d7dd74f90ec73cbe660960 AS ui-builder
 
-ARG PNPM_VERSION=9.0.3
-RUN npm install --global pnpm@${PNPM_VERSION}
-
 WORKDIR /ui
-COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml ./
+COPY build/ui/package.json build/ui/package-lock.json ./
 
-RUN pnpm install
+RUN npm ci
 COPY kargo/ui .
 
 ARG KARGO_VERSION
-RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
+RUN NODE_ENV='production' VERSION=${KARGO_VERSION} npm run build
 
 ####################################################################################################
 # back-end-builder
