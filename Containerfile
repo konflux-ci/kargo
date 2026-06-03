@@ -82,6 +82,7 @@ RUN curl -fL -o /tools/grpc_health_probe \
     chmod +x /tools/grpc_health_probe
 
 ARG HELM_VERSION=v3.21.0
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN curl -fL -o /tmp/helm.tar.gz \
       https://get.helm.sh/helm-${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz && \
     curl -fL -o /tmp/helm.tar.gz.sha256sum \
