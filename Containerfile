@@ -9,7 +9,7 @@ ARG KARGO_VERSION
 FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:b787df2d614ce4e950fdd0950805a3e23046158f47a76cda1c417a21987f02e3 AS ui-builder
 
 ARG PNPM_VERSION=9.0.3
-RUN corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
+RUN npm install --global /cachi2/output/deps/generic/pnpm-${PNPM_VERSION}.tgz
 
 WORKDIR /ui
 COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml ./
@@ -23,7 +23,7 @@ RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
 ####################################################################################################
 # back-end-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/go-toolset@sha256:d5d48915a31c7c774caf7568f7fbe3b25275e042f9f4de73d13fba39f9b2a987 AS back-end-builder
+FROM registry.access.redhat.com/ubi10/go-toolset@sha256:473a1b6bf2af9abb7b922732eadc2b48a455c8a281950fcb9fbd75bd326e7c24 AS back-end-builder
 
 ARG KARGO_VERSION
 ARG CGO_ENABLED=0
