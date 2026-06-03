@@ -1,0 +1,12 @@
+extends: default
+
+rules:
+  line-length:
+    level: warning
+  truthy:
+    check-keys: false
+  document-start:
+    level: warning
+  indentation:
+    spaces: consistent
+    indent-sequences: consistent

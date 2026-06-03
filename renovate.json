@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>konflux-ci/mintmaker//config/renovate/renovate.json"
+  ],
+  "schedule": [
+    "before 7am on Monday"
+  ],
+  "addLabels": [
+    "konflux",
+    "mintmaker"
+  ],
+  "packageRules": [
+    {
+      "description": "Go toolchain updates — deptriage defers approval until CI passes",
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchPackageNames": [
+        "/go-toolset/"
+      ]
+    },
+    {
+      "description": "Prioritize Konflux tekton task reference updates",
+      "matchManagers": [
+        "tekton"
+      ],
+      "prPriority": 10
+    }
+  ]
+}

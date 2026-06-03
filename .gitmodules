@@ -1,0 +1,4 @@
+[submodule "kargo"]
+	path = kargo
+	url = https://github.com/akuity/kargo.git
+	branch = main

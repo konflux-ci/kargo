@@ -1,0 +1,31 @@
+name: Publish Tag
+
+on:
+  push:
+    branches:
+    - release-*.*
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v6
+      with:
+        fetch-depth: '0'
+    - name: release-and-tag
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: ${{ github.ref_name }}
+      run: |
+        set -e
+
+        TAG=$(./hack/kargo_tag.sh)
+        if gh release view "${TAG}" > /dev/null; then
+          printf "Release already exists\n%s" "$(gh release view ${TAG} --json=name,tagName,url)"
+          exit 1
+        fi
+
+        gh release create "${TAG}" --generate-notes -t "Kargo ${TAG}" --target "${BRANCH}"
