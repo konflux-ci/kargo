@@ -73,7 +73,7 @@ ARG TARGETARCH=amd64
 
 WORKDIR /tools
 
-RUN microdnf install -y tar gzip && \
+RUN microdnf install -y tar-1.35 gzip-1.13 && \
     microdnf clean all
 
 ARG GRPC_HEALTH_PROBE_VERSION=v0.4.50
@@ -99,7 +99,7 @@ FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:aae01ce9206926cceeab9e5
 
 ARG KARGO_VERSION
 
-RUN microdnf install -y ca-certificates git-core gnupg2 openssh-clients tini && \
+RUN microdnf install -y ca-certificates-2025.2.80_v9.0.305 git-core-2.52.0 gnupg2-2.4.5 openssh-clients-9.9p1 && \
     microdnf clean all
 
 COPY --from=back-end-builder /kargo/bin/ /usr/local/bin/
@@ -125,5 +125,4 @@ LABEL org.opencontainers.image.licenses=Apache-2.0 \
 
 USER 65532:65532
 
-ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["/usr/local/bin/kargo"]
+ENTRYPOINT ["/usr/local/bin/kargo"]
