@@ -6,21 +6,24 @@ ARG KARGO_VERSION
 ####################################################################################################
 # ui-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:8003fedb7ce6ad66630bcd6b5213fa0811b3353d34d7dd74f90ec73cbe660960 AS ui-builder
+FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:b787df2d614ce4e950fdd0950805a3e23046158f47a76cda1c417a21987f02e3 AS ui-builder
+
+ARG PNPM_VERSION=9.0.3
+RUN corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
 
 WORKDIR /ui
-COPY build/ui/package.json build/ui/package-lock.json ./
+COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml ./
 
-RUN npm ci
+RUN pnpm install --frozen-lockfile
 COPY kargo/ui .
 
 ARG KARGO_VERSION
-RUN NODE_ENV='production' VERSION=${KARGO_VERSION} npm run build
+RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
 
 ####################################################################################################
 # back-end-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/go-toolset@sha256:dd14b6a5692bb71da204c6e913ecb7661b8aab92f35adee2ca6d942b90adfd84 AS back-end-builder
+FROM registry.access.redhat.com/ubi10/go-toolset@sha256:d5d48915a31c7c774caf7568f7fbe3b25275e042f9f4de73d13fba39f9b2a987 AS back-end-builder
 
 ARG KARGO_VERSION
 ARG CGO_ENABLED=0
@@ -63,7 +66,7 @@ RUN go build \
 ####################################################################################################
 # tools
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:aae01ce9206926cceeab9e5251c4a4daf542bc088f31dd9bce112347d043f864 AS tools
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15cfba75f096d6a7191de98481b870b3dba575d65302 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -92,7 +95,7 @@ RUN curl -fL -o /tmp/helm.tar.gz \
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:aae01ce9206926cceeab9e5251c4a4daf542bc088f31dd9bce112347d043f864
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15cfba75f096d6a7191de98481b870b3dba575d65302
 
 ARG KARGO_VERSION
 
