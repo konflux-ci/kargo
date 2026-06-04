@@ -6,6 +6,10 @@
   "schedule": [
     "before 7am on Monday"
   ],
+  "baseBranchPatterns": [
+    "main",
+    "release-1.10"
+  ],
   "addLabels": [
     "konflux",
     "mintmaker"
@@ -26,6 +30,22 @@
         "tekton"
       ],
       "prPriority": 10
+    },
+    {
+      "matchDepNames": ["kargo"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+    },
+    {
+      "matchDepNames": ["kargo"],
+      "matchUpdateTypes": ["patch"],
+      "enabled": true
+    },
+    {
+      "matchDepNames": ["kargo"],
+      "matchBaseBranches": ["release-1.10"],
+      "allowedVersions": "/^v?1\\.10\\./",
+      "description": "On release-1.10, only allow kargo 1.10.x versions"
     }
   ]
 }
