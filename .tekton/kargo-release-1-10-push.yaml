@@ -456,7 +456,7 @@ spec:
       - name: IMAGE_DIGEST
         value: $(tasks.build-image-index.results.IMAGE_DIGEST)
       - name: ADDITIONAL_TAGS
-        value: ["1.10", "{{target_branch}}"]
+        value: ["1.10", "{{target_branch}}", "1.10-{{revision}}", "{{git_tag}}"]
       runAfter:
       - build-image-index
       taskRef:
