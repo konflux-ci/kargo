@@ -8,7 +8,7 @@ metadata:
     pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "release-1.10"
+      == "release-1.10" && git_tag.matches("^v1\\.10\\.")
   labels:
     appstudio.openshift.io/application: kargo
     appstudio.openshift.io/component: kargo-release-1-10
