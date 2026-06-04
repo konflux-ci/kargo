@@ -1,4 +1,4 @@
 [submodule "kargo"]
 	path = kargo
 	url = https://github.com/akuity/kargo.git
-	branch = v1.10.2
+	branch = v1.10.3
