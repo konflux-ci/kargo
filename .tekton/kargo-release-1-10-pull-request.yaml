@@ -28,6 +28,9 @@ spec:
     value: 5d
   - name: dockerfile
     value: Containerfile
+  - name: build-args
+    value:
+    - "KARGO_VERSION=v1.10.4"
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
@@ -458,6 +461,8 @@ spec:
         value: $(tasks.build-image-index.results.IMAGE_URL)
       - name: IMAGE_DIGEST
         value: $(tasks.build-image-index.results.IMAGE_DIGEST)
+      - name: ADDITIONAL_TAGS
+        value: ["1.10", "{{target_branch}}", "1.10-{{revision}}"]
       runAfter:
       - build-image-index
       taskRef:

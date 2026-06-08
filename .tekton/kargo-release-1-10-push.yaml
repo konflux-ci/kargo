@@ -25,6 +25,9 @@ spec:
     value: quay.io/redhat-user-workloads/rh-konflux-devprod-tenant/kargo-release-1-10:{{revision}}
   - name: dockerfile
     value: Containerfile
+  - name: build-args
+    value:
+    - "KARGO_VERSION=v1.10.4"
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.

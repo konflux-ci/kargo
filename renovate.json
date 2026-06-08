@@ -14,6 +14,15 @@
     "konflux",
     "mintmaker"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^.tekton/.*\\.yaml$"],
+      "matchStrings": ["KARGO_VERSION=(?<currentValue>v\\d+\\.\\d+\\.\\d+)"],
+      "depNameTemplate": "akuity/kargo",
+      "datasourceTemplate": "github-tags"
+    }
+  ],
   "packageRules": [
     {
       "description": "Go toolchain updates — deptriage defers approval until CI passes",
@@ -32,17 +41,18 @@
       "prPriority": 10
     },
     {
-      "matchDepNames": ["kargo"],
+      "matchDepNames": ["kargo", "akuity/kargo"],
       "matchUpdateTypes": ["major", "minor"],
       "enabled": false
     },
     {
-      "matchDepNames": ["kargo"],
+      "matchDepNames": ["kargo", "akuity/kargo"],
       "matchUpdateTypes": ["patch"],
-      "enabled": true
+      "enabled": true,
+      "groupName": "kargo-version"
     },
     {
-      "matchDepNames": ["kargo"],
+      "matchDepNames": ["kargo", "akuity/kargo"],
       "matchBaseBranches": ["release-1.10"],
       "allowedVersions": "/^v?1\\.10\\./",
       "description": "On release-1.10, only allow kargo 1.10.x versions"
