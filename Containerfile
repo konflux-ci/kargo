@@ -93,6 +93,22 @@ RUN curl -fL -o /tmp/helm.tar.gz \
     chmod +x /tools/helm
 
 ####################################################################################################
+# tini
+####################################################################################################
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15cfba75f096d6a7191de98481b870b3dba575d65302 AS tini-builder
+
+ARG TINI_VERSION=v0.19.0
+
+RUN microdnf install -y cmake-3.31.8 make-1:4.4.1 gcc-14.3.1 glibc-static-2.39 && \
+    microdnf clean all
+
+RUN git clone --depth 1 --branch ${TINI_VERSION} https://github.com/krallin/tini.git && \
+    cd tini && \
+    cmake . && \
+    make && \
+    chmod +x tini-static
+
+####################################################################################################
 # final
 ####################################################################################################
 FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15cfba75f096d6a7191de98481b870b3dba575d65302
@@ -104,6 +120,7 @@ RUN microdnf install -y ca-certificates-2025.2.80_v9.0.305 git-core-2.52.0 gnupg
 
 COPY --from=back-end-builder /kargo/bin/ /usr/local/bin/
 COPY --from=tools /tools/ /usr/local/bin/
+COPY --from=tini-builder /tini/tini-static /sbin/tini
 
 LABEL org.opencontainers.image.licenses=Apache-2.0 \
     org.opencontainers.image.description="Kargo is a Kubernetes-native continuous promotion platform for GitOps workflows." \
@@ -125,4 +142,5 @@ LABEL org.opencontainers.image.licenses=Apache-2.0 \
 
 USER 65532:65532
 
-ENTRYPOINT ["/usr/local/bin/kargo"]
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["/usr/local/bin/kargo"]
