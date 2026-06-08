@@ -99,7 +99,7 @@ FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15c
 
 ARG TINI_VERSION=v0.19.0
 
-RUN microdnf install -y cmake-3.31.8 make-1:4.4.1 gcc-14.3.1 glibc-static-2.39 && \
+RUN microdnf install -y git-core-2.52.0 cmake-3.31.8 make-1:4.4.1 gcc-14.3.1 glibc-static-2.39 && \
     microdnf clean all
 
 RUN git clone --depth 1 --branch ${TINI_VERSION} https://github.com/krallin/tini.git && \
