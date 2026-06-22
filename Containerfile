@@ -102,6 +102,7 @@ ARG TINI_VERSION=v0.19.0
 RUN microdnf install -y git-core-2.52.0 cmake-3.31.8 make-1:4.4.1 gcc-14.3.1 glibc-static-2.39 && \
     microdnf clean all
 
+# hadolint ignore=DL3003 # We accept using 'cd' here as it's a build step
 RUN git clone --depth 1 --branch ${TINI_VERSION} https://github.com/krallin/tini.git && \
     cd tini && \
     cmake . && \
