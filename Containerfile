@@ -66,7 +66,7 @@ RUN go build \
 ####################################################################################################
 # tools
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:76c113359a458e3f04057762b5bd4a9837a6987520434dea158c728280116713 AS tools
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:5bc43c1af14ccc8bf73bb0306db13edcae1a30589569e9cdf7db5d4668b3ed24 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -95,7 +95,7 @@ RUN curl -fL -o /tmp/helm.tar.gz \
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:76c113359a458e3f04057762b5bd4a9837a6987520434dea158c728280116713
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:5bc43c1af14ccc8bf73bb0306db13edcae1a30589569e9cdf7db5d4668b3ed24
 
 ARG KARGO_VERSION
 
