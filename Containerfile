@@ -66,7 +66,7 @@ RUN go build \
 ####################################################################################################
 # tools
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15cfba75f096d6a7191de98481b870b3dba575d65302 AS tools
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:b217fa65d8c21058887b18f005f587e47a17dd1281a5196ac88d01724a273dbd AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -95,7 +95,7 @@ RUN curl -fL -o /tmp/helm.tar.gz \
 ####################################################################################################
 # tini
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15cfba75f096d6a7191de98481b870b3dba575d65302 AS tini-builder
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:b217fa65d8c21058887b18f005f587e47a17dd1281a5196ac88d01724a273dbd AS tini-builder
 
 ARG TINI_VERSION=v0.19.0
 
@@ -112,7 +112,7 @@ RUN git clone --depth 1 --branch ${TINI_VERSION} https://github.com/krallin/tini
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15cfba75f096d6a7191de98481b870b3dba575d65302
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:b217fa65d8c21058887b18f005f587e47a17dd1281a5196ac88d01724a273dbd
 
 ARG KARGO_VERSION
 
