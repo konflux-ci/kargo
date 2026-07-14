@@ -8,10 +8,10 @@ metadata:
     pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "main"
+      == "release-1.10"
   labels:
     appstudio.openshift.io/application: kargo
-    appstudio.openshift.io/component: kargo-{{target_branch}}
+    appstudio.openshift.io/component: kargo-release-1-10
     pipelines.appstudio.openshift.io/type: build
   name: kargo-{{target_branch}}-on-push
   namespace: rh-konflux-devprod-tenant
