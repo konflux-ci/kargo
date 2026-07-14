@@ -8,10 +8,10 @@ metadata:
     pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "main"
+      == "release-1.10"
   labels:
     appstudio.openshift.io/application: kargo
-    appstudio.openshift.io/component: kargo-main
+    appstudio.openshift.io/component: kargo-release-1-10
     pipelines.appstudio.openshift.io/type: build
   name: kargo-{{target_branch}}-on-push
   namespace: rh-konflux-devprod-tenant
@@ -22,13 +22,19 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
+<<<<<<< HEAD
     value: quay.io/redhat-user-workloads/rh-konflux-devprod-tenant/kargo-main:{{revision}}
+=======
+    value: quay.io/redhat-user-workloads/rh-konflux-devprod-tenant/kargo-release-1-10:{{revision}}
+  - name: image-expires-after
+    value: 5d
+>>>>>>> 00b1b42 (Lock version for release-1.10 branch)
   - name: dockerfile
     value: Containerfile
   pipelineRef:
     name: kargo-pipeline
   taskRunTemplate:
-    serviceAccountName: build-pipeline-kargo-main
+    serviceAccountName: build-pipeline-kargo-release-1-10
   workspaces:
   - name: git-auth
     secret:
