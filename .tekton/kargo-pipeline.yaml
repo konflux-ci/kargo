@@ -157,7 +157,7 @@ spec:
 
         # Output the version
         echo "Generated version: $VERSION"
-        echo "$VERSION" > "$SCRIPT_OUTPUT"
+        echo -n "$VERSION" > "$SCRIPT_OUTPUT"
     runAfter:
     - clone-repository
     taskRef:
