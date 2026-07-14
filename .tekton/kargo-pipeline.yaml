@@ -149,7 +149,8 @@ spec:
         #!/bin/bash
         set -euo pipefail
 
-        # Fetch tags from the kargo submodule
+        # Unshallow the submodule so git describe can reach ancestor tags
+        git -C kargo fetch --unshallow 2>/dev/null || true
         git -C kargo fetch --tags
 
         # Generate version using git describe
