@@ -11,7 +11,7 @@ metadata:
       == "main"
   labels:
     appstudio.openshift.io/application: kargo
-    appstudio.openshift.io/component: kargo-{{target_branch}}
+    appstudio.openshift.io/component: kargo-main
     pipelines.appstudio.openshift.io/type: build
   name: kargo-{{target_branch}}-on-push
   namespace: rh-konflux-devprod-tenant
@@ -22,7 +22,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/rh-konflux-devprod-tenant/kargo-{{target_branch}}:{{revision}}
+    value: quay.io/redhat-user-workloads/rh-konflux-devprod-tenant/kargo-main:{{revision}}
   - name: image-expires-after
     value: 5d
   - name: dockerfile
@@ -30,7 +30,7 @@ spec:
   pipelineRef:
     name: kargo-pipeline
   taskRunTemplate:
-    serviceAccountName: build-pipeline-kargo-{{target_branch}}
+    serviceAccountName: build-pipeline-kargo-main
   workspaces:
   - name: git-auth
     secret:
