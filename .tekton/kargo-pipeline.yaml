@@ -559,6 +559,8 @@ spec:
       value: $(tasks.build-image-index.results.IMAGE_URL)
     - name: IMAGE_DIGEST
       value: $(tasks.build-image-index.results.IMAGE_DIGEST)
+    - name: ADDITIONAL_TAGS
+      value: ["{{target_branch}}", "{{target_branch}}-{{revision}}", "{{target_branch}}-$(tasks.generate-version.results.SCRIPT_OUTPUT)"]
     runAfter:
     - build-image-index
     taskRef:
