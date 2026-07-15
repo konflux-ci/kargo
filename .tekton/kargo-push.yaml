@@ -23,8 +23,6 @@ spec:
     value: '{{revision}}'
   - name: output-image
     value: quay.io/redhat-user-workloads/rh-konflux-devprod-tenant/kargo-main:{{revision}}
-  - name: image-expires-after
-    value: 5d
   - name: dockerfile
     value: Containerfile
   pipelineRef:
