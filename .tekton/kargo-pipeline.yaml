@@ -139,7 +139,7 @@ spec:
   - name: generate-version
     params:
     - name: SOURCE_ARTIFACT
-      value: $(tasks.prefetch-dependencies.results.SOURCE_ARTIFACT)
+      value: $(tasks.clone-repository.results.SOURCE_ARTIFACT)
     - name: ociStorage
       value: $(params.output-image).version
     - name: SCRIPT_RUNNER_IMAGE
@@ -160,7 +160,7 @@ spec:
         echo "Generated version: $VERSION"
         echo -n "$VERSION" > "$SCRIPT_OUTPUT"
     runAfter:
-    - prefetch-dependencies
+    - clone-repository
     taskRef:
       params:
       - name: name
@@ -183,7 +183,7 @@ spec:
     - name: enable-package-registry-proxy
       value: $(params.enable-package-registry-proxy)
     runAfter:
-    - generate-version
+    - clone-repository
     taskRef:
       params:
       - name: name
@@ -231,7 +231,7 @@ spec:
     - name: BUILDAH_FORMAT
       value: $(params.buildah-format)
     - name: SOURCE_ARTIFACT
-      value: $(tasks.generate-version.results.SCRIPT_ARTIFACT)
+      value: $(tasks.prefetch-dependencies.results.SOURCE_ARTIFACT)
     - name: CACHI2_ARTIFACT
       value: $(tasks.prefetch-dependencies.results.CACHI2_ARTIFACT)
     - name: HTTP_PROXY
@@ -246,7 +246,7 @@ spec:
       value:
       - $(tasks.generate-version.results.SCRIPT_RUNNER_IMAGE_REFERENCE)
     runAfter:
-    - generate-version
+    - prefetch-dependencies
     taskRef:
       params:
       - name: name
@@ -587,7 +587,7 @@ spec:
     - name: CONTEXT
       value: $(params.path-context)
     - name: SOURCE_ARTIFACT
-      value: $(tasks.generate-version.results.SCRIPT_ARTIFACT)
+      value: $(tasks.prefetch-dependencies.results.SOURCE_ARTIFACT)
     runAfter:
     - build-image-index
     taskRef:
