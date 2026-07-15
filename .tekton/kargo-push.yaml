@@ -31,6 +31,9 @@ spec:
 >>>>>>> 00b1b42 (Lock version for release-1.10 branch)
   - name: dockerfile
     value: Containerfile
+  - name: build-platforms
+    value:
+    - linux/x86_64
   pipelineRef:
     name: kargo-pipeline
   taskRunTemplate:
