@@ -242,6 +242,8 @@ spec:
       value: "false"
     - name: IMAGE_APPEND_PLATFORM
       value: "true"
+    - name: PRE_BUILD_SCRIPT_IMAGE
+      value: $(tasks.generate-version.results.SCRIPT_RUNNER_IMAGE_REFERENCE)
     runAfter:
     - prefetch-dependencies
     taskRef:
