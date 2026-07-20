@@ -6,7 +6,7 @@ ARG KARGO_VERSION
 ####################################################################################################
 # ui-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:f7711b207f6d00de9be9cec050ef42048bcef5964a0fb74253d36e2c7af6fd3a AS ui-builder
+FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:2c1743a8715377414ecb9af86076d6fb4fb566418ddde09ffd96a23d7a8d938f AS ui-builder
 
 ARG PNPM_VERSION=9.0.3
 RUN npm install --global pnpm@${PNPM_VERSION}
