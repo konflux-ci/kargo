@@ -43,21 +43,31 @@
       "prPriority": 10
     },
     {
+      "description": "Never bump kargo across minor/major (main tracks git tip; release stays on patch line)",
       "matchDepNames": ["kargo", "akuity/kargo"],
       "matchUpdateTypes": ["major", "minor"],
       "enabled": false
     },
     {
+      "description": "Group kargo patch updates",
       "matchDepNames": ["kargo", "akuity/kargo"],
       "matchUpdateTypes": ["patch"],
       "enabled": true,
       "groupName": "kargo-version"
     },
     {
-      "matchDepNames": ["kargo", "akuity/kargo"],
+      "description": "release-1.10: disable all updates (images, tekton refs, actions, etc.)",
       "matchBaseBranches": ["release-1.10"],
+      "enabled": false
+    },
+    {
+      "description": "release-1.10: only kargo 1.10.x patches (e.g. v1.10.7 → v1.10.8)",
+      "matchBaseBranches": ["release-1.10"],
+      "matchDepNames": ["kargo", "akuity/kargo"],
+      "matchUpdateTypes": ["patch"],
       "allowedVersions": "/^v?1\\.10\\./",
-      "description": "On release-1.10, only allow kargo 1.10.x versions"
+      "enabled": true,
+      "groupName": "kargo-version"
     }
   ]
 }
