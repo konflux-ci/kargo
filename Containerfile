@@ -12,7 +12,8 @@ ARG PNPM_VERSION=11.13.0
 RUN npm install --global /cachi2/output/deps/generic/pnpm-${PNPM_VERSION}.tgz
 
 WORKDIR /ui
-COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/pnpm-workspace.yaml ./
+# Hermeto injects .npmrc (file:// registry) for rewritten lockfile tarball names
+COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/pnpm-workspace.yaml kargo/ui/.npmrc ./
 
 RUN pnpm install
 COPY kargo/ui .
