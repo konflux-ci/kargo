@@ -6,14 +6,14 @@ ARG KARGO_VERSION
 ####################################################################################################
 # ui-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:2c1743a8715377414ecb9af86076d6fb4fb566418ddde09ffd96a23d7a8d938f AS ui-builder
+FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:f7711b207f6d00de9be9cec050ef42048bcef5964a0fb74253d36e2c7af6fd3a AS ui-builder
 
-ARG PNPM_VERSION=11.13.0
+ARG PNPM_VERSION=9.0.3
 RUN npm install --global /cachi2/output/deps/generic/pnpm-${PNPM_VERSION}.tgz
 
 WORKDIR /ui
 # Hermeto injects .npmrc (file:// registry) for rewritten lockfile tarball names
-COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/pnpm-workspace.yaml kargo/ui/.npmrc ./
+COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/.npmrc ./
 
 RUN pnpm install
 COPY kargo/ui .
@@ -24,7 +24,7 @@ RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
 ####################################################################################################
 # back-end-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/go-toolset@sha256:40eb0e19d90700b02aa1055810a637f307af48c2d1cb376905bc53e3e583af6f AS back-end-builder
+FROM registry.access.redhat.com/ubi10/go-toolset@sha256:00900de69b6e58c1f1640b5534461591b37ddde8dabffa8ee4cd0745010cc6b1 AS back-end-builder
 
 ARG KARGO_VERSION
 ARG CGO_ENABLED=0
@@ -35,7 +35,7 @@ WORKDIR /kargo
 
 # Copy Go module manifests first for layer caching (multi-module workspace)
 COPY kargo/api/go.mod kargo/api/go.sum api/
-COPY kargo/pkg/x/client/generated/go.mod pkg/x/client/generated/
+COPY kargo/pkg/client/generated/go.mod kargo/pkg/client/generated/go.sum pkg/client/generated/
 COPY kargo/go.mod kargo/go.sum ./
 
 # Download dependencies
@@ -58,18 +58,16 @@ RUN go build \
 
 # Build main controlplane binary
 ARG VERSION_PACKAGE=github.com/akuity/kargo/pkg/x/version
-ARG GIT_COMMIT
-ARG GIT_TREE_STATE
 RUN go build \
       -trimpath \
-      -ldflags "-w -X ${VERSION_PACKAGE}.version=${KARGO_VERSION} -X ${VERSION_PACKAGE}.buildDate=$(date -u +'%Y-%m-%dT%H:%M:%SZ') -X ${VERSION_PACKAGE}.gitCommit=${GIT_COMMIT} -X ${VERSION_PACKAGE}.gitTreeState=${GIT_TREE_STATE}" \
+      -ldflags "-w -X ${VERSION_PACKAGE}.version=${KARGO_VERSION} -X ${VERSION_PACKAGE}.buildDate=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
       -o bin/kargo \
       ./cmd/controlplane
 
 ####################################################################################################
 # tools
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:af74bce19b9ab6446362310c9d18ffb4671ac11b2a4d36263047d9f57a653d80 AS tools
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:76c113359a458e3f04057762b5bd4a9837a6987520434dea158c728280116713 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -84,7 +82,7 @@ RUN curl -fL -o /tools/grpc_health_probe \
       https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-${TARGETOS}-${TARGETARCH} && \
     chmod +x /tools/grpc_health_probe
 
-ARG HELM_VERSION=v3.21.2
+ARG HELM_VERSION=v3.21.0
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN curl -fL -o /tmp/helm.tar.gz \
       https://get.helm.sh/helm-${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz && \
@@ -98,7 +96,7 @@ RUN curl -fL -o /tmp/helm.tar.gz \
 ####################################################################################################
 # tini
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:af74bce19b9ab6446362310c9d18ffb4671ac11b2a4d36263047d9f57a653d80 AS tini-builder
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:39c5de8723ad21c6a34e15cfba75f096d6a7191de98481b870b3dba575d65302 AS tini-builder
 
 ARG TINI_VERSION=v0.19.0
 
@@ -115,7 +113,7 @@ RUN git clone --depth 1 --branch ${TINI_VERSION} https://github.com/krallin/tini
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:af74bce19b9ab6446362310c9d18ffb4671ac11b2a4d36263047d9f57a653d80
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:76c113359a458e3f04057762b5bd4a9837a6987520434dea158c728280116713
 
 ARG KARGO_VERSION
 
