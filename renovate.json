@@ -61,13 +61,18 @@
       "enabled": false
     },
     {
-      "description": "release-1.10: only kargo 1.10.x patches (e.g. v1.10.7 → v1.10.8)",
+      "description": "release-1.10: re-enable kargo patch updates only",
       "matchBaseBranches": ["release-1.10"],
       "matchDepNames": ["kargo", "akuity/kargo"],
       "matchUpdateTypes": ["patch"],
-      "allowedVersions": "/^v?1\\.10\\./",
       "enabled": true,
       "groupName": "kargo-version"
+    },
+    {
+      "description": "release-1.10: restrict kargo to 1.10.x (e.g. v1.10.7 → v1.10.8)",
+      "matchBaseBranches": ["release-1.10"],
+      "matchDepNames": ["kargo", "akuity/kargo"],
+      "allowedVersions": "/^v?1\\.10\\./"
     }
   ]
 }
