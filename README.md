@@ -53,7 +53,7 @@ git commit -m "Update kargo submodule to <version>"
 - **Red Hat UBI10 base images**: Go Toolset for building, UBI Minimal for runtime
 - **Pinned image versions**: SHA digests for reproducible builds
 - **Multi-stage builds**: Separate stages for UI, Go backend, tools, and runtime
-- **Hermetic builds**: CACHI2 Go module prefetch via Konflux pipelines
+- **Hermetic builds**: Cachi2/Hermeto prefetch for gomod, pnpm, and generic artifacts (pnpm CLI) via Konflux pipelines
 - **Layer caching**: Go module dependencies downloaded before source copy
 - **Security**: Minimal runtime image, runs as non-root (UID 65532)
 - **GOTOOLCHAIN=local**: Tolerates minor Go version mismatches between image and go.mod
