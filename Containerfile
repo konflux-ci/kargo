@@ -12,7 +12,7 @@ ARG PNPM_VERSION=11.13.0
 RUN npm install --global /cachi2/output/deps/generic/pnpm-${PNPM_VERSION}.tgz
 
 WORKDIR /ui
-COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml ./
+COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/pnpm-workspace.yaml ./
 
 RUN pnpm install
 COPY kargo/ui .
