@@ -8,12 +8,12 @@ ARG KARGO_VERSION
 ####################################################################################################
 FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:8e7fff1001175878e0a10123faf460c453ff0f282fae43175544bd6d96e59be1 AS ui-builder
 
-ARG PNPM_VERSION=11.13.0
+ARG PNPM_VERSION=9.0.3
 RUN npm install --global /cachi2/output/deps/generic/pnpm-${PNPM_VERSION}.tgz
 
 WORKDIR /ui
 # Hermeto injects .npmrc (file:// registry) for rewritten lockfile tarball names
-COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/pnpm-workspace.yaml kargo/ui/.npmrc ./
+COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/.npmrc ./
 
 RUN pnpm install
 COPY kargo/ui .
@@ -35,7 +35,7 @@ WORKDIR /kargo
 
 # Copy Go module manifests first for layer caching (multi-module workspace)
 COPY kargo/api/go.mod kargo/api/go.sum api/
-COPY kargo/pkg/x/client/generated/go.mod pkg/x/client/generated/
+COPY kargo/pkg/client/generated/go.mod kargo/pkg/client/generated/go.sum pkg/client/generated/
 COPY kargo/go.mod kargo/go.sum ./
 
 # Download dependencies
@@ -58,11 +58,9 @@ RUN go build \
 
 # Build main controlplane binary
 ARG VERSION_PACKAGE=github.com/akuity/kargo/pkg/x/version
-ARG GIT_COMMIT
-ARG GIT_TREE_STATE
 RUN go build \
       -trimpath \
-      -ldflags "-w -X ${VERSION_PACKAGE}.version=${KARGO_VERSION} -X ${VERSION_PACKAGE}.buildDate=$(date -u +'%Y-%m-%dT%H:%M:%SZ') -X ${VERSION_PACKAGE}.gitCommit=${GIT_COMMIT} -X ${VERSION_PACKAGE}.gitTreeState=${GIT_TREE_STATE}" \
+      -ldflags "-w -X ${VERSION_PACKAGE}.version=${KARGO_VERSION} -X ${VERSION_PACKAGE}.buildDate=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
       -o bin/kargo \
       ./cmd/controlplane
 
