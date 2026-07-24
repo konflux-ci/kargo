@@ -35,7 +35,7 @@ WORKDIR /kargo
 
 # Copy Go module manifests first for layer caching (multi-module workspace)
 COPY kargo/api/go.mod kargo/api/go.sum api/
-COPY kargo/pkg/client/generated/go.mod kargo/pkg/client/generated/go.sum pkg/client/generated/
+COPY kargo/pkg/x/client/generated/go.mod pkg/x/client/generated/
 COPY kargo/go.mod kargo/go.sum ./
 
 # Download dependencies
@@ -58,9 +58,11 @@ RUN go build \
 
 # Build main controlplane binary
 ARG VERSION_PACKAGE=github.com/akuity/kargo/pkg/x/version
+ARG GIT_COMMIT
+ARG GIT_TREE_STATE
 RUN go build \
       -trimpath \
-      -ldflags "-w -X ${VERSION_PACKAGE}.version=${KARGO_VERSION} -X ${VERSION_PACKAGE}.buildDate=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+      -ldflags "-w -X ${VERSION_PACKAGE}.version=${KARGO_VERSION} -X ${VERSION_PACKAGE}.buildDate=$(date -u +'%Y-%m-%dT%H:%M:%SZ') -X ${VERSION_PACKAGE}.gitCommit=${GIT_COMMIT} -X ${VERSION_PACKAGE}.gitTreeState=${GIT_TREE_STATE}" \
       -o bin/kargo \
       ./cmd/controlplane
 
@@ -82,7 +84,7 @@ RUN curl -fL -o /tools/grpc_health_probe \
       https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-${TARGETOS}-${TARGETARCH} && \
     chmod +x /tools/grpc_health_probe
 
-ARG HELM_VERSION=v3.21.0
+ARG HELM_VERSION=v3.21.2
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN curl -fL -o /tmp/helm.tar.gz \
       https://get.helm.sh/helm-${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz && \
