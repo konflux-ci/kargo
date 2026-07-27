@@ -68,63 +68,53 @@ RUN go build \
 
 ####################################################################################################
 # tools
+# Prefetched via Hermeto generic artifacts (see artifacts.lock.yaml).
+# go-toolset provides tar for unpacking Helm archives without microdnf/curl.
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:04140c8d78c6c6915b5c1fdad2f16d10eac3630c3339999ccdf659d8c903be50 AS tools
+FROM registry.access.redhat.com/ubi10/go-toolset@sha256:1a6221864390b67f239bb19fc934004032150d2240485ec6e6a997171ae86930 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
 
+USER 0
 WORKDIR /tools
 
-RUN microdnf install -y tar-1.35 gzip-1.13 && \
-    microdnf clean all
-
-ARG GRPC_HEALTH_PROBE_VERSION=v0.4.50
-RUN curl -fL -o /tools/grpc_health_probe \
-      https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-${TARGETOS}-${TARGETARCH} && \
-    chmod +x /tools/grpc_health_probe
-
-ARG HELM_VERSION=v3.21.2
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-RUN curl -fL -o /tmp/helm.tar.gz \
-      https://get.helm.sh/helm-${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz && \
-    curl -fL -o /tmp/helm.tar.gz.sha256sum \
-      https://get.helm.sh/helm-${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz.sha256sum && \
-    echo "$(awk '{print $1}' /tmp/helm.tar.gz.sha256sum)  /tmp/helm.tar.gz" | sha256sum -c - && \
-    tar -xzf /tmp/helm.tar.gz -C /tmp && \
-    mv /tmp/${TARGETOS}-${TARGETARCH}/helm /tools/helm && \
-    chmod +x /tools/helm
-
-####################################################################################################
-# tini
-####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:04140c8d78c6c6915b5c1fdad2f16d10eac3630c3339999ccdf659d8c903be50 AS tini-builder
-
-ARG TINI_VERSION=v0.19.0
-
-RUN microdnf install -y git-core-2.52.0 cmake-3.31.8 make-1:4.4.1 gcc-14.3.1 glibc-static-2.39 && \
-    microdnf clean all
-
-# hadolint ignore=DL3003 # We accept using 'cd' here as it's a build step
-RUN git clone --depth 1 --branch ${TINI_VERSION} https://github.com/krallin/tini.git && \
-    cd tini && \
-    cmake . && \
-    make && \
-    chmod +x tini-static
+# Normalize to artifact naming (Go arch). Fail loud if prefetch missing.
+RUN case "${TARGETARCH}" in \
+      amd64|x86_64) arch=amd64 ;; \
+      arm64|aarch64) arch=arm64 ;; \
+      *) echo "unsupported TARGETARCH=${TARGETARCH}" >&2; exit 1 ;; \
+    esac && \
+    grpc="/cachi2/output/deps/generic/grpc_health_probe-${TARGETOS}-${arch}" && \
+    helm_tgz="/cachi2/output/deps/generic/helm-${TARGETOS}-${arch}.tar.gz" && \
+    test -f "${grpc}" && test -f "${helm_tgz}" && \
+    cp "${grpc}" /tools/grpc_health_probe && \
+    tar -xzf "${helm_tgz}" -C /tmp && \
+    cp "/tmp/${TARGETOS}-${arch}/helm" /tools/helm && \
+    chmod +x /tools/grpc_health_probe /tools/helm
 
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:04140c8d78c6c6915b5c1fdad2f16d10eac3630c3339999ccdf659d8c903be50
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:04140c8d78c6c6915b5c1fdad2f16d10eac3630c3339999ccdf659d8c903be50 AS final
 
 ARG KARGO_VERSION
+ARG TARGETARCH=amd64
 
-RUN microdnf install -y ca-certificates-2025.2.80_v9.0.305 git-core-2.52.0 gnupg2-2.4.5 openssh-clients-9.9p1 && \
+RUN microdnf install -y ca-certificates git-core gnupg2 openssh-clients && \
     microdnf clean all
 
 COPY --from=back-end-builder /kargo/bin/ /usr/local/bin/
 COPY --from=tools /tools/ /usr/local/bin/
-COPY --from=tini-builder /tini/tini-static /sbin/tini
+RUN case "${TARGETARCH}" in \
+      amd64|x86_64) arch=amd64 ;; \
+      arm64|aarch64) arch=arm64 ;; \
+      *) echo "unsupported TARGETARCH=${TARGETARCH}" >&2; exit 1 ;; \
+    esac && \
+    tini="/cachi2/output/deps/generic/tini-static-${arch}" && \
+    test -f "${tini}" && \
+    cp "${tini}" /sbin/tini && \
+    chmod +x /sbin/tini
 
 LABEL org.opencontainers.image.licenses=Apache-2.0 \
     org.opencontainers.image.description="Kargo is a Kubernetes-native continuous promotion platform for GitOps workflows." \
