@@ -32,7 +32,7 @@ The produced image contains:
 
 ## Hermetic builds
 
-Prefetch covers (PipelineRuns keep `hermetic` default `"false"` until a follow-up flip):
+PipelineRuns set `hermetic: "true"`. Prefetch covers:
 
 | Type | Path / lockfile | Purpose |
 |------|-----------------|---------|

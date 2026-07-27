@@ -25,7 +25,7 @@ Konflux wrapper repo for the upstream [Kargo](https://github.com/akuity/kargo). 
 - `kargo/` — git submodule tracking upstream tags (currently `main`)
 - `artifacts.lock.yaml` — Hermeto generic prefetch (pnpm CLI, Helm, grpc_health_probe, tini)
 - `rpms.in.yaml` / `rpms.lock.yaml` / `ubi.repo` — Hermeto RPM prefetch for the final image
-- `.tekton/` — Konflux pipeline definitions (pull-request, push, pipeline); prefetch includes rpm; hermetic flip is a follow-up once CI validates offline paths
+- `.tekton/` — Konflux pipeline definitions (pull-request, push, pipeline); PipelineRuns set `hermetic: "true"`
 - `.github/workflows/` — CI linting (hadolint, yamllint), auto-merge, dependency triage, release tagging
 - `hack/` — helper scripts for submodule updates, lockfile regeneration, and release tagging
 - `renovate.json` — MintMaker/Renovate config for automated submodule and image updates

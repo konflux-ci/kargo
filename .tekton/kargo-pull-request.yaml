@@ -26,6 +26,8 @@ spec:
     value: quay.io/redhat-user-workloads/rh-konflux-devprod-tenant/kargo-main:{{revision}}
   - name: dockerfile
     value: Containerfile
+  - name: hermetic
+    value: "true"
   pipelineRef:
     name: kargo-pipeline
   taskRunTemplate:
