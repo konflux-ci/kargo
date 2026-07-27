@@ -25,6 +25,33 @@
       "datasourceTemplate": "github-tags"
     }
   ],
+  "tekton": {
+    "packageRules": [
+      {
+        "description": "release-1.10: no Konflux reference updates (rebase from main instead)",
+        "matchBaseBranches": ["release-1.10"],
+        "enabled": false
+      }
+    ]
+  },
+  "dockerfile": {
+    "packageRules": [
+      {
+        "description": "release-1.10: no image digest updates (rebase from main instead)",
+        "matchBaseBranches": ["release-1.10"],
+        "enabled": false
+      }
+    ]
+  },
+  "github-actions": {
+    "packageRules": [
+      {
+        "description": "release-1.10: no GitHub Actions updates (rebase from main instead)",
+        "matchBaseBranches": ["release-1.10"],
+        "enabled": false
+      }
+    ]
+  },
   "packageRules": [
     {
       "description": "Go toolchain updates — deptriage defers approval until CI passes",
@@ -40,6 +67,7 @@
       "matchManagers": [
         "tekton"
       ],
+      "matchBaseBranches": ["main"],
       "prPriority": 10
     },
     {
