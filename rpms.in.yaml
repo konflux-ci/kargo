@@ -1,0 +1,17 @@
+# RPM packages installed in the final Containerfile stage.
+# Regenerate rpms.lock.yaml with: ./hack/update-rpms-lock.sh
+packages:
+- ca-certificates
+- git-core
+- gnupg2
+- openssh-clients
+contentOrigin:
+  repofiles:
+  - ./ubi.repo
+arches:
+- x86_64
+- aarch64
+context:
+  containerfile:
+    file: Containerfile
+    stageName: final
