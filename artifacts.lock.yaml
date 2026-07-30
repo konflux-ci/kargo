@@ -2,9 +2,9 @@
 metadata:
   version: "1.0"
 artifacts:
-  - download_url: "https://registry.npmjs.org/pnpm/-/pnpm-11.13.0.tgz"
-    checksum: "sha256:865c76bd9111a45ca41f6eeed4067ff0ecdfee9eac83aad24179c83ffebe7599"
-    filename: "pnpm-11.13.0.tgz"
+  - download_url: "https://registry.npmjs.org/pnpm/-/pnpm-9.0.3.tgz"
+    checksum: "sha256:f5becd4b77fe9150c8d89423612eb413945114bf6dd00fdcb5940434b84731c4"
+    filename: "pnpm-9.0.3.tgz"
   - download_url: "https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/v0.4.50/grpc_health_probe-linux-amd64"
     checksum: "sha256:84fb8aa14a6f5467bf12144320e8e91f4e888956c3229efa7da0b8bdb10de8d2"
     filename: "grpc_health_probe-linux-amd64"
