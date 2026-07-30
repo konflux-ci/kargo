@@ -6,14 +6,14 @@ ARG KARGO_VERSION
 ####################################################################################################
 # ui-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/nodejs-22@sha256:8e7fff1001175878e0a10123faf460c453ff0f282fae43175544bd6d96e59be1 AS ui-builder
+FROM registry.access.redhat.com/ubi10/nodejs-24@sha256:1484e0f5ab7d3301eddad1a0d5811ca30fdf4c4d28e04afd081776f448060a3c AS ui-builder
 
 ARG PNPM_VERSION=11.13.0
 RUN npm install --global /cachi2/output/deps/generic/pnpm-${PNPM_VERSION}.tgz
 
 WORKDIR /ui
 # Hermeto injects .npmrc (file:// registry) for rewritten lockfile tarball names
-COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/pnpm-workspace.yaml kargo/ui/.npmrc ./
+COPY kargo/ui/package.json kargo/ui/pnpm-lock.yaml kargo/ui/.npmrc ./
 
 RUN pnpm install
 COPY kargo/ui .
