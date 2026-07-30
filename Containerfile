@@ -101,6 +101,8 @@ FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:04140c8d78c6c6915b5c1fd
 ARG KARGO_VERSION
 ARG TARGETARCH=amd64
 
+# Versions pinned by Hermeto via rpms.lock.yaml (prefetch), not Containerfile.
+# hadolint ignore=DL3041
 RUN microdnf install -y ca-certificates git-core gnupg2 openssh-clients && \
     microdnf clean all
 
