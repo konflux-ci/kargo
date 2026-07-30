@@ -130,6 +130,10 @@ spec:
       value: $(params.git-url)
     - name: revision
       value: $(params.revision)
+    - name: depth
+      value: "0"
+    - name: fetchTags
+      value: "true"
     - name: ociStorage
       value: $(params.output-image).git
     - name: ociArtifactExpiresAfter
@@ -154,6 +158,8 @@ spec:
       value: $(tasks.clone-repository.results.SOURCE_ARTIFACT)
     - name: ociStorage
       value: $(params.output-image).version
+    - name: HERMETIC
+      value: $(params.hermetic)
     - name: SCRIPT_RUNNER_IMAGE
       value: registry.access.redhat.com/ubi10/go-toolset:10.1-1780422343@sha256:473a1b6bf2af9abb7b922732eadc2b48a455c8a281950fcb9fbd75bd326e7c24
     - name: SCRIPT
@@ -161,11 +167,7 @@ spec:
         #!/bin/bash
         set -euo pipefail
 
-        # Unshallow the submodule so git describe can reach ancestor tags
-        git -C kargo fetch --unshallow 2>/dev/null || true
-        git -C kargo fetch --tags
-
-        # Generate version using git describe
+        # History + tags come from clone-repository (depth=0, fetchTags=true)
         VERSION=$(git -C kargo describe --tags --always --long)
 
         # Output the version
