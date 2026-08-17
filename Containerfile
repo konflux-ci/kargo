@@ -96,7 +96,7 @@ RUN case "${TARGETARCH}" in \
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:e6c7c01447dc8eadf2a673e65fb6c607f16e168fe29a776fb937004f33c81cc0 AS final
+FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:a036678b09bd6e5d0efc28ea5554ae14aa6af2bc317d60f9bb0c0dd7610972d0 AS final
 
 ARG KARGO_VERSION
 ARG TARGETARCH=amd64
