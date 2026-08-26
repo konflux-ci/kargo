@@ -319,13 +319,20 @@ arches:
     name: openssh-clients
     evr: 9.9p1-25.el10_2
     sourcerpm: openssh-9.9p1-25.el10_2.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/p/pam-1.6.1-9.el10.aarch64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/p/pam-1.6.1-9.el10_2.1.aarch64.rpm
     repoid: ubi-10-for-aarch64-baseos-rpms
-    size: 603171
-    checksum: sha256:66d69a7e734de6de62ae1fdfea9ea76436ff90f166aef2013565f2776f339f38
+    size: 611166
+    checksum: sha256:6c0f13a2734c624b97e6d11d255f7e83976fc8eb327f5e97dcb6089c2a924f76
     name: pam
-    evr: 1.6.1-9.el10
-    sourcerpm: pam-1.6.1-9.el10.src.rpm
+    evr: 1.6.1-9.el10_2.1
+    sourcerpm: pam-1.6.1-9.el10_2.1.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/p/pam-libs-1.6.1-9.el10_2.1.aarch64.rpm
+    repoid: ubi-10-for-aarch64-baseos-rpms
+    size: 63446
+    checksum: sha256:6300f006fd59db4b2d2ffd8f8a2f829b251738aa68bf0a6b1611140939190e01
+    name: pam-libs
+    evr: 1.6.1-9.el10_2.1
+    sourcerpm: pam-1.6.1-9.el10_2.1.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/s/shadow-utils-4.15.0-11.el10.aarch64.rpm
     repoid: ubi-10-for-aarch64-baseos-rpms
     size: 1415521
@@ -579,12 +586,12 @@ arches:
     checksum: sha256:112d73e9d7ebeafd1dd76e25a1acbe3237d4a486f31746c9a49b8142d9c52bea
     name: openssh
     evr: 9.9p1-25.el10_2
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/p/pam-1.6.1-9.el10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/p/pam-1.6.1-9.el10_2.1.src.rpm
     repoid: ubi-10-for-aarch64-baseos-source-rpms
-    size: 1238676
-    checksum: sha256:bebd129b8ad42d9c90d00a08ead01f05b5e97ea2a506333317fbe34631080fb6
+    size: 1248005
+    checksum: sha256:14861636db041fba5dd9882927effb32e89a446779dba7e127feb7dacf0b57ae
     name: pam
-    evr: 1.6.1-9.el10
+    evr: 1.6.1-9.el10_2.1
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/s/shadow-utils-4.15.0-11.el10.src.rpm
     repoid: ubi-10-for-aarch64-baseos-source-rpms
     size: 1924763
@@ -927,13 +934,20 @@ arches:
     name: openssh-clients
     evr: 9.9p1-25.el10_2
     sourcerpm: openssh-9.9p1-25.el10_2.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/p/pam-1.6.1-9.el10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/p/pam-1.6.1-9.el10_2.1.x86_64.rpm
     repoid: ubi-10-for-x86_64-baseos-rpms
-    size: 598152
-    checksum: sha256:28336af9346638057043101fc77776ef55766a2e64e5a45130ebac53b47efcbc
+    size: 606013
+    checksum: sha256:bb4410454b465a1fca90ffe22816b811c9b09f3bc451ea945332d8a4a5203823
     name: pam
-    evr: 1.6.1-9.el10
-    sourcerpm: pam-1.6.1-9.el10.src.rpm
+    evr: 1.6.1-9.el10_2.1
+    sourcerpm: pam-1.6.1-9.el10_2.1.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/p/pam-libs-1.6.1-9.el10_2.1.x86_64.rpm
+    repoid: ubi-10-for-x86_64-baseos-rpms
+    size: 64026
+    checksum: sha256:3344c1cbb8ab88cf9cc94f9ea0588ee4cdfa4701299d907dd1f44e4864bf95ba
+    name: pam-libs
+    evr: 1.6.1-9.el10_2.1
+    sourcerpm: pam-1.6.1-9.el10_2.1.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/s/shadow-utils-4.15.0-11.el10.x86_64.rpm
     repoid: ubi-10-for-x86_64-baseos-rpms
     size: 1416217
@@ -1187,12 +1201,12 @@ arches:
     checksum: sha256:112d73e9d7ebeafd1dd76e25a1acbe3237d4a486f31746c9a49b8142d9c52bea
     name: openssh
     evr: 9.9p1-25.el10_2
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/p/pam-1.6.1-9.el10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/p/pam-1.6.1-9.el10_2.1.src.rpm
     repoid: ubi-10-for-x86_64-baseos-source-rpms
-    size: 1238676
-    checksum: sha256:bebd129b8ad42d9c90d00a08ead01f05b5e97ea2a506333317fbe34631080fb6
+    size: 1248005
+    checksum: sha256:14861636db041fba5dd9882927effb32e89a446779dba7e127feb7dacf0b57ae
     name: pam
-    evr: 1.6.1-9.el10
+    evr: 1.6.1-9.el10_2.1
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/s/shadow-utils-4.15.0-11.el10.src.rpm
     repoid: ubi-10-for-x86_64-baseos-source-rpms
     size: 1924763
