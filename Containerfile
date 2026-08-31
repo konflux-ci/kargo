@@ -24,7 +24,7 @@ RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
 ####################################################################################################
 # back-end-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/go-toolset@sha256:1db86a2b0f77c1197b011de5140236effc27b1a1724c0105d4926857a0756de5 AS back-end-builder
+FROM registry.access.redhat.com/ubi10/go-toolset@sha256:6abcb6beb3c00960073062ba474cdf924a93f495a8376ec2fb919b4099ffcef6 AS back-end-builder
 
 ARG KARGO_VERSION
 ARG CGO_ENABLED=0
@@ -71,7 +71,7 @@ RUN go build \
 # Prefetched via Hermeto generic artifacts (see artifacts.lock.yaml).
 # go-toolset provides tar for unpacking Helm archives without microdnf/curl.
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/go-toolset@sha256:1db86a2b0f77c1197b011de5140236effc27b1a1724c0105d4926857a0756de5 AS tools
+FROM registry.access.redhat.com/ubi10/go-toolset@sha256:6abcb6beb3c00960073062ba474cdf924a93f495a8376ec2fb919b4099ffcef6 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
