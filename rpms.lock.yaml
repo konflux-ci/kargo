@@ -74,13 +74,13 @@ arches:
     name: dbus
     evr: 1:1.14.10-5.el10
     sourcerpm: dbus-1.14.10-5.el10.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/d/dbus-broker-36-4.el10.aarch64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/d/dbus-broker-36-5.el10_2.aarch64.rpm
     repoid: ubi-10-for-aarch64-baseos-rpms
-    size: 171155
-    checksum: sha256:0b5c3c403e53921ee135535e2c0a64a30fa72bedc6ecd6a4322c075647254aa7
+    size: 177706
+    checksum: sha256:5d4952a90fa8232186d45559e3d563da88952a7d832b913538faa9b6fd39cf58
     name: dbus-broker
-    evr: 36-4.el10
-    sourcerpm: dbus-broker-36-4.el10.src.rpm
+    evr: 36-5.el10_2
+    sourcerpm: dbus-broker-36-5.el10_2.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/d/dbus-common-1.14.10-5.el10.noarch.rpm
     repoid: ubi-10-for-aarch64-baseos-rpms
     size: 19267
@@ -165,13 +165,13 @@ arches:
     name: gnupg2
     evr: 2.4.5-4.el10_1
     sourcerpm: gnupg2-2.4.5-4.el10_1.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/g/gzip-1.13-3.el10.aarch64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/g/gzip-1.13-4.el10_2.aarch64.rpm
     repoid: ubi-10-for-aarch64-baseos-rpms
-    size: 176545
-    checksum: sha256:4d6fdc1e71bab17676980a00b9d32a3ef1172f8df207cba0360f303ee8130fc1
+    size: 178312
+    checksum: sha256:d0070c965a481df742e7877c85a865d972dc60aba342134d95a821ae7fa95ffd
     name: gzip
-    evr: 1.13-3.el10
-    sourcerpm: gzip-1.13-3.el10.src.rpm
+    evr: 1.13-4.el10_2
+    sourcerpm: gzip-1.13-4.el10_2.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/k/kmod-libs-31-13.el10.aarch64.rpm
     repoid: ubi-10-for-aarch64-baseos-rpms
     size: 74946
@@ -326,13 +326,6 @@ arches:
     name: pam
     evr: 1.6.1-9.el10_2.1
     sourcerpm: pam-1.6.1-9.el10_2.1.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/p/pam-libs-1.6.1-9.el10_2.1.aarch64.rpm
-    repoid: ubi-10-for-aarch64-baseos-rpms
-    size: 63446
-    checksum: sha256:6300f006fd59db4b2d2ffd8f8a2f829b251738aa68bf0a6b1611140939190e01
-    name: pam-libs
-    evr: 1.6.1-9.el10_2.1
-    sourcerpm: pam-1.6.1-9.el10_2.1.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/os/Packages/s/shadow-utils-4.15.0-11.el10.aarch64.rpm
     repoid: ubi-10-for-aarch64-baseos-rpms
     size: 1415521
@@ -424,12 +417,12 @@ arches:
     checksum: sha256:666e1d7994a1dc6812345cdfc50fd41c3ee74731533a73b940eebe752acc32e9
     name: dbus
     evr: 1:1.14.10-5.el10
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/d/dbus-broker-36-4.el10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/d/dbus-broker-36-5.el10_2.src.rpm
     repoid: ubi-10-for-aarch64-baseos-source-rpms
-    size: 295047
-    checksum: sha256:e43735187bc66c273fec20daacef41fade961ac86d3761468535457049544e1a
+    size: 304007
+    checksum: sha256:17384b6efe5804978a882d4db221f2ef1c3fff13ce1305a55b1c4d9c300091d9
     name: dbus-broker
-    evr: 36-4.el10
+    evr: 36-5.el10_2
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/d/diffutils-3.10-8.el10.src.rpm
     repoid: ubi-10-for-aarch64-baseos-source-rpms
     size: 1669652
@@ -460,12 +453,12 @@ arches:
     checksum: sha256:ae56b8da2a7236c07eb23a85c60d53a3170b7b38032ebdc8d68602b09e78e81a
     name: gnupg2
     evr: 2.4.5-4.el10_1
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/g/gzip-1.13-3.el10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/g/gzip-1.13-4.el10_2.src.rpm
     repoid: ubi-10-for-aarch64-baseos-source-rpms
-    size: 894435
-    checksum: sha256:edcf0db195b71c11d189fe2ce77aab01b4c913616b230258e4d635f7f12ee93a
+    size: 897987
+    checksum: sha256:d40838374b79d65ea6e7a7e397b54c0da57bbca1c1a471e07c2b66145c0c1b1d
     name: gzip
-    evr: 1.13-3.el10
+    evr: 1.13-4.el10_2
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/aarch64/baseos/source/SRPMS/Packages/k/kmod-31-13.el10.src.rpm
     repoid: ubi-10-for-aarch64-baseos-source-rpms
     size: 631418
@@ -689,13 +682,13 @@ arches:
     name: dbus
     evr: 1:1.14.10-5.el10
     sourcerpm: dbus-1.14.10-5.el10.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/d/dbus-broker-36-4.el10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/d/dbus-broker-36-5.el10_2.x86_64.rpm
     repoid: ubi-10-for-x86_64-baseos-rpms
-    size: 178061
-    checksum: sha256:8e28f6dc7553aac0e86d0aab963c9ff70fa9b55d88ac098f6494b2635e2a7bee
+    size: 184654
+    checksum: sha256:449e269c9f240b93535d194771ecf185785a7313679b9edaadcfaa7b98c347a7
     name: dbus-broker
-    evr: 36-4.el10
-    sourcerpm: dbus-broker-36-4.el10.src.rpm
+    evr: 36-5.el10_2
+    sourcerpm: dbus-broker-36-5.el10_2.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/d/dbus-common-1.14.10-5.el10.noarch.rpm
     repoid: ubi-10-for-x86_64-baseos-rpms
     size: 19267
@@ -780,13 +773,13 @@ arches:
     name: gnupg2
     evr: 2.4.5-4.el10_1
     sourcerpm: gnupg2-2.4.5-4.el10_1.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/g/gzip-1.13-3.el10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/g/gzip-1.13-4.el10_2.x86_64.rpm
     repoid: ubi-10-for-x86_64-baseos-rpms
-    size: 178391
-    checksum: sha256:d0c80b0bc77f03ffeb0705be24c9943b35cf1fc4a35918f40c27b4bb42b1d489
+    size: 179994
+    checksum: sha256:f3e11fc91e4365c6ef727abb30c9a91c5a449d01a620c26940471e7f2f9d71ec
     name: gzip
-    evr: 1.13-3.el10
-    sourcerpm: gzip-1.13-3.el10.src.rpm
+    evr: 1.13-4.el10_2
+    sourcerpm: gzip-1.13-4.el10_2.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/k/kmod-libs-31-13.el10.x86_64.rpm
     repoid: ubi-10-for-x86_64-baseos-rpms
     size: 77198
@@ -941,13 +934,6 @@ arches:
     name: pam
     evr: 1.6.1-9.el10_2.1
     sourcerpm: pam-1.6.1-9.el10_2.1.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/p/pam-libs-1.6.1-9.el10_2.1.x86_64.rpm
-    repoid: ubi-10-for-x86_64-baseos-rpms
-    size: 64026
-    checksum: sha256:3344c1cbb8ab88cf9cc94f9ea0588ee4cdfa4701299d907dd1f44e4864bf95ba
-    name: pam-libs
-    evr: 1.6.1-9.el10_2.1
-    sourcerpm: pam-1.6.1-9.el10_2.1.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/os/Packages/s/shadow-utils-4.15.0-11.el10.x86_64.rpm
     repoid: ubi-10-for-x86_64-baseos-rpms
     size: 1416217
@@ -1039,12 +1025,12 @@ arches:
     checksum: sha256:666e1d7994a1dc6812345cdfc50fd41c3ee74731533a73b940eebe752acc32e9
     name: dbus
     evr: 1:1.14.10-5.el10
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/d/dbus-broker-36-4.el10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/d/dbus-broker-36-5.el10_2.src.rpm
     repoid: ubi-10-for-x86_64-baseos-source-rpms
-    size: 295047
-    checksum: sha256:e43735187bc66c273fec20daacef41fade961ac86d3761468535457049544e1a
+    size: 304007
+    checksum: sha256:17384b6efe5804978a882d4db221f2ef1c3fff13ce1305a55b1c4d9c300091d9
     name: dbus-broker
-    evr: 36-4.el10
+    evr: 36-5.el10_2
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/d/diffutils-3.10-8.el10.src.rpm
     repoid: ubi-10-for-x86_64-baseos-source-rpms
     size: 1669652
@@ -1075,12 +1061,12 @@ arches:
     checksum: sha256:ae56b8da2a7236c07eb23a85c60d53a3170b7b38032ebdc8d68602b09e78e81a
     name: gnupg2
     evr: 2.4.5-4.el10_1
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/g/gzip-1.13-3.el10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/g/gzip-1.13-4.el10_2.src.rpm
     repoid: ubi-10-for-x86_64-baseos-source-rpms
-    size: 894435
-    checksum: sha256:edcf0db195b71c11d189fe2ce77aab01b4c913616b230258e4d635f7f12ee93a
+    size: 897987
+    checksum: sha256:d40838374b79d65ea6e7a7e397b54c0da57bbca1c1a471e07c2b66145c0c1b1d
     name: gzip
-    evr: 1.13-3.el10
+    evr: 1.13-4.el10_2
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi10/10/x86_64/baseos/source/SRPMS/Packages/k/kmod-31-13.el10.src.rpm
     repoid: ubi-10-for-x86_64-baseos-source-rpms
     size: 631418
