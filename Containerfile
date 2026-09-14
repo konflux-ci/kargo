@@ -6,7 +6,7 @@ ARG KARGO_VERSION
 ####################################################################################################
 # ui-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/nodejs-24@sha256:0422012ca2c02075b6556cf4ad0dcea8d51de7b33854548ff83d8fe4d17449d8 AS ui-builder
+FROM registry.access.redhat.com/ubi10/nodejs-24@sha256:e6980356c53b5912204bab5263976bab5c5b3049b2a40e73881788116f15e66e AS ui-builder
 
 ARG PNPM_VERSION=11.13.0
 RUN npm install --global /cachi2/output/deps/generic/pnpm-${PNPM_VERSION}.tgz
