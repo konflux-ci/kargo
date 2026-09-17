@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # Regenerate rpms.lock.yaml for Hermeto RPM prefetch.
-# Requires podman. Run from repo root after changing final-stage packages or UBI digests.
+# Requires podman. Run from repo root after changing RPM packages or base-image digests.
 #
-# Repo IDs in ubi.repo must match Conforma known_rpm_repositories (RHSM-style):
+# Repo IDs in hi.repo must match Conforma known_rpm_repositories:
 #   https://github.com/release-engineering/rhtap-ec-policy/blob/main/data/known_rpm_repositories.yml
-# Short ids from the UBI image (ubi-10-baseos-rpms) fail rpm_repos.ids_known.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -19,41 +18,35 @@ if ! podman image exists "${IMAGE}"; then
     | podman build -t "${IMAGE}" -
 fi
 
-# Prefer FROM ... AS final; fall back to last ubi-minimal FROM.
-UBI_REF="$(awk '
-  /^FROM / && / AS final$/ { print $2; found=1; exit }
-  /^FROM / && /ubi-minimal/ { ref=$2 }
-  END { if (!found && ref != "") print ref }
+# RPMs are installed in the tools stage, not the final runtime stage.
+RPM_STAGE="${RPM_LOCKFILE_STAGE:-tools}"
+BASE_IMAGE="$(awk -v stage="${RPM_STAGE}" '
+  $1 == "FROM" && $NF == stage { print $2; exit }
 ' Containerfile)"
-if [[ -z "${UBI_REF}" ]]; then
-  echo "Could not find final-stage ubi-minimal image in Containerfile" >&2
+if [[ -z "${BASE_IMAGE}" ]]; then
+  echo "Could not find ${RPM_STAGE} stage image in Containerfile" >&2
   exit 1
 fi
 
-echo "Refreshing ubi.repo from ${UBI_REF} (rewriting section ids for Conforma)..."
-podman run --rm "${UBI_REF}" cat /etc/yum.repos.d/ubi.repo >ubi.repo.tmp
+echo "Refreshing hi.repo from ${BASE_IMAGE}..."
+podman run --rm "${BASE_IMAGE}" sh -c 'cat /etc/yum.repos.d/*.repo' >hi.repo.tmp
 
-# Map short image repo ids → RHSM-style ids Conforma allows; enable source repos for SBOM.
-# Use sed (not awk) so $basearch is literal.
-sed -E \
-  -e 's/^\[ubi-10-baseos-/[ubi-10-for-$basearch-baseos-/' \
-  -e 's/^\[ubi-10-appstream-/[ubi-10-for-$basearch-appstream-/' \
-  -e 's/^\[ubi-10-codeready-builder-/[codeready-builder-for-ubi-10-$basearch-/' \
-  ubi.repo.tmp \
-| awk '
-    /^\[.*source-rpms\]/ { in_src=1 }
-    /^\[/ && !/source-rpms/ { in_src=0 }
-    in_src && /^enabled = 0$/ { print "enabled = 1"; next }
-    { print }
-  ' >ubi.repo
-rm -f ubi.repo.tmp
+# Hummingbird repository IDs are already Conforma-approved. Enable source RPMs
+# so the generated lock contains source packages for SBOM generation.
+awk '
+  /^\[.*source-rpms\]/ { in_src=1 }
+  /^\[/ && !/source-rpms/ { in_src=0 }
+  in_src && /^enabled[[:space:]]*=/ { print "enabled=1"; next }
+  { print }
+' hi.repo.tmp >hi.repo
+rm -f hi.repo.tmp
 
 {
-  echo '# Repo IDs rewritten to Conforma known_rpm_repositories (RHSM-style).'
+  echo '# Repo IDs from the Hummingbird base image; all are Conforma known RPM repositories.'
   echo '# See: https://github.com/release-engineering/rhtap-ec-policy/blob/main/data/known_rpm_repositories.yml'
-  cat ubi.repo
-} >ubi.repo.withhdr
-mv ubi.repo.withhdr ubi.repo
+  cat hi.repo
+} >hi.repo.withhdr
+mv hi.repo.withhdr hi.repo
 
 echo "Resolving rpms.lock.yaml..."
 podman run --rm \
@@ -61,7 +54,7 @@ podman run --rm \
   -w /work \
   "${IMAGE}" \
   --outfile=rpms.lock.yaml \
-  --image "${UBI_REF}" \
+  --image "${BASE_IMAGE}" \
   rpms.in.yaml
 
 echo "Wrote ${ROOT}/rpms.lock.yaml"

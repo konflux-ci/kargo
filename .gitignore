@@ -21,7 +21,7 @@
 !*.yaml
 !*.yml
 !*.json
-!ubi.repo
+!hi.repo
 
 # Include shell scripts
 !*.sh

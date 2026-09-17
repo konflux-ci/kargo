@@ -1,17 +1,15 @@
-# RPM packages installed in the final Containerfile stage.
+# RPM packages installed in the tools Containerfile stage.
 # Regenerate rpms.lock.yaml with: ./hack/update-rpms-lock.sh
 packages:
-- ca-certificates
-- git-core
-- gnupg2
-- openssh-clients
+- tar
+- gzip
 contentOrigin:
   repofiles:
-  - ./ubi.repo
+  - ./hi.repo
 arches:
 - x86_64
 - aarch64
 context:
   containerfile:
     file: Containerfile
-    stageName: final
+    stageName: tools

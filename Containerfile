@@ -6,9 +6,10 @@ ARG KARGO_VERSION
 ####################################################################################################
 # ui-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/nodejs-24@sha256:e6980356c53b5912204bab5263976bab5c5b3049b2a40e73881788116f15e66e AS ui-builder
+FROM registry.access.redhat.com/hi/nodejs@sha256:7a744630841040b345674186e3c54e5cafa1955b7ef0c21870e905cb8dd3814a AS ui-builder
 
 ARG PNPM_VERSION=11.13.0
+USER 0
 RUN npm install --global /cachi2/output/deps/generic/pnpm-${PNPM_VERSION}.tgz
 
 WORKDIR /ui
@@ -24,7 +25,7 @@ RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
 ####################################################################################################
 # back-end-builder
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/go-toolset@sha256:de00e16138966f9fed6bca2d22d28f6cc0d50b26ef6977398e2d8980d80be75f AS back-end-builder
+FROM registry.access.redhat.com/hi/go@sha256:908f94bf3aa10e405e7fd828921e0266223a9ae390dd327666df8788caddb26b AS back-end-builder
 
 ARG KARGO_VERSION
 ARG CGO_ENABLED=0
@@ -69,15 +70,21 @@ RUN go build \
 ####################################################################################################
 # tools
 # Prefetched via Hermeto generic artifacts (see artifacts.lock.yaml).
-# go-toolset provides tar for unpacking Helm archives without microdnf/curl.
+# Use 'builder' version of core-runtime so 'dnf' is available for installing 'tar'.
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/go-toolset@sha256:de00e16138966f9fed6bca2d22d28f6cc0d50b26ef6977398e2d8980d80be75f AS tools
+FROM registry.access.redhat.com/hi/core-runtime@sha256:d939459917ebea5ea4f31187050959ad5cc833c6554b54080ebafd0c4142212c AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
 
 USER 0
 WORKDIR /tools
+
+# Version pinned by Hermeto via rpms.lock.yaml (prefetch), not Containerfile.
+# hadolint ignore=DL3041
+RUN dnf install -y tar gzip && \
+    dnf clean all
+
 
 # Normalize to artifact naming (Go arch). Fail loud if prefetch missing.
 RUN case "${TARGETARCH}" in \
@@ -96,15 +103,12 @@ RUN case "${TARGETARCH}" in \
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/ubi10/ubi-minimal@sha256:26dc3089ab24491c1ba01ab92a7d502d181425b6021e362a07484daee696a3aa AS final
+FROM registry.access.redhat.com/hi/core-runtime@sha256:fa72c318cd10f62b5616f396df0493ad8531adf0841aaf7b5d89c323712cfa11 AS final
 
 ARG KARGO_VERSION
 ARG TARGETARCH=amd64
 
-# Versions pinned by Hermeto via rpms.lock.yaml (prefetch), not Containerfile.
-# hadolint ignore=DL3041
-RUN microdnf install -y ca-certificates git-core gnupg2 openssh-clients && \
-    microdnf clean all
+USER 0
 
 COPY --from=back-end-builder /kargo/bin/ /usr/local/bin/
 COPY --from=tools /tools/ /usr/local/bin/

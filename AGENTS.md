@@ -21,10 +21,10 @@ Konflux wrapper repo for the upstream [Kargo](https://github.com/akuity/kargo). 
 - Shell scripts: `shellcheck path/to/script.sh`
 
 ## Project Layout
-- `Containerfile` — multi-stage hermetic build (UBI10 Go toolset + Node.js for UI → UBI10 minimal)
+- `Containerfile` — multi-stage hermetic build (Hummingbird Go and Node.js builders → Hummingbird runtime)
 - `kargo/` — git submodule tracking upstream tags (currently `main`)
 - `artifacts.lock.yaml` — Hermeto generic prefetch (pnpm CLI, Helm, grpc_health_probe, tini)
-- `rpms.in.yaml` / `rpms.lock.yaml` / `ubi.repo` — Hermeto RPM prefetch for the final image
+- `rpms.in.yaml` / `rpms.lock.yaml` / `hi.repo` — Hermeto RPM prefetch for the tools stage
 - `.tekton/` — Konflux pipeline definitions (pull-request, push, pipeline); PipelineRuns set `hermetic: "true"`
 - `.github/workflows/` — CI linting (hadolint, yamllint), auto-merge, dependency triage, release tagging
 - `hack/` — helper scripts for submodule updates, lockfile regeneration, and release tagging
@@ -37,7 +37,7 @@ Konflux builds run with network isolation. Prefetch (gomod, pnpm, generic, rpm) 
 
 - Do **not** add `curl`, `wget`, or `git clone` in Containerfile `RUN` steps
 - Do **not** add `microdnf`/`dnf` packages without updating `rpms.in.yaml` and running `./hack/update-rpms-lock.sh`
-- After MintMaker UBI digest bumps, re-run `./hack/update-rpms-lock.sh`
+- After Hummingbird base-image digest bumps, re-run `./hack/update-rpms-lock.sh`
 - After bumping Helm / grpc_health_probe / tini / pnpm, re-run `./hack/update-artifacts-lock.sh`
 
 ## Key Conventions

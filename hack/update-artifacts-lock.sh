@@ -9,7 +9,7 @@ WORKDIR="$(mktemp -d)"
 trap 'rm -rf "${WORKDIR}"' EXIT
 
 PNPM_VERSION="${PNPM_VERSION:-11.13.0}"
-HELM_VERSION="${HELM_VERSION:-v3.21.2}"
+HELM_VERSION="${HELM_VERSION:-v3.21.4}"
 GRPC_HEALTH_PROBE_VERSION="${GRPC_HEALTH_PROBE_VERSION:-v0.4.50}"
 TINI_VERSION="${TINI_VERSION:-v0.19.0}"
 
@@ -59,7 +59,9 @@ for arch in amd64 arm64; do
     exit 1
   fi
   # Sanity-check archive contains the helm binary
-  tar -tzf "${WORKDIR}/${tarname}" | grep -q "linux-${arch}/helm"
+  # Read the complete listing so pipefail does not treat grep's early exit as
+  # a tar SIGPIPE failure.
+  tar -tzf "${WORKDIR}/${tarname}" | grep "linux-${arch}/helm" >/dev/null
   add_artifact \
     "https://get.helm.sh/${tarname}" \
     "helm-linux-${arch}.tar.gz" \

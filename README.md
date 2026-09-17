@@ -4,7 +4,7 @@ Konflux wrapper repo for the upstream [Kargo](https://github.com/akuity/kargo). 
 
 ## Overview
 
-This repository acts as a mediator between **Konflux** and upstream **Kargo**. Custom Containerfiles enable **hermetic builds** within the Konflux environment using Red Hat UBI base images.
+This repository acts as a mediator between **Konflux** and upstream **Kargo**. Custom Containerfiles enable **hermetic builds** within the Konflux environment using Project Hummingbird base images.
 
 The produced image contains:
 - **kargo** controlplane binary (API server, controller, management-controller, webhooks, garbage-collector)
@@ -39,7 +39,7 @@ PipelineRuns set `hermetic: "true"`. Prefetch covers:
 | gomod | `kargo/` | Go modules |
 | pnpm | `kargo/ui/` | UI dependencies |
 | generic | `artifacts.lock.yaml` | pnpm CLI, Helm, grpc_health_probe, tini |
-| rpm | `rpms.in.yaml` / `rpms.lock.yaml` | Final-image RPMs |
+| rpm | `rpms.in.yaml` / `rpms.lock.yaml` | Tools-stage RPMs (`tar`) |
 
 **Containerfile rules for hermetic CI:**
 
@@ -54,11 +54,11 @@ PipelineRuns set `hermetic: "true"`. Prefetch covers:
 ./hack/update-artifacts-lock.sh
 # Optional overrides: PNPM_VERSION=… HELM_VERSION=… GRPC_HEALTH_PROBE_VERSION=… TINI_VERSION=…
 
-# Final-stage RPMs (after UBI digest or package list changes)
+# Tools-stage RPMs (after base-image or package list changes)
 ./hack/update-rpms-lock.sh
 ```
 
-MintMaker UBI digest bumps require re-running `./hack/update-rpms-lock.sh` (and usually refreshing `ubi.repo`).
+Hummingbird base-image digest bumps require re-running `./hack/update-rpms-lock.sh` (and usually refreshing `hi.repo`).
 
 ## Submodule Updates
 
@@ -83,7 +83,7 @@ git commit -m "Update kargo submodule to <version>"
 
 ## Containerfile Features
 
-- **Red Hat UBI10 base images**: Go Toolset for building, UBI Minimal for runtime
+- **Project Hummingbird base images**: Go for building, Core-Runtime for runtime
 - **Pinned image versions**: SHA digests for reproducible builds
 - **Multi-stage builds**: Separate stages for UI, Go backend, tools, and runtime
 - **Hermetic builds**: Hermeto prefetch for gomod, pnpm, generic artifacts, and RPMs
