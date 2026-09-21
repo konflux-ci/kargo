@@ -72,7 +72,7 @@ RUN go build \
 # Prefetched via Hermeto generic artifacts (see artifacts.lock.yaml).
 # Use 'builder' version of core-runtime so 'dnf' is available for installing 'tar'.
 ####################################################################################################
-FROM registry.access.redhat.com/hi/core-runtime@sha256:d939459917ebea5ea4f31187050959ad5cc833c6554b54080ebafd0c4142212c AS tools
+FROM registry.access.redhat.com/hi/core-runtime@sha256:fa72c318cd10f62b5616f396df0493ad8531adf0841aaf7b5d89c323712cfa11 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
