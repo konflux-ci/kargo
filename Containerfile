@@ -103,7 +103,7 @@ RUN case "${TARGETARCH}" in \
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/hi/core-runtime:latest@sha256:fa72c318cd10f62b5616f396df0493ad8531adf0841aaf7b5d89c323712cfa11 AS final
+FROM registry.access.redhat.com/hi/core-runtime:latest@sha256:58f9030ce520821c61798d41ca52aa2b10ba5f20c49245f63ecffcfcaa3d464f AS final
 
 ARG KARGO_VERSION
 ARG TARGETARCH=amd64
