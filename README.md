@@ -58,7 +58,7 @@ PipelineRuns set `hermetic: "true"`. Prefetch covers:
 ./hack/update-rpms-lock.sh
 ```
 
-Hummingbird base-image **tag** changes (not digest-only rotations) require re-running `./hack/update-rpms-lock.sh` to refresh `hi.repo` and resolve RPM versions against the new image.
+Hummingbird base-image **tag** changes typically require re-running `./hack/update-rpms-lock.sh` to refresh `hi.repo` and resolve RPM versions against the new image. Digest-only rotations usually do not, but if a hermetic build fails after a digest bump, re-run the script to rule out stale locks.
 
 ## Submodule Updates
 
