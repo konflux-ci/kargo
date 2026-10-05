@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Regenerate rpms.lock.yaml for Hermeto RPM prefetch.
-# Requires podman. Run from repo root after changing RPM packages or base-image digests.
+# Requires podman. Run from repo root after changing RPM packages,
+# base-image tags, or repo URLs. Not needed for digest-only rotations.
 #
 # Repo IDs in hi.repo must match Conforma known_rpm_repositories:
 #   https://github.com/release-engineering/rhtap-ec-policy/blob/main/data/known_rpm_repositories.yml
