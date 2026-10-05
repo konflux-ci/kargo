@@ -54,11 +54,11 @@ PipelineRuns set `hermetic: "true"`. Prefetch covers:
 ./hack/update-artifacts-lock.sh
 # Optional overrides: PNPM_VERSION=… HELM_VERSION=… GRPC_HEALTH_PROBE_VERSION=… TINI_VERSION=…
 
-# Tools-stage RPMs (after base-image or package list changes)
+# Tools-stage RPMs (after base-image tag changes or package list changes)
 ./hack/update-rpms-lock.sh
 ```
 
-Hummingbird base-image digest bumps require re-running `./hack/update-rpms-lock.sh` (and usually refreshing `hi.repo`).
+Hummingbird base-image **tag** changes (not digest-only rotations) require re-running `./hack/update-rpms-lock.sh` to refresh `hi.repo` and resolve RPM versions against the new image.
 
 ## Submodule Updates
 
