@@ -37,7 +37,8 @@ Konflux builds run with network isolation. Prefetch (gomod, pnpm, generic, rpm) 
 
 - Do **not** add `curl`, `wget`, or `git clone` in Containerfile `RUN` steps
 - Do **not** add `microdnf`/`dnf` packages without updating `rpms.in.yaml` and running `./hack/update-rpms-lock.sh`
-- After Hummingbird base-image digest bumps, re-run `./hack/update-rpms-lock.sh`
+- After Hummingbird base-image **tag** changes to the `tools` stage image (e.g., `core-runtime:latest-builder` changing to a different tag), re-run `./hack/update-rpms-lock.sh` to refresh `hi.repo` and resolve RPM versions against the new image
+- Digest-only rotations within the same tag typically do **not** require rpms-lock regeneration; if a hermetic build fails after a digest bump, re-run the script to rule out stale locks
 - After bumping Helm / grpc_health_probe / tini / pnpm, re-run `./hack/update-artifacts-lock.sh`
 
 ## Key Conventions
