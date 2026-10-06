@@ -18,7 +18,10 @@ if ! podman image exists "${IMAGE}"; then
     | podman build -t "${IMAGE}" -
 fi
 
-# RPMs are installed in the tools stage, not the final runtime stage.
+# RPMs are installed in the tools stage, not the final runtime stage. The
+# Containerfile also installs git-core into an empty installroot, so resolve
+# the lock as a bare system rather than subtracting packages from the builder
+# image's RPM database.
 RPM_STAGE="${RPM_LOCKFILE_STAGE:-tools}"
 BASE_IMAGE="$(awk -v stage="${RPM_STAGE}" '
   $1 == "FROM" && $NF == stage { print $2; exit }
@@ -54,7 +57,7 @@ podman run --rm \
   -w /work \
   "${IMAGE}" \
   --outfile=rpms.lock.yaml \
-  --image "${BASE_IMAGE}" \
+  --bare \
   rpms.in.yaml
 
 echo "Wrote ${ROOT}/rpms.lock.yaml"

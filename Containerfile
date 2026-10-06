@@ -70,7 +70,8 @@ RUN go build \
 ####################################################################################################
 # tools
 # Prefetched via Hermeto generic artifacts (see artifacts.lock.yaml).
-# Use 'builder' version of core-runtime so 'dnf' is available for installing 'tar'.
+# Use 'builder' version of core-runtime so 'dnf' is available for installing
+# the tools and assembling the Git runtime payload.
 ####################################################################################################
 FROM registry.access.redhat.com/hi/core-runtime:latest-builder@sha256:7b6b0d5eae0a26fc4dd44f368c0157d8e0672eb6bbb95e281d0bde30eb38070b AS tools
 
@@ -84,6 +85,44 @@ WORKDIR /tools
 # hadolint ignore=DL3041
 RUN dnf install -y tar gzip && \
     dnf clean all
+
+# Install Git and its complete RPM dependency closure into a separate root.
+# Copy the resulting filesystem rather than hardcoding Git's executable or
+# library paths; this preserves architecture-specific dependencies and links.
+RUN mkdir -p /git-root/etc/pki /git-runtime && \
+    cp -a /etc/pki/rpm-gpg /git-root/etc/pki/ && \
+    case "${TARGETARCH}" in \
+      amd64|x86_64) repo_id=public-hummingbird-x86_64-rpms ;; \
+      arm64|aarch64) repo_id=public-hummingbird-aarch64-rpms ;; \
+      *) echo "unsupported TARGETARCH=${TARGETARCH}" >&2; exit 1 ;; \
+    esac && \
+    dnf --installroot=/git-root \
+      --use-host-config \
+      --setopt="${repo_id}.gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-hummingbird-release" \
+      --setopt=install_weak_deps=False \
+      --setopt=keepcache=False \
+      install -y git-core && \
+    tar -C /git-root -cf - \
+      --exclude='./bin' \
+      --exclude='./sbin' \
+      --exclude='./lib' \
+      --exclude='./lib64' \
+      --exclude='./dev' \
+      --exclude='./proc' \
+      --exclude='./sys' \
+      --exclude='./run' \
+      --exclude='./etc/passwd' \
+      --exclude='./etc/group' \
+      --exclude='./etc/shadow' \
+      --exclude='./etc/gshadow' \
+      --exclude='./etc/subuid' \
+      --exclude='./etc/subgid' \
+      --exclude='./etc/yum.repos.d' \
+      --exclude='./var/lib/rpm' \
+      --exclude='./var/lib/dnf' \
+      --exclude='./var/cache/dnf' \
+      . | \
+      tar -C /git-runtime -xf -
 
 
 # Normalize to artifact naming (Go arch). Fail loud if prefetch missing.
@@ -110,6 +149,8 @@ USER 0
 
 COPY --from=back-end-builder /kargo/bin/ /usr/local/bin/
 COPY --from=tools /tools/ /usr/local/bin/
+COPY --from=tools /git-runtime/ /
+RUN git --version && test -x /usr/bin/git && test -d "$(git --exec-path)"
 RUN case "${TARGETARCH}" in \
       amd64|x86_64) arch=amd64 ;; \
       arm64|aarch64) arch=arm64 ;; \
