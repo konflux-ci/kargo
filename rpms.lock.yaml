@@ -4,6 +4,167 @@ lockfileVendor: redhat
 arches:
 - arch: aarch64
   packages:
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/a/alternatives-1.33-5.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 47865
+    checksum: sha256:6e37c7f96323aadff0007b3ce78242259cc2fbbd8a5ea582673eaad61976680b
+    name: alternatives
+    evr: 1.33-5.1.hum1
+    sourcerpm: chkconfig-1.33-5.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/a/audit-libs-4.2.1-2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 152695
+    checksum: sha256:c271facc7cff268e2fc242af77553c17bb67820f6296ad9c02d205c4d1cd53e6
+    name: audit-libs
+    evr: 4.2.1-2.hum1
+    sourcerpm: audit-4.2.1-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/b/bash-5.3.15-2.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 1942534
+    checksum: sha256:c642de7662f0fbec8a66c7d42431ac5ac6079c26a2c3e51bc65584a68b4333af
+    name: bash
+    evr: 5.3.15-2.1.hum1
+    sourcerpm: bash-5.3.15-2.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/b/bzip2-libs-1.0.8-24.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 48467
+    checksum: sha256:c854a3d4e2ff9494d6813688820cf52d2b0c183744f92e0fbd46a94579ee5f56
+    name: bzip2-libs
+    evr: 1.0.8-24.hum1
+    sourcerpm: bzip2-1.0.8-24.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/c/ca-certificates-2026.2.90_v9.0.317-1.1.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 1166700
+    checksum: sha256:dff3a5a565e46d01be5067cb5b2a965531191c021719fb82eac194e42cebe72d
+    name: ca-certificates
+    evr: 2026.2.90_v9.0.317-1.1.hum1
+    sourcerpm: ca-certificates-2026.2.90_v9.0.317-1.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/c/coreutils-9.12-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 1353736
+    checksum: sha256:f886b6e22233aed6d48430d21475fa73b627164e2c95d7dae9bbc4b49fa561eb
+    name: coreutils
+    evr: 9.12-1.hum1
+    sourcerpm: coreutils-9.12-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/c/coreutils-common-9.12-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 2372806
+    checksum: sha256:1739fc75ede54ebb64784168cdca078c4b1cbfa6c2d2614abed74bb38cb5030a
+    name: coreutils-common
+    evr: 9.12-1.hum1
+    sourcerpm: coreutils-9.12-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/c/crypto-policies-20260812-1.git359ab16.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 118087
+    checksum: sha256:261415c77d35c617009fc4f3684c48f1e1c6b098d0dec0f1d0c3a12d33d4f757
+    name: crypto-policies
+    evr: 20260812-1.git359ab16.hum1
+    sourcerpm: crypto-policies-20260812-1.git359ab16.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/c/crypto-policies-config-default-20260812-1.git359ab16.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 18217
+    checksum: sha256:20d22dd1eaeeb64a1c7e20e78bbfaba7dae7b889ad8649bedd800e795db8da55
+    name: crypto-policies-config-default
+    evr: 20260812-1.git359ab16.hum1
+    sourcerpm: crypto-policies-20260812-1.git359ab16.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/c/crypto-policies-scripts-20260812-1.git359ab16.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 143248
+    checksum: sha256:5cb9ff3142e86532624b6767ebd6565d0385c7d241a7793e118a3a9083ae6e0d
+    name: crypto-policies-scripts
+    evr: 20260812-1.git359ab16.hum1
+    sourcerpm: crypto-policies-20260812-1.git359ab16.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/c/cyrus-sasl-lib-2.1.28-37.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 796060
+    checksum: sha256:84840091fedfa0feeb237a40b6d4f59532c16be4d3ad87006b4512c033af5be3
+    name: cyrus-sasl-lib
+    evr: 2.1.28-37.1.hum1
+    sourcerpm: cyrus-sasl-2.1.28-37.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/e/expat-2.8.5-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 137848
+    checksum: sha256:1294b9880bd92a52ade499712c9dcf24956bfa0a217dfbed4fc98bbb9ef9d450
+    name: expat
+    evr: 2.8.5-1.hum1
+    sourcerpm: expat-2.8.5-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/f/filesystem-3.18-59.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 7558370
+    checksum: sha256:36264a3a8b4466f3ac23dae36a6f8e8f1fba85a5f21569d8779dd22418fe9ca0
+    name: filesystem
+    evr: 3.18-59.1.hum1
+    sourcerpm: filesystem-3.18-59.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/f/findutils-4.11.0-1.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 624257
+    checksum: sha256:3cc39d51c019312870920375ec3b3b9c39f393598d8f34899e8c6eecd0a8c777
+    name: findutils
+    evr: 1:4.11.0-1.1.hum1
+    sourcerpm: findutils-4.11.0-1.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/gdbm-libs-1.23-12.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 63935
+    checksum: sha256:1c55cc80b28adf841366928d9f8b3250b21f3d32dda846d5399f32ab9a6c1e77
+    name: gdbm-libs
+    evr: 1:1.23-12.hum1
+    sourcerpm: gdbm-1.23-12.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/git-core-2.56.0-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 6019255
+    checksum: sha256:933135de719ce8d4ae80d0184e29189ae73ede94aecbfe8cf82aed85b02326a1
+    name: git-core
+    evr: 2.56.0-1.hum1
+    sourcerpm: git-2.56.0-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/glibc-2.43-9.2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 2065619
+    checksum: sha256:6994cbf2124d77f6b69eb0e8c38c2ef9ad067b1a4aa8995e99ec3422e0b98909
+    name: glibc
+    evr: 2.43-9.2.hum1
+    sourcerpm: glibc-2.43-9.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/glibc-common-2.43-9.2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 379278
+    checksum: sha256:c8de7dc9b3361b08f83bcefeeeb282bba30a6086bd67560a425ab000f7ba8f70
+    name: glibc-common
+    evr: 2.43-9.2.hum1
+    sourcerpm: glibc-2.43-9.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/glibc-gconv-extra-2.43-9.2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 1906926
+    checksum: sha256:c59fdc637a1b1a8c23ab83f187cc852cf93a95677a086b218aa3f0f6f599e170
+    name: glibc-gconv-extra
+    evr: 2.43-9.2.hum1
+    sourcerpm: glibc-2.43-9.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/glibc-minimal-langpack-2.43-9.2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 90849
+    checksum: sha256:07b4ceb7d45649d9f0064d3e6e3e95470fef5aff536de065bcd50e89801a3ee8
+    name: glibc-minimal-langpack
+    evr: 2.43-9.2.hum1
+    sourcerpm: glibc-2.43-9.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/gmp-6.3.0-6.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 284031
+    checksum: sha256:cb18f886fd5b7d83e7e5f03ab2ab4b1f9f88dd09e199ab9b107e4b3609c1265f
+    name: gmp
+    evr: 1:6.3.0-6.hum1
+    sourcerpm: gmp-6.3.0-6.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/gnulib-l10n-20241231-4.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 160098
+    checksum: sha256:0a4dc4d912685d472f9be93db27edc02448e91817f5cc55ed54e15730fa0f9e7
+    name: gnulib-l10n
+    evr: 20241231-4.hum1
+    sourcerpm: gnulib-l10n-20241231-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/grep-3.12-4.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 310907
+    checksum: sha256:4b681c4e4656f0fb00db55521ae2f55010c7709362a4811bf9698b4bed6c521d
+    name: grep
+    evr: 3.12-4.hum1
+    sourcerpm: grep-3.12-4.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/gzip-1.14-4.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
     size: 183965
@@ -11,6 +172,426 @@ arches:
     name: gzip
     evr: 1.14-4.hum1
     sourcerpm: gzip-1.14-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/h/hummingbird-gpg-keys-20251124-1.17.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 29130
+    checksum: sha256:2f46084a76b6c6db78e302e0ca11662b8703a1e39314beeea31fa99f45e7561c
+    name: hummingbird-gpg-keys
+    evr: 20251124-1.17.hum1
+    sourcerpm: hummingbird-release-20251124-1.17.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/h/hummingbird-release-20251124-1.17.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 23432
+    checksum: sha256:471de1a5502bd6a6da13edd32c5062c19d52c5ee934c8727693f7a1814c8c751
+    name: hummingbird-release
+    evr: 20251124-1.17.hum1
+    sourcerpm: hummingbird-release-20251124-1.17.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/h/hummingbird-repos-20251124-1.17.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 13763
+    checksum: sha256:5aada4252590224e575e97e3c99f4b2b00b3f9f974296a133f8dfdcf3a928f5b
+    name: hummingbird-repos
+    evr: 20251124-1.17.hum1
+    sourcerpm: hummingbird-release-20251124-1.17.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/k/keyutils-libs-1.6.3-8.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 38580
+    checksum: sha256:2e6db3a8f0c4bc95d61dbd3844f15eeac786fca234415cfcd68cab4254e63ab0
+    name: keyutils-libs
+    evr: 1.6.3-8.hum1
+    sourcerpm: keyutils-1.6.3-8.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/k/krb5-libs-1.22.2-10.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 789675
+    checksum: sha256:a52898561f4d252395c867e84d2fcc91f16cac11c451c6ab33fd4d96924fb8eb
+    name: krb5-libs
+    evr: 1.22.2-10.hum1
+    sourcerpm: krb5-1.22.2-10.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/less-710-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 240209
+    checksum: sha256:573157b9ae857c45e95a1b307ab8d60aa6606bea83a382f137b59515b4cbf832
+    name: less
+    evr: 710-1.hum1
+    sourcerpm: less-710-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libacl-2.4.0-2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 33625
+    checksum: sha256:764f58cda1e8ce8b87905becb18df4b5f35ba106296789007158f22f8a48e364
+    name: libacl
+    evr: 2.4.0-2.hum1
+    sourcerpm: acl-2.4.0-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libattr-2.6.0-9.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 24091
+    checksum: sha256:56c33544020f0edd97ea632bae120665385d6ff5fc6f3182b7ad9eba2ecc6355
+    name: libattr
+    evr: 2.6.0-9.1.hum1
+    sourcerpm: attr-2.6.0-9.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libbrotli-1.2.0-6.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 364231
+    checksum: sha256:6a50a7f082c90600b7b47b13576539109ac6c8a7114a6b6accafe7cc535fb625
+    name: libbrotli
+    evr: 1.2.0-6.hum1
+    sourcerpm: brotli-1.2.0-6.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libcap-2.78-2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 101874
+    checksum: sha256:4dcda46b7a8db2d289da405fcbcd0db041f4d22992e8ee37daa779c2cc808cf5
+    name: libcap
+    evr: 2.78-2.hum1
+    sourcerpm: libcap-2.78-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libcap-ng-0.9.6-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 42229
+    checksum: sha256:6500bf6a8bf51dfea9a1ecbeca9986bf5b7c92786ebd8c8746afeb46ae9e066e
+    name: libcap-ng
+    evr: 0.9.6-1.hum1
+    sourcerpm: libcap-ng-0.9.6-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libcbor-0.14.0-3.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 42240
+    checksum: sha256:e4ad90b69e4023ba53c021be5969a92d0b272837161ae26aefdc4078cca93b12
+    name: libcbor
+    evr: 0.14.0-3.hum1
+    sourcerpm: libcbor-0.14.0-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libcom_err-1.47.4-2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 33395
+    checksum: sha256:44169d5ea7aef7a6068ccfb1366d78612db0fa04807946ff2fac2f5d74096dc9
+    name: libcom_err
+    evr: 1.47.4-2.hum1
+    sourcerpm: e2fsprogs-1.47.4-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libcurl-8.22.0-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 480182
+    checksum: sha256:25bc69731c1869313f17c8d29fc1865b987ac5a53c4332610f1277572181c3f6
+    name: libcurl
+    evr: 8.22.0-1.hum1
+    sourcerpm: curl-8.22.0-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libeconf-0.7.9-4.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 41893
+    checksum: sha256:4b95d5ea553340b7f6d01d391c2a00b8f1cdbe1811d6260e90134075ac9d9a1c
+    name: libeconf
+    evr: 0.7.9-4.1.hum1
+    sourcerpm: libeconf-0.7.9-4.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libedit-3.1-60.20260512cvs.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 115237
+    checksum: sha256:34b707a90a098e138cd847bddd161b536fba6b680b633a3b250472c7fb43ecb0
+    name: libedit
+    evr: 3.1-60.20260512cvs.hum1
+    sourcerpm: libedit-3.1-60.20260512cvs.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libevent-2.1.13-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 288484
+    checksum: sha256:54d345f9a342a307a78bc280a7d02f13aa9e7573b615992863397883b2175167
+    name: libevent
+    evr: 2.1.13-1.hum1
+    sourcerpm: libevent-2.1.13-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libffi-3.8.0-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 49353
+    checksum: sha256:d8d6541541b896c7ce776d86c7ef189f5a74675339880b112e01fa784320ac8e
+    name: libffi
+    evr: 3.8.0-1.hum1
+    sourcerpm: libffi-3.8.0-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libfido2-1.17.0-6.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 107793
+    checksum: sha256:910b75d4c41ff43535893a55c0eb8d102e94dbb8f6b02a88e1de54021027d25f
+    name: libfido2
+    evr: 1.17.0-6.hum1
+    sourcerpm: libfido2-1.17.0-6.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libgcc-16.2.1-3.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 127015
+    checksum: sha256:17eacd53059336fa8347402fb419e8ad35a264032bff2d5c4bd49e5dca98f49c
+    name: libgcc
+    evr: 16.2.1-3.hum1
+    sourcerpm: gcc-16.2.1-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libidn2-2.3.8-4.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 184807
+    checksum: sha256:ac40ec3de9feffc768f4bfdd5c27d922d68c27b7b5f33d85adc49ea2ed1f2f60
+    name: libidn2
+    evr: 2.3.8-4.hum1
+    sourcerpm: libidn2-2.3.8-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libnghttp2-1.69.0-6.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 82815
+    checksum: sha256:58fa108e0a707b2e1fca8d3d17286d8850a11b9bf32bc9b4e39bb9c9e03509bb
+    name: libnghttp2
+    evr: 1.69.0-6.hum1
+    sourcerpm: nghttp2-1.69.0-6.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libnghttp3-1.18.0-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 77120
+    checksum: sha256:b3ecd7517b66cc347380bbb558460c815d24f93b14097f084f6e57e9ae88763b
+    name: libnghttp3
+    evr: 1.18.0-1.hum1
+    sourcerpm: nghttp3-1.18.0-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libpsl-0.23.3-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 74281
+    checksum: sha256:64dcd025f8572f5829bb1bcee4c1c1394a931df196af0ca282259ae4d74d2e85
+    name: libpsl
+    evr: 0.23.3-1.hum1
+    sourcerpm: libpsl-0.23.3-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libselinux-3.11-5.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 106008
+    checksum: sha256:949e1993f52aba99c6acc9ad0481ad0ec2b674f3619027693a35f50a6f1479f1
+    name: libselinux
+    evr: 3.11-5.hum1
+    sourcerpm: libselinux-3.11-5.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libsepol-3.11-2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 338553
+    checksum: sha256:802d8e52b4a94f0d4aad130eb90e44bffb166d16d9ca813ea20bc8e6f8d0f2ba
+    name: libsepol
+    evr: 3.11-2.hum1
+    sourcerpm: libsepol-3.11-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libssh-0.12.2-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 288694
+    checksum: sha256:3a0dcb778a62917c631788e76226bf2bd09fd2caab8e89e55eb53a6f9b4bdc3f
+    name: libssh
+    evr: 0.12.2-1.hum1
+    sourcerpm: libssh-0.12.2-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libssh-config-0.12.2-1.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 13772
+    checksum: sha256:cf8d3293a79faabada59d6d085d10aa98ca6f63c6a5df85b10938c988b52c648
+    name: libssh-config
+    evr: 0.12.2-1.hum1
+    sourcerpm: libssh-0.12.2-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libtasn1-4.21.0-2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 80500
+    checksum: sha256:a19eb3c4e7d8668c709c6b30f2321d13ebc0a56e0a54b7ab22847a529d475a0e
+    name: libtasn1
+    evr: 4.21.0-2.hum1
+    sourcerpm: libtasn1-4.21.0-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libtool-ltdl-2.6.2-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 41294
+    checksum: sha256:0f640e4189951f0b3ec96ec88fdf864161bfad55a29f0c88a9b7d639d60139a9
+    name: libtool-ltdl
+    evr: 2.6.2-1.hum1
+    sourcerpm: libtool-2.6.2-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libunistring-1.1-12.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 557021
+    checksum: sha256:633b7eb5b70735643645a3f8109bd22273f78ce0e26b7b6bda54c5f041c1c114
+    name: libunistring
+    evr: 1.1-12.hum1
+    sourcerpm: libunistring-1.1-12.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libuuid-2.42.4-2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 32290
+    checksum: sha256:dad29f2a722f240395ebc9e4bb46bc856fff5428f6f4fabecdc24ab5e3cfc6c6
+    name: libuuid
+    evr: 2.42.4-2.hum1
+    sourcerpm: util-linux-2.42.4-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libverto-0.3.2-13.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 27209
+    checksum: sha256:3bce73ff27972638ac25d162e180f82dbfdde2ced6caf575742f2c127b9f7edc
+    name: libverto
+    evr: 0.3.2-13.hum1
+    sourcerpm: libverto-0.3.2-13.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libxcrypt-4.5.2-4.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 135687
+    checksum: sha256:f40a390d02e0118e51d701ee796ff29ef31af16ddb5d1a045e88d2f4fe3dace6
+    name: libxcrypt
+    evr: 4.5.2-4.hum1
+    sourcerpm: libxcrypt-4.5.2-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libzstd-1.5.7-6.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 343913
+    checksum: sha256:fc6798305ebdd0f08b52b452b1124f79801db3af5a1ba8c307fca39d45eb60e9
+    name: libzstd
+    evr: 1.5.7-6.1.hum1
+    sourcerpm: zstd-1.5.7-6.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/m/mpdecimal-4.0.1-4.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 102957
+    checksum: sha256:f5eb89cbb17baca07bad65e1b77b7479e44dccc08a2624fd2627ef6c18204ec3
+    name: mpdecimal
+    evr: 4.0.1-4.hum1
+    sourcerpm: mpdecimal-4.0.1-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/n/ncurses-base-6.6-3.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 108884
+    checksum: sha256:8f68df591aeff1ab17cbf873fcd5ecea8af00eea28451a25974cd751a0d119d0
+    name: ncurses-base
+    evr: 6.6-3.hum1
+    sourcerpm: ncurses-6.6-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/n/ncurses-libs-6.6-3.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 344836
+    checksum: sha256:4c0f3bfb5778f459868adc62d94f64d1fa9a682865e22ac9d57bb09349c01695
+    name: ncurses-libs
+    evr: 6.6-3.hum1
+    sourcerpm: ncurses-6.6-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/n/ngtcp2-1.22.1-3.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 155584
+    checksum: sha256:33c503e897211e8a87362ea7e8c90097d743b3f1100790e473c05b092654a502
+    name: ngtcp2
+    evr: 1.22.1-3.hum1
+    sourcerpm: ngtcp2-1.22.1-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/n/ngtcp2-crypto-ossl-1.22.1-3.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 31389
+    checksum: sha256:c1b1c12f885fd2a1e28dbd47e39c7072cb7ac90d6d6921f499607b5188d89520
+    name: ngtcp2-crypto-ossl
+    evr: 1.22.1-3.hum1
+    sourcerpm: ngtcp2-1.22.1-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openldap-2.6.15-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 268133
+    checksum: sha256:89763ed2874859c56904ea7c591d1211ec74c4693b35322c96e6249aacb23714
+    name: openldap
+    evr: 2.6.15-1.hum1
+    sourcerpm: openldap-2.6.15-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssh-10.5p1-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 389605
+    checksum: sha256:617bf950500ff641f41861c5c7af7d063206236cf4a82709709c5333ab4cabf5
+    name: openssh
+    evr: 10.5p1-1.hum1
+    sourcerpm: openssh-10.5p1-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssh-clients-10.5p1-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 843986
+    checksum: sha256:42201104d48e890be7cc13c493cecf935c8de3d6857b218539c1001c1ba2c62a
+    name: openssh-clients
+    evr: 10.5p1-1.hum1
+    sourcerpm: openssh-10.5p1-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssl-fips-provider-upstream-3.5.9-0.2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 748865
+    checksum: sha256:d295a1c9855e9152bd2e5774902c315a51348a0e814a4e755b6e342fd306ca21
+    name: openssl-fips-provider-upstream
+    evr: 1:3.5.9-0.2.hum1
+    sourcerpm: openssl-3.5.9-0.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssl-libs-3.5.9-0.2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 2249287
+    checksum: sha256:3551ea97e4debca2dc850ea61811ab88b3503c70a39befcb3199562783fd5363
+    name: openssl-libs
+    evr: 1:3.5.9-0.2.hum1
+    sourcerpm: openssl-3.5.9-0.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/p11-kit-0.26.5-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 558587
+    checksum: sha256:fb45a0f856352c507ce6ee37d6a2e117bbdbc5b7a1b8ddf5b885c6e4bfa400dc
+    name: p11-kit
+    evr: 0.26.5-1.hum1
+    sourcerpm: p11-kit-0.26.5-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/p11-kit-trust-0.26.5-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 147708
+    checksum: sha256:c6596c638823b4ed4fac3c0b861f5dd051947840288fcb329f233f30aa38a5e2
+    name: p11-kit-trust
+    evr: 0.26.5-1.hum1
+    sourcerpm: p11-kit-0.26.5-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/pam-libs-1.7.2-4.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 64922
+    checksum: sha256:a866afd0e1aec793695e8021bd4620d72eae18c4a52c6f078d1d0dc7d0339151
+    name: pam-libs
+    evr: 1.7.2-4.hum1
+    sourcerpm: pam-1.7.2-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/pcre2-10.49-0.1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 265435
+    checksum: sha256:b4203ef6df312b8323d7018a826ad02245b16885b746bc06ff46125e710028af
+    name: pcre2
+    evr: 10.49-0.1.hum1
+    sourcerpm: pcre2-10.49-0.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/pcre2-syntax-10.49-0.1.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 179727
+    checksum: sha256:78b8bcf094f1897ec7a4cc4b7d8271c8c98da20da254415b4b20cd203d7ee70b
+    name: pcre2-syntax
+    evr: 10.49-0.1.hum1
+    sourcerpm: pcre2-10.49-0.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/publicsuffix-list-dafsa-20260624-2.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 67792
+    checksum: sha256:23aace97837d048187b67e7017ffff861dc3f58782512eb42d23b6a36036ec9c
+    name: publicsuffix-list-dafsa
+    evr: 20260624-2.hum1
+    sourcerpm: publicsuffix-list-20260624-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/python-pip-wheel-26.2-0.1.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 1252988
+    checksum: sha256:f6fe5f889491c767c3289f7c42d7fb7a99a6aeb71e5f07f0fe361db26dd8552c
+    name: python-pip-wheel
+    evr: 26.2-0.1.hum1
+    sourcerpm: python-pip-26.2-0.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/python-unversioned-command-3.14.8-1.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 18112
+    checksum: sha256:3f18f91d61b07aa937b5979c5351fed01acaaebc2d6d857854b2f9f0dbef6c8e
+    name: python-unversioned-command
+    evr: 3.14.8-1.hum1
+    sourcerpm: python3.14-3.14.8-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/python3-3.14.8-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 36646
+    checksum: sha256:57015b33de24a31837d73d8df53e9db0bd25bb59ab35cd4826fb5ae6670db450
+    name: python3
+    evr: 3.14.8-1.hum1
+    sourcerpm: python3.14-3.14.8-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/p/python3-libs-3.14.8-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 10494926
+    checksum: sha256:ea6fda053c83d270f01aa03103819e84f3f5be20599abadc42a96d9fd998f1a5
+    name: python3-libs
+    evr: 3.14.8-1.hum1
+    sourcerpm: python3.14-3.14.8-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/r/readline-8.3-7.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 232803
+    checksum: sha256:0f698d8c41ae5987426ad374936485834b9d8127f94a980e501352d75f26e2d9
+    name: readline
+    evr: 8.3-7.hum1
+    sourcerpm: readline-8.3-7.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/s/sed-4.10-2.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 367652
+    checksum: sha256:a87b580f9455208ff0492d2320d00e36468d6d2c8fdd4ba3fd56747171a319f2
+    name: sed
+    evr: 4.10-2.hum1
+    sourcerpm: sed-4.10-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/s/setup-2.15.1-2.1.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 165561
+    checksum: sha256:c522b073bcca7ca587570c8b843a0aea3623290bb6fbbfbac87c3c35ae35739a
+    name: setup
+    evr: 2.15.1-2.1.hum1
+    sourcerpm: setup-2.15.1-2.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/s/sqlite-libs-3.53.4-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 789397
+    checksum: sha256:3a2f101dd93fe5df1faf20bd99310151e0d26b97dbb8018636e5a18e2cfd943b
+    name: sqlite-libs
+    evr: 3.53.4-1.hum1
+    sourcerpm: sqlite-3.53.4-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/s/systemd-libs-261.2-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 883903
+    checksum: sha256:8397411c15bda36ac8ef87a3ba8b7714e1b3f0cf589ea68cfcf37c32e0ee3951
+    name: systemd-libs
+    evr: 261.2-1.hum1
+    sourcerpm: systemd-261.2-1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/t/tar-1.35-10.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
     size: 885040
@@ -18,22 +599,631 @@ arches:
     name: tar
     evr: 2:1.35-10.hum1
     sourcerpm: tar-1.35-10.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/t/tzdata-2026c-2.1.hum1.noarch.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 861980
+    checksum: sha256:537cc2029893dcd71720e129c25ea19ce1fe5e72f1a6e70808f7f8b8a6824740
+    name: tzdata
+    evr: 2026c-2.1.hum1
+    sourcerpm: tzdata-2026c-2.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/u/unzip-6.0-71.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 212725
+    checksum: sha256:6af13eb2ec758d5b92735d80d026c8f3a650bb33128007f287601b6737675271
+    name: unzip
+    evr: 6.0-71.hum1
+    sourcerpm: unzip-6.0-71.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/x/xz-libs-5.8.4-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 120378
+    checksum: sha256:4bd671275152d245c9bc03224460ab878cf75d8ba97410a670269b5f77e55734
+    name: xz-libs
+    evr: 1:5.8.4-1.hum1
+    sourcerpm: xz-5.8.4-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/z/zlib-ng-compat-2.3.3-6.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 78294
+    checksum: sha256:afbd23e64f5171e7b1447276ae7c39bf9135d01cc1da1fb758af48c986283f5f
+    name: zlib-ng-compat
+    evr: 2.3.3-6.hum1
+    sourcerpm: zlib-ng-2.3.3-6.hum1.src.rpm
   source:
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/acl-2.4.0-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 621447
+    checksum: sha256:fac5aa1a03ece77dc7a29a11b1a17b2d461b019cfa19f0e3fed6e2ea6924e679
+    name: acl
+    evr: 2.4.0-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/attr-2.6.0-9.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 574821
+    checksum: sha256:6d1f57e0f10c44eaa4ea13a0ff008623b2c5e3555c4c3e69571b42b67b8dea2c
+    name: attr
+    evr: 2.6.0-9.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/audit-4.2.1-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 816462
+    checksum: sha256:b846ff1c13af0b0161fc8a1e05bb65836f754d2ffca59ba89391f9e4476c5eb8
+    name: audit
+    evr: 4.2.1-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/bash-5.3.15-2.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 11625500
+    checksum: sha256:9427e0c1261d42f00d19b9dd64be3bacbb01dda9ac403d5da23481f17402b4eb
+    name: bash
+    evr: 5.3.15-2.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/brotli-1.2.0-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 691928
+    checksum: sha256:2e16ca923556fbffac39e580a0b81d5f818fd8ae2d18209a9bb06414affd7d07
+    name: brotli
+    evr: 1.2.0-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/bzip2-1.0.8-24.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 855578
+    checksum: sha256:d23bc4cd4149268ee34a4f337671a5e3405bc9b2564df0b27041bfc34242d945
+    name: bzip2
+    evr: 1.0.8-24.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/ca-certificates-2026.2.90_v9.0.317-1.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 803107
+    checksum: sha256:aa71257237249e7e34b9aa9fdb635ea709a49b16af75a61a1222b350cd77333d
+    name: ca-certificates
+    evr: 2026.2.90_v9.0.317-1.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/chkconfig-1.33-5.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 257353
+    checksum: sha256:33ab48b2405aca4f6863b5a2a073683659f04eda0040d0e3d85fd089f899369e
+    name: chkconfig
+    evr: 1.33-5.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/coreutils-9.12-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 6895489
+    checksum: sha256:a1d0dfab949902bb0f58802ba01a45b5f63480d7ea431826a2d1c1f1199c73b4
+    name: coreutils
+    evr: 9.12-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/crypto-policies-20260812-1.git359ab16.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 191082
+    checksum: sha256:e7cce1f69053e1e2b2292ff7c45767672de0359ec12105154f273f3fbc25c6a3
+    name: crypto-policies
+    evr: 20260812-1.git359ab16.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/curl-8.22.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 3067876
+    checksum: sha256:fc3be77332e4f0549d89cf2ee8a75c72df2ec1813292eded0e446eeb530a9adc
+    name: curl
+    evr: 8.22.0-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/cyrus-sasl-2.1.28-37.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 3973599
+    checksum: sha256:1b8217a9b393dde0652c7c90c07a9d0effd161d3a18c882fee0c34a95a33ecee
+    name: cyrus-sasl
+    evr: 2.1.28-37.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/e/e2fsprogs-1.47.4-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 7760776
+    checksum: sha256:cff49f9d0190df469557bd7e8d2095be414c6037f4d88bac65ddc2376b2c4b47
+    name: e2fsprogs
+    evr: 1.47.4-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/e/expat-2.8.5-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 873267
+    checksum: sha256:37d66b552ff5e022065145fbc1a8fa5a847ea8d5af00c04c990eef3e88ae60e4
+    name: expat
+    evr: 2.8.5-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/f/filesystem-3.18-59.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 307069
+    checksum: sha256:716eceb88a66a435893d53acffc5236d0da0f69240cb855be5d77cd216d76c34
+    name: filesystem
+    evr: 3.18-59.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/f/findutils-4.11.0-1.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2543829
+    checksum: sha256:ef8e19e8be911b593e5b2fd25df32cff0be087106b80f902d855e072c1bc3f60
+    name: findutils
+    evr: 1:4.11.0-1.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gcc-16.2.1-3.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 112250862
+    checksum: sha256:a29215c2e19be6ced1552505a51678d54cf3f8faf1d470e4a11d6e11e2574be9
+    name: gcc
+    evr: 16.2.1-3.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gdbm-1.23-12.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1158396
+    checksum: sha256:c892cbd27f964c8b903a55fbff3c605e61df207d51d13d664592f2017dfe3c82
+    name: gdbm
+    evr: 1:1.23-12.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/git-2.56.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 8584067
+    checksum: sha256:99d5c75ea7210b6ff5e74fc856a248fc8dea995db9ba748e019b7875b200b6f4
+    name: git
+    evr: 2.56.0-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/glibc-2.43-9.2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 22502244
+    checksum: sha256:95d717f6bf9c0206c6044c680f2de6889b8078262fd6da34702a99cae845467e
+    name: glibc
+    evr: 2.43-9.2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gmp-6.3.0-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2179012
+    checksum: sha256:db7546ca6a6d183f2756aad2ab569eee8859521ce56a1e2644d95af17cc9178f
+    name: gmp
+    evr: 1:6.3.0-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gnulib-l10n-20241231-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 809010
+    checksum: sha256:50e9e3d4daa8ae3a2d58e9a71bea88f698c0300d63ce32f103ab438221d62cf9
+    name: gnulib-l10n
+    evr: 20241231-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/grep-3.12-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2166217
+    checksum: sha256:3280a4ddc14227c4b0c295d5ec9202159b714c5d75ef20ec330f0a52fea6257d
+    name: grep
+    evr: 3.12-4.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gzip-1.14-4.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 946401
     checksum: sha256:ca45f604ca718c0b8eecf2a8a0d70466c465ca7b2834fcc4b9afc34387b178f1
     name: gzip
     evr: 1.14-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/h/hummingbird-release-20251124-1.17.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 45329
+    checksum: sha256:805248010ce6cc6181565bbc56a856cb962dce21c2a178527db98d4c4d9b14bd
+    name: hummingbird-release
+    evr: 20251124-1.17.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/k/keyutils-1.6.3-8.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 169878
+    checksum: sha256:620e4a1d7da4552bcb6f31b628d3f5c5db2b0e43758ec9e108dd39a88181cd56
+    name: keyutils
+    evr: 1.6.3-8.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/k/krb5-1.22.2-10.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 8883330
+    checksum: sha256:7773b199a2d5b2ead59635d7c33cab193c576ff7faf3fae8e895085e472733ef
+    name: krb5
+    evr: 1.22.2-10.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/less-710-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1157704
+    checksum: sha256:7c5fe3415a51e3598da84ec4f09982b2d0ea4b838b701b507e34a9d6e9406ae7
+    name: less
+    evr: 710-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libcap-2.78-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 314619
+    checksum: sha256:b347844d597269186a46bf4c0114b8a0e0c94cceee40b259b940569e62ca35a9
+    name: libcap
+    evr: 2.78-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libcap-ng-0.9.6-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 710266
+    checksum: sha256:18f1b7635fc575a8cd588de21a3d210107132caba949e6a225e493b9418e0e94
+    name: libcap-ng
+    evr: 0.9.6-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libcbor-0.14.0-3.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 343810
+    checksum: sha256:e6401474b1f16b2269bada6ffed15de689785814075303b1d5d9661af985331d
+    name: libcbor
+    evr: 0.14.0-3.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libeconf-0.7.9-4.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 284599
+    checksum: sha256:34af6a12d0217e1620983d5e3ac950f9f01820c9d0f7dd8b551f4c09edc23664
+    name: libeconf
+    evr: 0.7.9-4.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libedit-3.1-60.20260512cvs.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 587804
+    checksum: sha256:818a67f0d4c9641ef6fbb9b6bf9a0036a0209a4726145f92fe843535e07194ed
+    name: libedit
+    evr: 3.1-60.20260512cvs.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libevent-2.1.13-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1171262
+    checksum: sha256:9d4ccb0ba7893d53d3df034376e819a09a9d486722fe60b923936b980d5ba339
+    name: libevent
+    evr: 2.1.13-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libffi-3.8.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1621673
+    checksum: sha256:1e087dfbda52de3a0c726d7cbf13be9e194190430fed7092c01df7ed79010c5e
+    name: libffi
+    evr: 3.8.0-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libfido2-1.17.0-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 914089
+    checksum: sha256:7337251cf7a16109c4febd10cf641db38864b33ded1b4d5deb467fc5754a5127
+    name: libfido2
+    evr: 1.17.0-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libidn2-2.3.8-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2256816
+    checksum: sha256:19fd8c8ffdbc451de3a180edbb11e995f3149861c89ec580c600a7fe2f1426e6
+    name: libidn2
+    evr: 2.3.8-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libpsl-0.23.3-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 7804719
+    checksum: sha256:7e6daf5e529e71e8d9dd2f5c3c49c26b43a1dae30ff8962b1502a13182f7ff2c
+    name: libpsl
+    evr: 0.23.3-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libselinux-3.11-5.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 280130
+    checksum: sha256:79cbd2eae4bfa79f7014a0b641a05034be349971cc98849becd66f958a3d5019
+    name: libselinux
+    evr: 3.11-5.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libsepol-3.11-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 579016
+    checksum: sha256:1edaae2cc2fef8bb665b05c60afeb6e372c517b4a47a5f57081186d2c6bff171
+    name: libsepol
+    evr: 3.11-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libssh-0.12.2-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 788132
+    checksum: sha256:0f453ada0e5375ea0f156e232af0520a28fe5a1385f8641474c5ab0ebf9560fc
+    name: libssh
+    evr: 0.12.2-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libtasn1-4.21.0-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1836580
+    checksum: sha256:6a6c99b065cfd313484b26735871aa8fc58078963a2a2ebda59a9a47a480a234
+    name: libtasn1
+    evr: 4.21.0-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libtool-2.6.2-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1124121
+    checksum: sha256:964afdbc7c605cad5155053857e3590c8ada6479f763cb16e549030640f8a193
+    name: libtool
+    evr: 2.6.2-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libunistring-1.1-12.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2419599
+    checksum: sha256:d7ef9d83c98568ece190a3cc2d6634902b4014d58c43ee85e87ad035eaf3ec42
+    name: libunistring
+    evr: 1.1-12.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libverto-0.3.2-13.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 417202
+    checksum: sha256:14d40bd4a6e5643dc57f11e1917d5600a5f3c1c3219ee794316b2ef92c98650a
+    name: libverto
+    evr: 0.3.2-13.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libxcrypt-4.5.2-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 756764
+    checksum: sha256:f9f734c06ed1e3615fbceb2d64c37d302ac33cd4c0e7546c22887a5e90646bf1
+    name: libxcrypt
+    evr: 4.5.2-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/m/mpdecimal-4.0.1-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1087735
+    checksum: sha256:c0878a1cda270d7d405b2bf691dd52e32b6fc803e43a21ab9d8e9029ef01c86a
+    name: mpdecimal
+    evr: 4.0.1-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/ncurses-6.6-3.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 3866136
+    checksum: sha256:6b3bf917f3f23107b1b305c3dcd73e6c6ca34f0c6cf36d7f15091bed9ada23c1
+    name: ncurses
+    evr: 6.6-3.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp2-1.69.0-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1768994
+    checksum: sha256:3103fe26e1121a44e0da6e6469806d86e5cf3c1c10951eb911a0b8587da1371e
+    name: nghttp2
+    evr: 1.69.0-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp3-1.18.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 436840
+    checksum: sha256:435fb5400ca7fdad88b10ee3f4407f96d9066d111465fc5346ab2ed089c2742f
+    name: nghttp3
+    evr: 1.18.0-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/ngtcp2-1.22.1-3.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 734529
+    checksum: sha256:24671698b22d3c2e8f59be1d71eebf97a074d3a54e0e54a49c48b571d1e728f6
+    name: ngtcp2
+    evr: 1.22.1-3.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openldap-2.6.15-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 6666354
+    checksum: sha256:c181bba58d4c8e457e598dd9618438660b00d6525869481a1ead82fa228ac60d
+    name: openldap
+    evr: 2.6.15-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssh-10.5p1-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2739280
+    checksum: sha256:c628f52692eb999b73e916c1d6abdab62c4b60c4b20300bcc5b3571a94acb47b
+    name: openssh
+    evr: 10.5p1-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssl-3.5.9-0.2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 54117204
+    checksum: sha256:a6b00b381dd3c7a2e6fd7b473c6c8b32339fe0ec0f2bcca4538e01cefa56ea40
+    name: openssl
+    evr: 1:3.5.9-0.2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/p11-kit-0.26.5-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1133281
+    checksum: sha256:c591fba09505a3f95d48315c411a7ca92a88a47b5765f788aaad563b69f50183
+    name: p11-kit
+    evr: 0.26.5-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/pam-1.7.2-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 679372
+    checksum: sha256:84dba8e8b8cc276b5ce4d14dcc407a2c623a475fd1aa4b415662af924d7810de
+    name: pam
+    evr: 1.7.2-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/pcre2-10.49-0.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2252350
+    checksum: sha256:38db22f885516efbff09244f00c14fb18decb7cef8f653f5c54ec0406cee0480
+    name: pcre2
+    evr: 10.49-0.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/publicsuffix-list-20260624-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 113627
+    checksum: sha256:1f3788b4b639d621aecfc11eeaf95e62f63c65d69f3ba326d207f30e14918bc1
+    name: publicsuffix-list
+    evr: 20260624-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/python-pip-26.2-0.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 10570517
+    checksum: sha256:78165f1918aaa1d15dc8c57ee61aec91d50a18f061dd56e0285f4ae6ad192900
+    name: python-pip
+    evr: 26.2-0.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/python3.14-3.14.8-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 24284106
+    checksum: sha256:7790bdc3652008017afe53e811cd21bddff02ea2396bea43b313655f0b800a01
+    name: python3.14
+    evr: 3.14.8-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/r/readline-8.3-7.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 3468276
+    checksum: sha256:6a36ef333e558eb95c910b6a479056611fe26ff14a17dff0bc5c30d12caf8194
+    name: readline
+    evr: 8.3-7.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/s/sed-4.10-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1843164
+    checksum: sha256:192973134c474a8ff182eab2f9fa4af3c1870e8de39352fbe0b087636a6110bc
+    name: sed
+    evr: 4.10-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/s/setup-2.15.1-2.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 188712
+    checksum: sha256:d4d6069664159eb34ba112c0e620925f63d17f2329a8bbb4c439b07bf0608ca3
+    name: setup
+    evr: 2.15.1-2.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/s/sqlite-3.53.4-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 25843994
+    checksum: sha256:4686b835ab1cc9d6b45ef9763849c214d28ac319b03c1c68df211978cf6bc2af
+    name: sqlite
+    evr: 3.53.4-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/s/systemd-261.2-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 18515418
+    checksum: sha256:791e095c04663166314436815d344ccaeb567053d0aaa746850f19b1a8b566bb
+    name: systemd
+    evr: 261.2-1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/t/tar-1.35-10.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 2449010
     checksum: sha256:d8c3c2687ec7d84c883b09ccdba18480bf89ad08184b9de798d5ac6d4bed080f
     name: tar
     evr: 2:1.35-10.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/t/tzdata-2026c-2.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 933689
+    checksum: sha256:0338b57a2c6bba045f7b4fa60e897d2b2c84b6fcf2e39ec4223b4f030f587194
+    name: tzdata
+    evr: 2026c-2.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/u/unzip-6.0-71.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1477295
+    checksum: sha256:66d42d679e91fb994c809e90a51c57aa3da59a01f3212ec486274723d580bfeb
+    name: unzip
+    evr: 6.0-71.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/u/util-linux-2.42.4-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 10795564
+    checksum: sha256:a2d6f83b45829987f79a2a79ef7db08b89e253b763d88849886569cf9fa4dcd2
+    name: util-linux
+    evr: 2.42.4-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/x/xz-5.8.4-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2851296
+    checksum: sha256:34dd9f0795794f9077473e9d490fdb2435f0079da236966c2de4975a595f03de
+    name: xz
+    evr: 1:5.8.4-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/z/zlib-ng-2.3.3-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2464635
+    checksum: sha256:7058e55c70581aad8d65c88a024f2f916ad815daf33beef0ba7a7ab13298502d
+    name: zlib-ng
+    evr: 2.3.3-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/z/zstd-1.5.7-6.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2501053
+    checksum: sha256:fe80d3950c6cd3fead7a0bd6302a88a79de853922f83d888269b48f7fabda31e
+    name: zstd
+    evr: 1.5.7-6.1.hum1
   module_metadata: []
 - arch: x86_64
   packages:
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/a/alternatives-1.33-5.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 48334
+    checksum: sha256:a116eb2ceffb11f4518e055ccf07e49dbec4177245c98e82514fc5d081d50420
+    name: alternatives
+    evr: 1.33-5.1.hum1
+    sourcerpm: chkconfig-1.33-5.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/a/audit-libs-4.2.1-2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 154582
+    checksum: sha256:c8e735822ebe1a7472d84866f142a1e3d26c8c5db28857be64d8599b9a66d1e6
+    name: audit-libs
+    evr: 4.2.1-2.hum1
+    sourcerpm: audit-4.2.1-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/b/bash-5.3.15-2.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 1996696
+    checksum: sha256:dc5fdf0ed2b6d259563bbfe6fa4a07f63adbb620dfe343b155ee7f12e1de12fe
+    name: bash
+    evr: 5.3.15-2.1.hum1
+    sourcerpm: bash-5.3.15-2.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/b/bzip2-libs-1.0.8-24.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 50907
+    checksum: sha256:e9b25168f3d6df3283b3a16df281c32991cbb2059d9e1a2cf45819c770c5c723
+    name: bzip2-libs
+    evr: 1.0.8-24.hum1
+    sourcerpm: bzip2-1.0.8-24.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/c/ca-certificates-2026.2.90_v9.0.317-1.1.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 1166700
+    checksum: sha256:dff3a5a565e46d01be5067cb5b2a965531191c021719fb82eac194e42cebe72d
+    name: ca-certificates
+    evr: 2026.2.90_v9.0.317-1.1.hum1
+    sourcerpm: ca-certificates-2026.2.90_v9.0.317-1.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/c/coreutils-9.12-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 1421163
+    checksum: sha256:b25e8a24e4134283b63039940aaded3d2fdd84d1f2c58d5bfcf07561a41b4f60
+    name: coreutils
+    evr: 9.12-1.hum1
+    sourcerpm: coreutils-9.12-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/c/coreutils-common-9.12-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 2372842
+    checksum: sha256:778faa493650ddcb0e42fa307a499f0cf511fe1df58175113ed83dd676c03c4e
+    name: coreutils-common
+    evr: 9.12-1.hum1
+    sourcerpm: coreutils-9.12-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/c/crypto-policies-20260812-1.git359ab16.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 118087
+    checksum: sha256:261415c77d35c617009fc4f3684c48f1e1c6b098d0dec0f1d0c3a12d33d4f757
+    name: crypto-policies
+    evr: 20260812-1.git359ab16.hum1
+    sourcerpm: crypto-policies-20260812-1.git359ab16.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/c/crypto-policies-config-default-20260812-1.git359ab16.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 18217
+    checksum: sha256:20d22dd1eaeeb64a1c7e20e78bbfaba7dae7b889ad8649bedd800e795db8da55
+    name: crypto-policies-config-default
+    evr: 20260812-1.git359ab16.hum1
+    sourcerpm: crypto-policies-20260812-1.git359ab16.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/c/crypto-policies-scripts-20260812-1.git359ab16.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 143248
+    checksum: sha256:5cb9ff3142e86532624b6767ebd6565d0385c7d241a7793e118a3a9083ae6e0d
+    name: crypto-policies-scripts
+    evr: 20260812-1.git359ab16.hum1
+    sourcerpm: crypto-policies-20260812-1.git359ab16.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/c/cyrus-sasl-lib-2.1.28-37.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 848531
+    checksum: sha256:7a4208f6fe50ff91c5d3d6ec0a09e458b247d7b4180fd36b76a003f560477b54
+    name: cyrus-sasl-lib
+    evr: 2.1.28-37.1.hum1
+    sourcerpm: cyrus-sasl-2.1.28-37.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/e/expat-2.8.5-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 142837
+    checksum: sha256:3a49ac24e16e1d3dd4f50818d5bb2e82d7c76c5b6af043b96a49b76fc8206961
+    name: expat
+    evr: 2.8.5-1.hum1
+    sourcerpm: expat-2.8.5-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/f/filesystem-3.18-59.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 7558406
+    checksum: sha256:ff5277280142ac0c4523a9b1a0ba7fdab9aa4e7a112efdf5d92890b9900235d8
+    name: filesystem
+    evr: 3.18-59.1.hum1
+    sourcerpm: filesystem-3.18-59.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/f/findutils-4.11.0-1.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 628899
+    checksum: sha256:6932068e114a2194e94d8a3377d0e20258c9c29163721f271ceeff5892bac2cd
+    name: findutils
+    evr: 1:4.11.0-1.1.hum1
+    sourcerpm: findutils-4.11.0-1.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/gdbm-libs-1.23-12.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 66359
+    checksum: sha256:adb051f6b098317485b5351d886e76bbf1df571b32c47e6819578d295f096fec
+    name: gdbm-libs
+    evr: 1:1.23-12.hum1
+    sourcerpm: gdbm-1.23-12.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/git-core-2.56.0-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 6072007
+    checksum: sha256:94947858432d5cf0c896a372dbc0020f2867fc4c7f620fcfda6972163bca602d
+    name: git-core
+    evr: 2.56.0-1.hum1
+    sourcerpm: git-2.56.0-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/glibc-2.43-9.2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 2507490
+    checksum: sha256:b3a98ee4ffefb120143a6b20dedfde9e4672a73d18c3576158fc9c2f183564f3
+    name: glibc
+    evr: 2.43-9.2.hum1
+    sourcerpm: glibc-2.43-9.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/glibc-common-2.43-9.2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 395072
+    checksum: sha256:786cf75d10e631f2a78724d18257402999b45aae3a0cb3f791c9142d169d220b
+    name: glibc-common
+    evr: 2.43-9.2.hum1
+    sourcerpm: glibc-2.43-9.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/glibc-gconv-extra-2.43-9.2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 1814474
+    checksum: sha256:e68dbbc97b8ee981cbc68d7662fd0ff901aca64be3d811f22e69c9e6ba84e5e8
+    name: glibc-gconv-extra
+    evr: 2.43-9.2.hum1
+    sourcerpm: glibc-2.43-9.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/glibc-minimal-langpack-2.43-9.2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 90889
+    checksum: sha256:79b661954d86ef79e917d9380aab8ff55c7715de61a8e8e176fab4ad84a8da23
+    name: glibc-minimal-langpack
+    evr: 2.43-9.2.hum1
+    sourcerpm: glibc-2.43-9.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/gmp-6.3.0-6.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 336312
+    checksum: sha256:6566943f8813eb0ced4fa107044729289d3bb8064dbc8252d6cd3853f9cc0d09
+    name: gmp
+    evr: 1:6.3.0-6.hum1
+    sourcerpm: gmp-6.3.0-6.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/gnulib-l10n-20241231-4.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 160098
+    checksum: sha256:0a4dc4d912685d472f9be93db27edc02448e91817f5cc55ed54e15730fa0f9e7
+    name: gnulib-l10n
+    evr: 20241231-4.hum1
+    sourcerpm: gnulib-l10n-20241231-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/grep-3.12-4.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 316127
+    checksum: sha256:40d4b69bcb3a8209540a7d515d02c9cc55007889b60535b5d57082aa7b0329be
+    name: grep
+    evr: 3.12-4.hum1
+    sourcerpm: grep-3.12-4.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/gzip-1.14-4.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
     size: 190196
@@ -41,6 +1231,426 @@ arches:
     name: gzip
     evr: 1.14-4.hum1
     sourcerpm: gzip-1.14-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/h/hummingbird-gpg-keys-20251124-1.17.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 29130
+    checksum: sha256:2f46084a76b6c6db78e302e0ca11662b8703a1e39314beeea31fa99f45e7561c
+    name: hummingbird-gpg-keys
+    evr: 20251124-1.17.hum1
+    sourcerpm: hummingbird-release-20251124-1.17.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/h/hummingbird-release-20251124-1.17.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 23432
+    checksum: sha256:471de1a5502bd6a6da13edd32c5062c19d52c5ee934c8727693f7a1814c8c751
+    name: hummingbird-release
+    evr: 20251124-1.17.hum1
+    sourcerpm: hummingbird-release-20251124-1.17.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/h/hummingbird-repos-20251124-1.17.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 13763
+    checksum: sha256:5aada4252590224e575e97e3c99f4b2b00b3f9f974296a133f8dfdcf3a928f5b
+    name: hummingbird-repos
+    evr: 20251124-1.17.hum1
+    sourcerpm: hummingbird-release-20251124-1.17.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/k/keyutils-libs-1.6.3-8.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 38564
+    checksum: sha256:3188c0693d2e584454290bb1d49e9f5663c5b175ded852edcedd2ad433532c1c
+    name: keyutils-libs
+    evr: 1.6.3-8.hum1
+    sourcerpm: keyutils-1.6.3-8.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/k/krb5-libs-1.22.2-10.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 832032
+    checksum: sha256:ab46290f5ea647ca5a70a2d154b9877d87dc638717ea175168d27aef05879ddd
+    name: krb5-libs
+    evr: 1.22.2-10.hum1
+    sourcerpm: krb5-1.22.2-10.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/less-710-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 246163
+    checksum: sha256:f994cd38ae0258df0b3f42955b4819dc99f943ef7252fb5e81ace1f36425dab7
+    name: less
+    evr: 710-1.hum1
+    sourcerpm: less-710-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libacl-2.4.0-2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 34422
+    checksum: sha256:29090b3829d740e87f80d0dd8e9e4e3179908e6ebf7a7c802d5a8dff42b02b3b
+    name: libacl
+    evr: 2.4.0-2.hum1
+    sourcerpm: acl-2.4.0-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libattr-2.6.0-9.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 24660
+    checksum: sha256:6e3c2be2eaca96854af4c96ea846d0af9bd7e45fc0d736ddfa79943783d22238
+    name: libattr
+    evr: 2.6.0-9.1.hum1
+    sourcerpm: attr-2.6.0-9.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libbrotli-1.2.0-6.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 363604
+    checksum: sha256:b5b0d2864c58930f4e016b3e2ecc61134ee2a8c1bf32a3334e219a2ac7f53bf9
+    name: libbrotli
+    evr: 1.2.0-6.hum1
+    sourcerpm: brotli-1.2.0-6.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libcap-2.78-2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 102243
+    checksum: sha256:8fdc6ee28b5bda4786d3c0b73bf5aa021a1ffc24a9ab27e9913b9a173b0742fc
+    name: libcap
+    evr: 2.78-2.hum1
+    sourcerpm: libcap-2.78-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libcap-ng-0.9.6-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 41887
+    checksum: sha256:1806d850696ac54aac742e78315a5baeeb31f6b031715e6bb2413c7f2a7fd722
+    name: libcap-ng
+    evr: 0.9.6-1.hum1
+    sourcerpm: libcap-ng-0.9.6-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libcbor-0.14.0-3.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 43833
+    checksum: sha256:15b3d383c1131dba540008e7536e950de52fdcb89febf7a31de46443a08b8b7c
+    name: libcbor
+    evr: 0.14.0-3.hum1
+    sourcerpm: libcbor-0.14.0-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libcom_err-1.47.4-2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 33499
+    checksum: sha256:e153010c101b791899975923ff77ba4b66d5115388089408b6393073ab6224aa
+    name: libcom_err
+    evr: 1.47.4-2.hum1
+    sourcerpm: e2fsprogs-1.47.4-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libcurl-8.22.0-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 515584
+    checksum: sha256:66feb684ca58f03e07a37f019cd2e6e5a5928a9ef4586f959f50d06b95c1de62
+    name: libcurl
+    evr: 8.22.0-1.hum1
+    sourcerpm: curl-8.22.0-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libeconf-0.7.9-4.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 43022
+    checksum: sha256:ec1ba3d6d399dee347fb27ce90ddd63dd3dc8acbbda29cfbba39aea4f4e92f4a
+    name: libeconf
+    evr: 0.7.9-4.1.hum1
+    sourcerpm: libeconf-0.7.9-4.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libedit-3.1-60.20260512cvs.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 119199
+    checksum: sha256:90c026ce92eb6cb19808ef8e8f3a4a98f4b91778d905cfa28eb17a115ad2bd2f
+    name: libedit
+    evr: 3.1-60.20260512cvs.hum1
+    sourcerpm: libedit-3.1-60.20260512cvs.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libevent-2.1.13-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 305512
+    checksum: sha256:f8b1fcd1d8309524de647b361f02090f04e01038289b615acbfa475224067c0a
+    name: libevent
+    evr: 2.1.13-1.hum1
+    sourcerpm: libevent-2.1.13-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libffi-3.8.0-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 53775
+    checksum: sha256:817b946af4ab911ab9c0d3700a6788e6d08bc53e792d4778378f678020c824ff
+    name: libffi
+    evr: 3.8.0-1.hum1
+    sourcerpm: libffi-3.8.0-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libfido2-1.17.0-6.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 115964
+    checksum: sha256:61024d2d336fe22ace35587c9b475613943275399e664ffa82000ab0d21ed581
+    name: libfido2
+    evr: 1.17.0-6.hum1
+    sourcerpm: libfido2-1.17.0-6.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libgcc-16.2.1-3.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 145906
+    checksum: sha256:298c6c2815a7ecc4292efab3a95a440341059c5a18b735f5e36b4034310e9a12
+    name: libgcc
+    evr: 16.2.1-3.hum1
+    sourcerpm: gcc-16.2.1-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libidn2-2.3.8-4.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 185630
+    checksum: sha256:0192245b12bacbcf23b18afb0ebbcbef71fe8f04e18ad73e12f603c10e4abd27
+    name: libidn2
+    evr: 2.3.8-4.hum1
+    sourcerpm: libidn2-2.3.8-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libnghttp2-1.69.0-6.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 85621
+    checksum: sha256:f31904eabbb1c188974b79e3209f2d5f2272b52437a1070a77d2e0d343a91d47
+    name: libnghttp2
+    evr: 1.69.0-6.hum1
+    sourcerpm: nghttp2-1.69.0-6.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libnghttp3-1.18.0-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 82425
+    checksum: sha256:46f9a053efa93239d22d3de5aee2b379e354e4a6f55a40dbdb3c0bdbc6690ac5
+    name: libnghttp3
+    evr: 1.18.0-1.hum1
+    sourcerpm: nghttp3-1.18.0-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libpsl-0.23.3-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 74587
+    checksum: sha256:ad0727070535a6b51ce24c4a01e7fa9003f6a3ac70dba3d0eea9c6deeb91ffbd
+    name: libpsl
+    evr: 0.23.3-1.hum1
+    sourcerpm: libpsl-0.23.3-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libselinux-3.11-5.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 110560
+    checksum: sha256:5edf09e9da5ff936496ae9583e2deacf28b1eda28a5c26e7cc3eb316c38f140e
+    name: libselinux
+    evr: 3.11-5.hum1
+    sourcerpm: libselinux-3.11-5.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libsepol-3.11-2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 378932
+    checksum: sha256:a0680301825ced18c062dbcf01c946f87721441d5f0ac83d25290087c7dabfe8
+    name: libsepol
+    evr: 3.11-2.hum1
+    sourcerpm: libsepol-3.11-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libssh-0.12.2-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 307974
+    checksum: sha256:36ae8bb084e1fbf195bc7f3d365357d373c860b59cfeef878a79a107802472bd
+    name: libssh
+    evr: 0.12.2-1.hum1
+    sourcerpm: libssh-0.12.2-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libssh-config-0.12.2-1.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 13772
+    checksum: sha256:cf8d3293a79faabada59d6d085d10aa98ca6f63c6a5df85b10938c988b52c648
+    name: libssh-config
+    evr: 0.12.2-1.hum1
+    sourcerpm: libssh-0.12.2-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libtasn1-4.21.0-2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 83204
+    checksum: sha256:01c1c709adc784c67102c9de666027e9783e18af866463e781ca2d84f4c74e0a
+    name: libtasn1
+    evr: 4.21.0-2.hum1
+    sourcerpm: libtasn1-4.21.0-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libtool-ltdl-2.6.2-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 42613
+    checksum: sha256:38cca2e3237f7de959ecc1b0b50967a04958df2ccd030d2471a03f13b524d948
+    name: libtool-ltdl
+    evr: 2.6.2-1.hum1
+    sourcerpm: libtool-2.6.2-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libunistring-1.1-12.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 564392
+    checksum: sha256:9e1b0f4077de94de5c1cb78127e51b4742d367d0234fd405e1279f1121f615af
+    name: libunistring
+    evr: 1.1-12.hum1
+    sourcerpm: libunistring-1.1-12.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libuuid-2.42.4-2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 33073
+    checksum: sha256:ca9a74de201c40ab66bfd43ae0786e96d6e8e5a44fd1515e984eebf86ba9e8b3
+    name: libuuid
+    evr: 2.42.4-2.hum1
+    sourcerpm: util-linux-2.42.4-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libverto-0.3.2-13.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 27766
+    checksum: sha256:07af161ae71b17c3ddd3bdd423d249de93992d3d60edcdb90a889d5ad1de1df2
+    name: libverto
+    evr: 0.3.2-13.hum1
+    sourcerpm: libverto-0.3.2-13.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libxcrypt-4.5.2-4.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 141715
+    checksum: sha256:2a434fac4798d11fcd933b075d1ee3dc71ba09a3f61abfd7bf12f4bfb501c184
+    name: libxcrypt
+    evr: 4.5.2-4.hum1
+    sourcerpm: libxcrypt-4.5.2-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libzstd-1.5.7-6.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 378929
+    checksum: sha256:d5a2cf19140ccc0292a57a6e0e3baea9189f8366b3dbe9b9854600c95f018306
+    name: libzstd
+    evr: 1.5.7-6.1.hum1
+    sourcerpm: zstd-1.5.7-6.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/m/mpdecimal-4.0.1-4.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 106246
+    checksum: sha256:39f20a9da91ab24e3ee25848764dd2a8c682a2f8e9b4d133a1054eda0e65fc2a
+    name: mpdecimal
+    evr: 4.0.1-4.hum1
+    sourcerpm: mpdecimal-4.0.1-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/n/ncurses-base-6.6-3.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 108884
+    checksum: sha256:8f68df591aeff1ab17cbf873fcd5ecea8af00eea28451a25974cd751a0d119d0
+    name: ncurses-base
+    evr: 6.6-3.hum1
+    sourcerpm: ncurses-6.6-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/n/ncurses-libs-6.6-3.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 364371
+    checksum: sha256:6b6542c4d2bc8b49db64bcda3cb2320f9a074ef31d2b102f8e4e43e492f09543
+    name: ncurses-libs
+    evr: 6.6-3.hum1
+    sourcerpm: ncurses-6.6-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/n/ngtcp2-1.22.1-3.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 165924
+    checksum: sha256:ba92450c81a9653170fa1844cd6c2ce5e2c253366504ed27a904c0b190419c0c
+    name: ngtcp2
+    evr: 1.22.1-3.hum1
+    sourcerpm: ngtcp2-1.22.1-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/n/ngtcp2-crypto-ossl-1.22.1-3.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 33184
+    checksum: sha256:92ae381bc395947cebadfe94a2a20adc4bf3b39b79d1ac70b3327c4230d6ef87
+    name: ngtcp2-crypto-ossl
+    evr: 1.22.1-3.hum1
+    sourcerpm: ngtcp2-1.22.1-3.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openldap-2.6.15-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 288070
+    checksum: sha256:3a9829397aef53743688b89a4b26422b36140103995c6762db0fe084deb788b8
+    name: openldap
+    evr: 2.6.15-1.hum1
+    sourcerpm: openldap-2.6.15-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssh-10.5p1-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 397811
+    checksum: sha256:f006e6a72a2af121ff2ee0c04b5d82b7efd1f33419a0c5aee251ee7708d5bcf1
+    name: openssh
+    evr: 10.5p1-1.hum1
+    sourcerpm: openssh-10.5p1-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssh-clients-10.5p1-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 851427
+    checksum: sha256:f0563de647206bcee89108c5869fa52e2ca4cd7a02073508ce5298b691eb3930
+    name: openssh-clients
+    evr: 10.5p1-1.hum1
+    sourcerpm: openssh-10.5p1-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssl-fips-provider-upstream-3.5.9-0.2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 876481
+    checksum: sha256:ba823891adfd527e4365b9c89fb7a443fba12619c77952042cc070b752105d4f
+    name: openssl-fips-provider-upstream
+    evr: 1:3.5.9-0.2.hum1
+    sourcerpm: openssl-3.5.9-0.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssl-libs-3.5.9-0.2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 2485480
+    checksum: sha256:5eba28b39fd5c76eb51cca351fe4f2e0731c32591ac4674c4f78d0bf75e9db70
+    name: openssl-libs
+    evr: 1:3.5.9-0.2.hum1
+    sourcerpm: openssl-3.5.9-0.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/p11-kit-0.26.5-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 584871
+    checksum: sha256:f84e2aea6cd31dba9089ad6bc094b581c410b7a9901a2b435d8d13290e13969e
+    name: p11-kit
+    evr: 0.26.5-1.hum1
+    sourcerpm: p11-kit-0.26.5-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/p11-kit-trust-0.26.5-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 154863
+    checksum: sha256:5a925888afe907ca0a10a11ec9f8676390c297d3af9bae6cb117aa17cd0b340e
+    name: p11-kit-trust
+    evr: 0.26.5-1.hum1
+    sourcerpm: p11-kit-0.26.5-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/pam-libs-1.7.2-4.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 67371
+    checksum: sha256:d1779765ace5e2d146e2e84a4be7501caa634093d5cca34a7d1f1f5c1784bb15
+    name: pam-libs
+    evr: 1.7.2-4.hum1
+    sourcerpm: pam-1.7.2-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/pcre2-10.49-0.1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 293751
+    checksum: sha256:8a40782ab3e261575c9421cfcce784b1dc66393ecefb55e876c3ff8f6e3f1719
+    name: pcre2
+    evr: 10.49-0.1.hum1
+    sourcerpm: pcre2-10.49-0.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/pcre2-syntax-10.49-0.1.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 179727
+    checksum: sha256:78b8bcf094f1897ec7a4cc4b7d8271c8c98da20da254415b4b20cd203d7ee70b
+    name: pcre2-syntax
+    evr: 10.49-0.1.hum1
+    sourcerpm: pcre2-10.49-0.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/publicsuffix-list-dafsa-20260624-2.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 67792
+    checksum: sha256:23aace97837d048187b67e7017ffff861dc3f58782512eb42d23b6a36036ec9c
+    name: publicsuffix-list-dafsa
+    evr: 20260624-2.hum1
+    sourcerpm: publicsuffix-list-20260624-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/python-pip-wheel-26.2-0.1.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 1252988
+    checksum: sha256:f6fe5f889491c767c3289f7c42d7fb7a99a6aeb71e5f07f0fe361db26dd8552c
+    name: python-pip-wheel
+    evr: 26.2-0.1.hum1
+    sourcerpm: python-pip-26.2-0.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/python-unversioned-command-3.14.8-1.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 18112
+    checksum: sha256:3f18f91d61b07aa937b5979c5351fed01acaaebc2d6d857854b2f9f0dbef6c8e
+    name: python-unversioned-command
+    evr: 3.14.8-1.hum1
+    sourcerpm: python3.14-3.14.8-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/python3-3.14.8-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 36420
+    checksum: sha256:7887304d5688b501a2f15e175d68c1d4259f9969301b6cc85734c45500417ae2
+    name: python3
+    evr: 3.14.8-1.hum1
+    sourcerpm: python3.14-3.14.8-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/p/python3-libs-3.14.8-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 10747984
+    checksum: sha256:3d463a26c24466cce96e0479d14ef05cf2f1dd36626d4fd29e79cf1f16d14a42
+    name: python3-libs
+    evr: 3.14.8-1.hum1
+    sourcerpm: python3.14-3.14.8-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/r/readline-8.3-7.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 241242
+    checksum: sha256:06b444f9bcc129f40b5b6378dc564ff5d5b74373af15b10e8ebe17977ce51273
+    name: readline
+    evr: 8.3-7.hum1
+    sourcerpm: readline-8.3-7.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/s/sed-4.10-2.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 375039
+    checksum: sha256:96618e0e2bcbf623c3c540be5baa7956aca5e265b24bcd2bcd2bd1f183e9ba9d
+    name: sed
+    evr: 4.10-2.hum1
+    sourcerpm: sed-4.10-2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/s/setup-2.15.1-2.1.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 165561
+    checksum: sha256:c522b073bcca7ca587570c8b843a0aea3623290bb6fbbfbac87c3c35ae35739a
+    name: setup
+    evr: 2.15.1-2.1.hum1
+    sourcerpm: setup-2.15.1-2.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/s/sqlite-libs-3.53.4-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 838235
+    checksum: sha256:83690d88a11b2df8b701341740f75f4ef507c95ff6a5ecf6a7815c46455ef41f
+    name: sqlite-libs
+    evr: 3.53.4-1.hum1
+    sourcerpm: sqlite-3.53.4-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/s/systemd-libs-261.2-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 968796
+    checksum: sha256:fda23a5e4dba961ebe05c3a6ded7d539e786c6c437005dc07692cef246415176
+    name: systemd-libs
+    evr: 261.2-1.hum1
+    sourcerpm: systemd-261.2-1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/t/tar-1.35-10.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
     size: 898722
@@ -48,17 +1658,465 @@ arches:
     name: tar
     evr: 2:1.35-10.hum1
     sourcerpm: tar-1.35-10.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/t/tzdata-2026c-2.1.hum1.noarch.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 861980
+    checksum: sha256:537cc2029893dcd71720e129c25ea19ce1fe5e72f1a6e70808f7f8b8a6824740
+    name: tzdata
+    evr: 2026c-2.1.hum1
+    sourcerpm: tzdata-2026c-2.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/u/unzip-6.0-71.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 212951
+    checksum: sha256:be2e66ffd7bff83fea6e3793bfda0a926deb6cd1e04ecf58d094ec9f74c57f74
+    name: unzip
+    evr: 6.0-71.hum1
+    sourcerpm: unzip-6.0-71.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/x/xz-libs-5.8.4-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 125560
+    checksum: sha256:936c13dfed3b4310ccb4ee36af7ebdbe4a620c5c389f2316422ec2925f031831
+    name: xz-libs
+    evr: 1:5.8.4-1.hum1
+    sourcerpm: xz-5.8.4-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/z/zlib-ng-compat-2.3.3-6.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 97439
+    checksum: sha256:d828b79c17901a3c9ea470ed6312a3c39c9f4ae207a6e0134351ad8059b7af32
+    name: zlib-ng-compat
+    evr: 2.3.3-6.hum1
+    sourcerpm: zlib-ng-2.3.3-6.hum1.src.rpm
   source:
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/acl-2.4.0-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 621447
+    checksum: sha256:fac5aa1a03ece77dc7a29a11b1a17b2d461b019cfa19f0e3fed6e2ea6924e679
+    name: acl
+    evr: 2.4.0-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/attr-2.6.0-9.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 574821
+    checksum: sha256:6d1f57e0f10c44eaa4ea13a0ff008623b2c5e3555c4c3e69571b42b67b8dea2c
+    name: attr
+    evr: 2.6.0-9.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/audit-4.2.1-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 816462
+    checksum: sha256:b846ff1c13af0b0161fc8a1e05bb65836f754d2ffca59ba89391f9e4476c5eb8
+    name: audit
+    evr: 4.2.1-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/bash-5.3.15-2.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 11625500
+    checksum: sha256:9427e0c1261d42f00d19b9dd64be3bacbb01dda9ac403d5da23481f17402b4eb
+    name: bash
+    evr: 5.3.15-2.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/brotli-1.2.0-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 691928
+    checksum: sha256:2e16ca923556fbffac39e580a0b81d5f818fd8ae2d18209a9bb06414affd7d07
+    name: brotli
+    evr: 1.2.0-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/bzip2-1.0.8-24.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 855578
+    checksum: sha256:d23bc4cd4149268ee34a4f337671a5e3405bc9b2564df0b27041bfc34242d945
+    name: bzip2
+    evr: 1.0.8-24.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/ca-certificates-2026.2.90_v9.0.317-1.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 803107
+    checksum: sha256:aa71257237249e7e34b9aa9fdb635ea709a49b16af75a61a1222b350cd77333d
+    name: ca-certificates
+    evr: 2026.2.90_v9.0.317-1.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/chkconfig-1.33-5.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 257353
+    checksum: sha256:33ab48b2405aca4f6863b5a2a073683659f04eda0040d0e3d85fd089f899369e
+    name: chkconfig
+    evr: 1.33-5.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/coreutils-9.12-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 6895489
+    checksum: sha256:a1d0dfab949902bb0f58802ba01a45b5f63480d7ea431826a2d1c1f1199c73b4
+    name: coreutils
+    evr: 9.12-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/crypto-policies-20260812-1.git359ab16.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 191082
+    checksum: sha256:e7cce1f69053e1e2b2292ff7c45767672de0359ec12105154f273f3fbc25c6a3
+    name: crypto-policies
+    evr: 20260812-1.git359ab16.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/curl-8.22.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 3067876
+    checksum: sha256:fc3be77332e4f0549d89cf2ee8a75c72df2ec1813292eded0e446eeb530a9adc
+    name: curl
+    evr: 8.22.0-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/c/cyrus-sasl-2.1.28-37.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 3973599
+    checksum: sha256:1b8217a9b393dde0652c7c90c07a9d0effd161d3a18c882fee0c34a95a33ecee
+    name: cyrus-sasl
+    evr: 2.1.28-37.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/e/e2fsprogs-1.47.4-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 7760776
+    checksum: sha256:cff49f9d0190df469557bd7e8d2095be414c6037f4d88bac65ddc2376b2c4b47
+    name: e2fsprogs
+    evr: 1.47.4-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/e/expat-2.8.5-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 873267
+    checksum: sha256:37d66b552ff5e022065145fbc1a8fa5a847ea8d5af00c04c990eef3e88ae60e4
+    name: expat
+    evr: 2.8.5-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/f/filesystem-3.18-59.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 307069
+    checksum: sha256:716eceb88a66a435893d53acffc5236d0da0f69240cb855be5d77cd216d76c34
+    name: filesystem
+    evr: 3.18-59.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/f/findutils-4.11.0-1.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2543829
+    checksum: sha256:ef8e19e8be911b593e5b2fd25df32cff0be087106b80f902d855e072c1bc3f60
+    name: findutils
+    evr: 1:4.11.0-1.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gcc-16.2.1-3.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 112250862
+    checksum: sha256:a29215c2e19be6ced1552505a51678d54cf3f8faf1d470e4a11d6e11e2574be9
+    name: gcc
+    evr: 16.2.1-3.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gdbm-1.23-12.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1158396
+    checksum: sha256:c892cbd27f964c8b903a55fbff3c605e61df207d51d13d664592f2017dfe3c82
+    name: gdbm
+    evr: 1:1.23-12.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/git-2.56.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 8584067
+    checksum: sha256:99d5c75ea7210b6ff5e74fc856a248fc8dea995db9ba748e019b7875b200b6f4
+    name: git
+    evr: 2.56.0-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/glibc-2.43-9.2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 22502244
+    checksum: sha256:95d717f6bf9c0206c6044c680f2de6889b8078262fd6da34702a99cae845467e
+    name: glibc
+    evr: 2.43-9.2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gmp-6.3.0-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2179012
+    checksum: sha256:db7546ca6a6d183f2756aad2ab569eee8859521ce56a1e2644d95af17cc9178f
+    name: gmp
+    evr: 1:6.3.0-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gnulib-l10n-20241231-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 809010
+    checksum: sha256:50e9e3d4daa8ae3a2d58e9a71bea88f698c0300d63ce32f103ab438221d62cf9
+    name: gnulib-l10n
+    evr: 20241231-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/grep-3.12-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2166217
+    checksum: sha256:3280a4ddc14227c4b0c295d5ec9202159b714c5d75ef20ec330f0a52fea6257d
+    name: grep
+    evr: 3.12-4.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gzip-1.14-4.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 946401
     checksum: sha256:ca45f604ca718c0b8eecf2a8a0d70466c465ca7b2834fcc4b9afc34387b178f1
     name: gzip
     evr: 1.14-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/h/hummingbird-release-20251124-1.17.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 45329
+    checksum: sha256:805248010ce6cc6181565bbc56a856cb962dce21c2a178527db98d4c4d9b14bd
+    name: hummingbird-release
+    evr: 20251124-1.17.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/k/keyutils-1.6.3-8.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 169878
+    checksum: sha256:620e4a1d7da4552bcb6f31b628d3f5c5db2b0e43758ec9e108dd39a88181cd56
+    name: keyutils
+    evr: 1.6.3-8.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/k/krb5-1.22.2-10.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 8883330
+    checksum: sha256:7773b199a2d5b2ead59635d7c33cab193c576ff7faf3fae8e895085e472733ef
+    name: krb5
+    evr: 1.22.2-10.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/less-710-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1157704
+    checksum: sha256:7c5fe3415a51e3598da84ec4f09982b2d0ea4b838b701b507e34a9d6e9406ae7
+    name: less
+    evr: 710-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libcap-2.78-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 314619
+    checksum: sha256:b347844d597269186a46bf4c0114b8a0e0c94cceee40b259b940569e62ca35a9
+    name: libcap
+    evr: 2.78-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libcap-ng-0.9.6-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 710266
+    checksum: sha256:18f1b7635fc575a8cd588de21a3d210107132caba949e6a225e493b9418e0e94
+    name: libcap-ng
+    evr: 0.9.6-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libcbor-0.14.0-3.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 343810
+    checksum: sha256:e6401474b1f16b2269bada6ffed15de689785814075303b1d5d9661af985331d
+    name: libcbor
+    evr: 0.14.0-3.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libeconf-0.7.9-4.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 284599
+    checksum: sha256:34af6a12d0217e1620983d5e3ac950f9f01820c9d0f7dd8b551f4c09edc23664
+    name: libeconf
+    evr: 0.7.9-4.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libedit-3.1-60.20260512cvs.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 587804
+    checksum: sha256:818a67f0d4c9641ef6fbb9b6bf9a0036a0209a4726145f92fe843535e07194ed
+    name: libedit
+    evr: 3.1-60.20260512cvs.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libevent-2.1.13-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1171262
+    checksum: sha256:9d4ccb0ba7893d53d3df034376e819a09a9d486722fe60b923936b980d5ba339
+    name: libevent
+    evr: 2.1.13-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libffi-3.8.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1621673
+    checksum: sha256:1e087dfbda52de3a0c726d7cbf13be9e194190430fed7092c01df7ed79010c5e
+    name: libffi
+    evr: 3.8.0-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libfido2-1.17.0-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 914089
+    checksum: sha256:7337251cf7a16109c4febd10cf641db38864b33ded1b4d5deb467fc5754a5127
+    name: libfido2
+    evr: 1.17.0-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libidn2-2.3.8-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2256816
+    checksum: sha256:19fd8c8ffdbc451de3a180edbb11e995f3149861c89ec580c600a7fe2f1426e6
+    name: libidn2
+    evr: 2.3.8-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libpsl-0.23.3-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 7804719
+    checksum: sha256:7e6daf5e529e71e8d9dd2f5c3c49c26b43a1dae30ff8962b1502a13182f7ff2c
+    name: libpsl
+    evr: 0.23.3-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libselinux-3.11-5.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 280130
+    checksum: sha256:79cbd2eae4bfa79f7014a0b641a05034be349971cc98849becd66f958a3d5019
+    name: libselinux
+    evr: 3.11-5.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libsepol-3.11-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 579016
+    checksum: sha256:1edaae2cc2fef8bb665b05c60afeb6e372c517b4a47a5f57081186d2c6bff171
+    name: libsepol
+    evr: 3.11-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libssh-0.12.2-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 788132
+    checksum: sha256:0f453ada0e5375ea0f156e232af0520a28fe5a1385f8641474c5ab0ebf9560fc
+    name: libssh
+    evr: 0.12.2-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libtasn1-4.21.0-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1836580
+    checksum: sha256:6a6c99b065cfd313484b26735871aa8fc58078963a2a2ebda59a9a47a480a234
+    name: libtasn1
+    evr: 4.21.0-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libtool-2.6.2-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1124121
+    checksum: sha256:964afdbc7c605cad5155053857e3590c8ada6479f763cb16e549030640f8a193
+    name: libtool
+    evr: 2.6.2-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libunistring-1.1-12.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2419599
+    checksum: sha256:d7ef9d83c98568ece190a3cc2d6634902b4014d58c43ee85e87ad035eaf3ec42
+    name: libunistring
+    evr: 1.1-12.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libverto-0.3.2-13.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 417202
+    checksum: sha256:14d40bd4a6e5643dc57f11e1917d5600a5f3c1c3219ee794316b2ef92c98650a
+    name: libverto
+    evr: 0.3.2-13.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libxcrypt-4.5.2-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 756764
+    checksum: sha256:f9f734c06ed1e3615fbceb2d64c37d302ac33cd4c0e7546c22887a5e90646bf1
+    name: libxcrypt
+    evr: 4.5.2-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/m/mpdecimal-4.0.1-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1087735
+    checksum: sha256:c0878a1cda270d7d405b2bf691dd52e32b6fc803e43a21ab9d8e9029ef01c86a
+    name: mpdecimal
+    evr: 4.0.1-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/ncurses-6.6-3.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 3866136
+    checksum: sha256:6b3bf917f3f23107b1b305c3dcd73e6c6ca34f0c6cf36d7f15091bed9ada23c1
+    name: ncurses
+    evr: 6.6-3.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp2-1.69.0-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1768994
+    checksum: sha256:3103fe26e1121a44e0da6e6469806d86e5cf3c1c10951eb911a0b8587da1371e
+    name: nghttp2
+    evr: 1.69.0-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp3-1.18.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 436840
+    checksum: sha256:435fb5400ca7fdad88b10ee3f4407f96d9066d111465fc5346ab2ed089c2742f
+    name: nghttp3
+    evr: 1.18.0-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/ngtcp2-1.22.1-3.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 734529
+    checksum: sha256:24671698b22d3c2e8f59be1d71eebf97a074d3a54e0e54a49c48b571d1e728f6
+    name: ngtcp2
+    evr: 1.22.1-3.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openldap-2.6.15-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 6666354
+    checksum: sha256:c181bba58d4c8e457e598dd9618438660b00d6525869481a1ead82fa228ac60d
+    name: openldap
+    evr: 2.6.15-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssh-10.5p1-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2739280
+    checksum: sha256:c628f52692eb999b73e916c1d6abdab62c4b60c4b20300bcc5b3571a94acb47b
+    name: openssh
+    evr: 10.5p1-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssl-3.5.9-0.2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 54117204
+    checksum: sha256:a6b00b381dd3c7a2e6fd7b473c6c8b32339fe0ec0f2bcca4538e01cefa56ea40
+    name: openssl
+    evr: 1:3.5.9-0.2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/p11-kit-0.26.5-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1133281
+    checksum: sha256:c591fba09505a3f95d48315c411a7ca92a88a47b5765f788aaad563b69f50183
+    name: p11-kit
+    evr: 0.26.5-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/pam-1.7.2-4.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 679372
+    checksum: sha256:84dba8e8b8cc276b5ce4d14dcc407a2c623a475fd1aa4b415662af924d7810de
+    name: pam
+    evr: 1.7.2-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/pcre2-10.49-0.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2252350
+    checksum: sha256:38db22f885516efbff09244f00c14fb18decb7cef8f653f5c54ec0406cee0480
+    name: pcre2
+    evr: 10.49-0.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/publicsuffix-list-20260624-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 113627
+    checksum: sha256:1f3788b4b639d621aecfc11eeaf95e62f63c65d69f3ba326d207f30e14918bc1
+    name: publicsuffix-list
+    evr: 20260624-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/python-pip-26.2-0.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 10570517
+    checksum: sha256:78165f1918aaa1d15dc8c57ee61aec91d50a18f061dd56e0285f4ae6ad192900
+    name: python-pip
+    evr: 26.2-0.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/p/python3.14-3.14.8-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 24284106
+    checksum: sha256:7790bdc3652008017afe53e811cd21bddff02ea2396bea43b313655f0b800a01
+    name: python3.14
+    evr: 3.14.8-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/r/readline-8.3-7.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 3468276
+    checksum: sha256:6a36ef333e558eb95c910b6a479056611fe26ff14a17dff0bc5c30d12caf8194
+    name: readline
+    evr: 8.3-7.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/s/sed-4.10-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1843164
+    checksum: sha256:192973134c474a8ff182eab2f9fa4af3c1870e8de39352fbe0b087636a6110bc
+    name: sed
+    evr: 4.10-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/s/setup-2.15.1-2.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 188712
+    checksum: sha256:d4d6069664159eb34ba112c0e620925f63d17f2329a8bbb4c439b07bf0608ca3
+    name: setup
+    evr: 2.15.1-2.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/s/sqlite-3.53.4-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 25843994
+    checksum: sha256:4686b835ab1cc9d6b45ef9763849c214d28ac319b03c1c68df211978cf6bc2af
+    name: sqlite
+    evr: 3.53.4-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/s/systemd-261.2-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 18515418
+    checksum: sha256:791e095c04663166314436815d344ccaeb567053d0aaa746850f19b1a8b566bb
+    name: systemd
+    evr: 261.2-1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/t/tar-1.35-10.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 2449010
     checksum: sha256:d8c3c2687ec7d84c883b09ccdba18480bf89ad08184b9de798d5ac6d4bed080f
     name: tar
     evr: 2:1.35-10.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/t/tzdata-2026c-2.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 933689
+    checksum: sha256:0338b57a2c6bba045f7b4fa60e897d2b2c84b6fcf2e39ec4223b4f030f587194
+    name: tzdata
+    evr: 2026c-2.1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/u/unzip-6.0-71.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1477295
+    checksum: sha256:66d42d679e91fb994c809e90a51c57aa3da59a01f3212ec486274723d580bfeb
+    name: unzip
+    evr: 6.0-71.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/u/util-linux-2.42.4-2.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 10795564
+    checksum: sha256:a2d6f83b45829987f79a2a79ef7db08b89e253b763d88849886569cf9fa4dcd2
+    name: util-linux
+    evr: 2.42.4-2.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/x/xz-5.8.4-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2851296
+    checksum: sha256:34dd9f0795794f9077473e9d490fdb2435f0079da236966c2de4975a595f03de
+    name: xz
+    evr: 1:5.8.4-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/z/zlib-ng-2.3.3-6.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2464635
+    checksum: sha256:7058e55c70581aad8d65c88a024f2f916ad815daf33beef0ba7a7ab13298502d
+    name: zlib-ng
+    evr: 2.3.3-6.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/z/zstd-1.5.7-6.1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2501053
+    checksum: sha256:fe80d3950c6cd3fead7a0bd6302a88a79de853922f83d888269b48f7fabda31e
+    name: zstd
+    evr: 1.5.7-6.1.hum1
   module_metadata: []
