@@ -8,7 +8,7 @@
   ],
   "baseBranchPatterns": [
     "main",
-    "release-1.10"
+    "release-1.12"
   ],
   "addLabels": [
     "konflux",
@@ -28,8 +28,8 @@
   "tekton": {
     "packageRules": [
       {
-        "description": "release-1.10: no Konflux reference updates (rebase from main instead)",
-        "matchBaseBranches": ["release-1.10"],
+        "description": "release-1.12: no Konflux reference updates (rebase from main instead)",
+        "matchBaseBranches": ["release-1.12"],
         "enabled": false
       }
     ]
@@ -37,8 +37,8 @@
   "dockerfile": {
     "packageRules": [
       {
-        "description": "release-1.10: no image digest updates (rebase from main instead)",
-        "matchBaseBranches": ["release-1.10"],
+        "description": "release-1.12: no image digest updates (rebase from main instead)",
+        "matchBaseBranches": ["release-1.12"],
         "enabled": false
       }
     ]
@@ -46,8 +46,8 @@
   "github-actions": {
     "packageRules": [
       {
-        "description": "release-1.10: no GitHub Actions updates (rebase from main instead)",
-        "matchBaseBranches": ["release-1.10"],
+        "description": "release-1.12: no GitHub Actions updates (rebase from main instead)",
+        "matchBaseBranches": ["release-1.12"],
         "enabled": false
       }
     ]
@@ -84,23 +84,23 @@
       "groupName": "kargo-version"
     },
     {
-      "description": "release-1.10: disable all updates (images, tekton refs, actions, etc.)",
-      "matchBaseBranches": ["release-1.10"],
+      "description": "release-1.12: disable all updates (images, tekton refs, actions, etc.)",
+      "matchBaseBranches": ["release-1.12"],
       "enabled": false
     },
     {
-      "description": "release-1.10: re-enable kargo patch updates only",
-      "matchBaseBranches": ["release-1.10"],
+      "description": "release-1.12: re-enable kargo patch updates only",
+      "matchBaseBranches": ["release-1.12"],
       "matchDepNames": ["kargo", "akuity/kargo"],
       "matchUpdateTypes": ["patch"],
       "enabled": true,
       "groupName": "kargo-version"
     },
     {
-      "description": "release-1.10: restrict kargo to 1.10.x (e.g. v1.10.7 → v1.10.8)",
-      "matchBaseBranches": ["release-1.10"],
+      "description": "release-1.12: restrict kargo to 1.12.x (e.g. v1.12.7 → v1.12.8)",
+      "matchBaseBranches": ["release-1.12"],
       "matchDepNames": ["kargo", "akuity/kargo"],
-      "allowedVersions": "/^v?1\\.10\\./"
+      "allowedVersions": "/^v?1\\.12\\./"
     }
   ]
 }
