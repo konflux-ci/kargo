@@ -1,6 +1,7 @@
 # RPM packages installed in the tools Containerfile stage.
 # Regenerate rpms.lock.yaml with: ./hack/update-rpms-lock.sh
 packages:
+- git-core
 - tar
 - gzip
 contentOrigin:
