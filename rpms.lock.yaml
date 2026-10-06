@@ -4,6 +4,20 @@ lockfileVendor: redhat
 arches:
 - arch: aarch64
   packages:
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/e/expat-2.8.5-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 137848
+    checksum: sha256:1294b9880bd92a52ade499712c9dcf24956bfa0a217dfbed4fc98bbb9ef9d450
+    name: expat
+    evr: 2.8.5-1.hum1
+    sourcerpm: expat-2.8.5-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/git-core-2.56.0-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 6019255
+    checksum: sha256:933135de719ce8d4ae80d0184e29189ae73ede94aecbfe8cf82aed85b02326a1
+    name: git-core
+    evr: 2.56.0-1.hum1
+    sourcerpm: git-2.56.0-1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/g/gzip-1.14-4.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
     size: 183965
@@ -11,6 +25,34 @@ arches:
     name: gzip
     evr: 1.14-4.hum1
     sourcerpm: gzip-1.14-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/less-710-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 240209
+    checksum: sha256:573157b9ae857c45e95a1b307ab8d60aa6606bea83a382f137b59515b4cbf832
+    name: less
+    evr: 710-1.hum1
+    sourcerpm: less-710-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libedit-3.1-60.20260512cvs.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 115237
+    checksum: sha256:34b707a90a098e138cd847bddd161b536fba6b680b633a3b250472c7fb43ecb0
+    name: libedit
+    evr: 3.1-60.20260512cvs.hum1
+    sourcerpm: libedit-3.1-60.20260512cvs.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssh-10.5p1-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 389605
+    checksum: sha256:617bf950500ff641f41861c5c7af7d063206236cf4a82709709c5333ab4cabf5
+    name: openssh
+    evr: 10.5p1-1.hum1
+    sourcerpm: openssh-10.5p1-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssh-clients-10.5p1-1.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 843986
+    checksum: sha256:42201104d48e890be7cc13c493cecf935c8de3d6857b218539c1001c1ba2c62a
+    name: openssh-clients
+    evr: 10.5p1-1.hum1
+    sourcerpm: openssh-10.5p1-1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/t/tar-1.35-10.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
     size: 885040
@@ -18,22 +60,79 @@ arches:
     name: tar
     evr: 2:1.35-10.hum1
     sourcerpm: tar-1.35-10.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/u/unzip-6.0-71.hum1.aarch64.rpm
+    repoid: public-hummingbird-aarch64-rpms
+    size: 212725
+    checksum: sha256:6af13eb2ec758d5b92735d80d026c8f3a650bb33128007f287601b6737675271
+    name: unzip
+    evr: 6.0-71.hum1
+    sourcerpm: unzip-6.0-71.hum1.src.rpm
   source:
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/e/expat-2.8.5-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 873267
+    checksum: sha256:37d66b552ff5e022065145fbc1a8fa5a847ea8d5af00c04c990eef3e88ae60e4
+    name: expat
+    evr: 2.8.5-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/git-2.56.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 8584067
+    checksum: sha256:99d5c75ea7210b6ff5e74fc856a248fc8dea995db9ba748e019b7875b200b6f4
+    name: git
+    evr: 2.56.0-1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gzip-1.14-4.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 946401
     checksum: sha256:ca45f604ca718c0b8eecf2a8a0d70466c465ca7b2834fcc4b9afc34387b178f1
     name: gzip
     evr: 1.14-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/less-710-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1157704
+    checksum: sha256:7c5fe3415a51e3598da84ec4f09982b2d0ea4b838b701b507e34a9d6e9406ae7
+    name: less
+    evr: 710-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libedit-3.1-60.20260512cvs.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 587804
+    checksum: sha256:818a67f0d4c9641ef6fbb9b6bf9a0036a0209a4726145f92fe843535e07194ed
+    name: libedit
+    evr: 3.1-60.20260512cvs.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssh-10.5p1-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2739280
+    checksum: sha256:c628f52692eb999b73e916c1d6abdab62c4b60c4b20300bcc5b3571a94acb47b
+    name: openssh
+    evr: 10.5p1-1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/t/tar-1.35-10.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 2449010
     checksum: sha256:d8c3c2687ec7d84c883b09ccdba18480bf89ad08184b9de798d5ac6d4bed080f
     name: tar
     evr: 2:1.35-10.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/u/unzip-6.0-71.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1477295
+    checksum: sha256:66d42d679e91fb994c809e90a51c57aa3da59a01f3212ec486274723d580bfeb
+    name: unzip
+    evr: 6.0-71.hum1
   module_metadata: []
 - arch: x86_64
   packages:
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/e/expat-2.8.5-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 142837
+    checksum: sha256:3a49ac24e16e1d3dd4f50818d5bb2e82d7c76c5b6af043b96a49b76fc8206961
+    name: expat
+    evr: 2.8.5-1.hum1
+    sourcerpm: expat-2.8.5-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/git-core-2.56.0-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 6072007
+    checksum: sha256:94947858432d5cf0c896a372dbc0020f2867fc4c7f620fcfda6972163bca602d
+    name: git-core
+    evr: 2.56.0-1.hum1
+    sourcerpm: git-2.56.0-1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/g/gzip-1.14-4.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
     size: 190196
@@ -41,6 +140,34 @@ arches:
     name: gzip
     evr: 1.14-4.hum1
     sourcerpm: gzip-1.14-4.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/less-710-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 246163
+    checksum: sha256:f994cd38ae0258df0b3f42955b4819dc99f943ef7252fb5e81ace1f36425dab7
+    name: less
+    evr: 710-1.hum1
+    sourcerpm: less-710-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libedit-3.1-60.20260512cvs.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 119199
+    checksum: sha256:90c026ce92eb6cb19808ef8e8f3a4a98f4b91778d905cfa28eb17a115ad2bd2f
+    name: libedit
+    evr: 3.1-60.20260512cvs.hum1
+    sourcerpm: libedit-3.1-60.20260512cvs.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssh-10.5p1-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 397811
+    checksum: sha256:f006e6a72a2af121ff2ee0c04b5d82b7efd1f33419a0c5aee251ee7708d5bcf1
+    name: openssh
+    evr: 10.5p1-1.hum1
+    sourcerpm: openssh-10.5p1-1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssh-clients-10.5p1-1.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 851427
+    checksum: sha256:f0563de647206bcee89108c5869fa52e2ca4cd7a02073508ce5298b691eb3930
+    name: openssh-clients
+    evr: 10.5p1-1.hum1
+    sourcerpm: openssh-10.5p1-1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/t/tar-1.35-10.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
     size: 898722
@@ -48,17 +175,60 @@ arches:
     name: tar
     evr: 2:1.35-10.hum1
     sourcerpm: tar-1.35-10.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/u/unzip-6.0-71.hum1.x86_64.rpm
+    repoid: public-hummingbird-x86_64-rpms
+    size: 212951
+    checksum: sha256:be2e66ffd7bff83fea6e3793bfda0a926deb6cd1e04ecf58d094ec9f74c57f74
+    name: unzip
+    evr: 6.0-71.hum1
+    sourcerpm: unzip-6.0-71.hum1.src.rpm
   source:
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/e/expat-2.8.5-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 873267
+    checksum: sha256:37d66b552ff5e022065145fbc1a8fa5a847ea8d5af00c04c990eef3e88ae60e4
+    name: expat
+    evr: 2.8.5-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/git-2.56.0-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 8584067
+    checksum: sha256:99d5c75ea7210b6ff5e74fc856a248fc8dea995db9ba748e019b7875b200b6f4
+    name: git
+    evr: 2.56.0-1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/g/gzip-1.14-4.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 946401
     checksum: sha256:ca45f604ca718c0b8eecf2a8a0d70466c465ca7b2834fcc4b9afc34387b178f1
     name: gzip
     evr: 1.14-4.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/less-710-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1157704
+    checksum: sha256:7c5fe3415a51e3598da84ec4f09982b2d0ea4b838b701b507e34a9d6e9406ae7
+    name: less
+    evr: 710-1.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/l/libedit-3.1-60.20260512cvs.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 587804
+    checksum: sha256:818a67f0d4c9641ef6fbb9b6bf9a0036a0209a4726145f92fe843535e07194ed
+    name: libedit
+    evr: 3.1-60.20260512cvs.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssh-10.5p1-1.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 2739280
+    checksum: sha256:c628f52692eb999b73e916c1d6abdab62c4b60c4b20300bcc5b3571a94acb47b
+    name: openssh
+    evr: 10.5p1-1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/t/tar-1.35-10.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 2449010
     checksum: sha256:d8c3c2687ec7d84c883b09ccdba18480bf89ad08184b9de798d5ac6d4bed080f
     name: tar
     evr: 2:1.35-10.hum1
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/u/unzip-6.0-71.hum1.src.rpm
+    repoid: public-hummingbird-source-rpms
+    size: 1477295
+    checksum: sha256:66d42d679e91fb994c809e90a51c57aa3da59a01f3212ec486274723d580bfeb
+    name: unzip
+    evr: 6.0-71.hum1
   module_metadata: []
