@@ -92,13 +92,11 @@ RUN case "${TARGETARCH}" in \
       arm64|aarch64) arch=arm64 ;; \
       *) echo "unsupported TARGETARCH=${TARGETARCH}" >&2; exit 1 ;; \
     esac && \
-    grpc="/cachi2/output/deps/generic/grpc_health_probe-${TARGETOS}-${arch}" && \
     helm_tgz="/cachi2/output/deps/generic/helm-${TARGETOS}-${arch}.tar.gz" && \
-    test -f "${grpc}" && test -f "${helm_tgz}" && \
-    cp "${grpc}" /tools/grpc_health_probe && \
+    test -f "${helm_tgz}" && \
     tar -xzf "${helm_tgz}" -C /tmp && \
     cp "/tmp/${TARGETOS}-${arch}/helm" /tools/helm && \
-    chmod +x /tools/grpc_health_probe /tools/helm
+    chmod +x /tools/helm
 
 ####################################################################################################
 # final

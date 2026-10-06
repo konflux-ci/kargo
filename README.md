@@ -11,7 +11,6 @@ The produced image contains:
 - **credential-helper** for Git repository access
 - **UI** (React/TypeScript frontend built with Vite)
 - **helm** binary (required by the kustomize-build promotion step)
-- **grpc_health_probe** for health checking
 - **tini** as the container entrypoint
 
 ## Quick Start
@@ -38,21 +37,21 @@ PipelineRuns set `hermetic: "true"`. Prefetch covers:
 |------|-----------------|---------|
 | gomod | `kargo/` | Go modules |
 | pnpm | `kargo/ui/` | UI dependencies |
-| generic | `artifacts.lock.yaml` | pnpm CLI, Helm, grpc_health_probe, tini |
+| generic | `artifacts.lock.yaml` | pnpm CLI, Helm, tini |
 | rpm | `rpms.in.yaml` / `rpms.lock.yaml` | Tools-stage RPMs (`tar`) |
 
 **Containerfile rules for hermetic CI:**
 
 - Do not add `curl` / `wget` / `git clone` in `RUN` steps
 - Do not add `microdnf`/`dnf` packages without updating `rpms.in.yaml` and regenerating `rpms.lock.yaml`
-- Bump Helm / grpc_health_probe / tini / pnpm via `./hack/update-artifacts-lock.sh` (or env overrides); script regenerates `artifacts.lock.yaml` and syncs `Containerfile` `ARG PNPM_VERSION`
+- Bump Helm / tini / pnpm via `./hack/update-artifacts-lock.sh` (or env overrides); script regenerates `artifacts.lock.yaml` and syncs `Containerfile` `ARG PNPM_VERSION`
 
 ### Regenerating lockfiles
 
 ```bash
-# Generic binaries (pnpm, Helm, grpc_health_probe, tini)
+# Generic binaries (pnpm, Helm, tini)
 ./hack/update-artifacts-lock.sh
-# Optional overrides: PNPM_VERSION=… HELM_VERSION=… GRPC_HEALTH_PROBE_VERSION=… TINI_VERSION=…
+# Optional overrides: PNPM_VERSION=… HELM_VERSION=… TINI_VERSION=…
 
 # Tools-stage RPMs (after base-image or package list changes)
 ./hack/update-rpms-lock.sh

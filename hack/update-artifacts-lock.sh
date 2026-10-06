@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Regenerate artifacts.lock.yaml for Hermeto generic prefetch.
-# Run from repo root after bumping PNPM / Helm / grpc_health_probe / tini versions.
+# Run from repo root after bumping PNPM / Helm / tini versions.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -9,8 +9,7 @@ WORKDIR="$(mktemp -d)"
 trap 'rm -rf "${WORKDIR}"' EXIT
 
 PNPM_VERSION="${PNPM_VERSION:-11.13.0}"
-HELM_VERSION="${HELM_VERSION:-v3.21.4}"
-GRPC_HEALTH_PROBE_VERSION="${GRPC_HEALTH_PROBE_VERSION:-v0.4.50}"
+HELM_VERSION="${HELM_VERSION:-v3.22.0}"
 TINI_VERSION="${TINI_VERSION:-v0.19.0}"
 
 sha256_file() {
@@ -33,17 +32,6 @@ add_artifact \
   "https://registry.npmjs.org/pnpm/-/pnpm-${PNPM_VERSION}.tgz" \
   "pnpm-${PNPM_VERSION}.tgz" \
   "${WORKDIR}/pnpm-${PNPM_VERSION}.tgz"
-
-for arch in amd64 arm64; do
-  echo "Fetching grpc_health_probe ${GRPC_HEALTH_PROBE_VERSION} (${arch})..."
-  name="grpc_health_probe-linux-${arch}"
-  curl -fsSL -o "${WORKDIR}/${name}" \
-    "https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/${name}"
-  add_artifact \
-    "https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/${name}" \
-    "${name}" \
-    "${WORKDIR}/${name}"
-done
 
 for arch in amd64 arm64; do
   echo "Fetching Helm ${HELM_VERSION} (${arch})..."
