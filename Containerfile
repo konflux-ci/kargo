@@ -45,7 +45,6 @@ RUN go mod download
 # Copy source code
 COPY kargo/api/ api/
 COPY kargo/pkg/ pkg/
-COPY kargo/db/ db/
 COPY kargo/cmd/ cmd/
 COPY --from=ui-builder /ui/build pkg/server/ui/
 
