@@ -78,6 +78,9 @@ FROM registry.access.redhat.com/hi/core-runtime:latest-builder@sha256:7b6b0d5eae
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
 
+# Make failures in the tar pipeline fail the build.
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 USER 0
 WORKDIR /tools
 
@@ -89,6 +92,8 @@ RUN dnf install -y tar gzip && \
 # Install Git and its complete RPM dependency closure into a separate root.
 # Copy the resulting filesystem rather than hardcoding Git's executable or
 # library paths; this preserves architecture-specific dependencies and links.
+# Version pinned by Hermeto via rpms.lock.yaml (prefetch), not Containerfile.
+# hadolint ignore=DL3041
 RUN mkdir -p /git-root/etc/pki /git-runtime && \
     cp -a /etc/pki/rpm-gpg /git-root/etc/pki/ && \
     case "${TARGETARCH}" in \
@@ -102,6 +107,7 @@ RUN mkdir -p /git-root/etc/pki /git-runtime && \
       --setopt=install_weak_deps=False \
       --setopt=keepcache=False \
       install -y git-core && \
+    dnf clean all && \
     tar -C /git-root -cf - \
       --exclude='./bin' \
       --exclude='./sbin' \
