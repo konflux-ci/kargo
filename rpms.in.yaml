@@ -10,7 +10,8 @@ contentOrigin:
 arches:
 - x86_64
 - aarch64
+# MintMaker runs rpm-lockfile-prototype without the helper script's --bare flag.
+# The tools stage also installs git-core into an empty installroot, so the lock
+# must contain the complete dependency closure rather than only the base-image delta.
 context:
-  containerfile:
-    file: Containerfile
-    stageName: tools
+  bare: true
