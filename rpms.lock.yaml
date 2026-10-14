@@ -452,20 +452,20 @@ arches:
     name: openldap
     evr: 2.6.15-1.1.hum1
     sourcerpm: openldap-2.6.15-1.1.hum1.src.rpm
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssh-10.5p1-1.1.hum1.aarch64.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssh-10.5p1-1.2.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
-    size: 389744
-    checksum: sha256:0a16c55638e4fcd102757b511fa32b127174d2720dbfcbbd3145248d7e5a9540
+    size: 389825
+    checksum: sha256:a74c345d091f28d700c9ce4dedfb59395f8cb9ba40171d88273eb51ba35d3e74
     name: openssh
-    evr: 10.5p1-1.1.hum1
-    sourcerpm: openssh-10.5p1-1.1.hum1.src.rpm
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssh-clients-10.5p1-1.1.hum1.aarch64.rpm
+    evr: 10.5p1-1.2.hum1
+    sourcerpm: openssh-10.5p1-1.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssh-clients-10.5p1-1.2.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
-    size: 843988
-    checksum: sha256:15ec3a697116507abb2a3d2daf9b6ec26e3aeecbe5cdf6a3f0dd9aae0eea3c71
+    size: 843921
+    checksum: sha256:5d1c71bdb74e2028935df309770ed9c520fb9f840c5a2a679d1697b72f02bb4a
     name: openssh-clients
-    evr: 10.5p1-1.1.hum1
-    sourcerpm: openssh-10.5p1-1.1.hum1.src.rpm
+    evr: 10.5p1-1.2.hum1
+    sourcerpm: openssh-10.5p1-1.2.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/o/openssl-fips-provider-upstream-3.5.9-0.3.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
     size: 748853
@@ -627,12 +627,6 @@ arches:
     checksum: sha256:8e45fe4790614f5f2b5a9c048040b00624aace05501cb381e759b369c2f4d08a
     name: acl
     evr: 2.4.0-2.1.hum1
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/attr-2.6.0-9.1.hum1.src.rpm
-    repoid: public-hummingbird-source-rpms
-    size: 574821
-    checksum: sha256:6d1f57e0f10c44eaa4ea13a0ff008623b2c5e3555c4c3e69571b42b67b8dea2c
-    name: attr
-    evr: 2.6.0-9.1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/audit-4.2.1-2.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 816510
@@ -927,12 +921,12 @@ arches:
     checksum: sha256:c80b4d4fc795321de162bd0431007e3085155305ef0d6753651f65b07ce4d611
     name: openldap
     evr: 2.6.15-1.1.hum1
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssh-10.5p1-1.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssh-10.5p1-1.2.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
-    size: 2739294
-    checksum: sha256:24c8c654b822abf1cb43e346e8982251711bce7263c3869e30f71ff5564d9b23
+    size: 2746135
+    checksum: sha256:20188dcfb556615bec0bcfd34b7bc8b2c3bf79a37d7b7187bc637a5f2d9226e9
     name: openssh
-    evr: 10.5p1-1.1.hum1
+    evr: 10.5p1-1.2.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssl-3.5.9-0.3.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 54117253
@@ -1498,20 +1492,20 @@ arches:
     name: openldap
     evr: 2.6.15-1.1.hum1
     sourcerpm: openldap-2.6.15-1.1.hum1.src.rpm
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssh-10.5p1-1.1.hum1.x86_64.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssh-10.5p1-1.2.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
-    size: 397908
-    checksum: sha256:e9ee7116c1ef461b606d8ab8fac806b256b9209c340b8fd0b5e22c8bda475392
+    size: 397838
+    checksum: sha256:d38d3296d2f2cfb1c0dbb8033f2632baf263770865f6b9cd352d08dfbb696643
     name: openssh
-    evr: 10.5p1-1.1.hum1
-    sourcerpm: openssh-10.5p1-1.1.hum1.src.rpm
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssh-clients-10.5p1-1.1.hum1.x86_64.rpm
+    evr: 10.5p1-1.2.hum1
+    sourcerpm: openssh-10.5p1-1.2.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssh-clients-10.5p1-1.2.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
-    size: 851496
-    checksum: sha256:f89fac8753f2a0d97cc3a80b785a45be84baa4dca237233cd548a37ba8dd081d
+    size: 851579
+    checksum: sha256:7916c3df79f74c521a6709eb296c0ab2cec4a6ef92de69b03d1595007f36b341
     name: openssh-clients
-    evr: 10.5p1-1.1.hum1
-    sourcerpm: openssh-10.5p1-1.1.hum1.src.rpm
+    evr: 10.5p1-1.2.hum1
+    sourcerpm: openssh-10.5p1-1.2.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/o/openssl-fips-provider-upstream-3.5.9-0.3.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
     size: 876478
@@ -1673,12 +1667,6 @@ arches:
     checksum: sha256:8e45fe4790614f5f2b5a9c048040b00624aace05501cb381e759b369c2f4d08a
     name: acl
     evr: 2.4.0-2.1.hum1
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/attr-2.6.0-9.1.hum1.src.rpm
-    repoid: public-hummingbird-source-rpms
-    size: 574821
-    checksum: sha256:6d1f57e0f10c44eaa4ea13a0ff008623b2c5e3555c4c3e69571b42b67b8dea2c
-    name: attr
-    evr: 2.6.0-9.1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/a/audit-4.2.1-2.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 816510
@@ -1973,12 +1961,12 @@ arches:
     checksum: sha256:c80b4d4fc795321de162bd0431007e3085155305ef0d6753651f65b07ce4d611
     name: openldap
     evr: 2.6.15-1.1.hum1
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssh-10.5p1-1.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssh-10.5p1-1.2.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
-    size: 2739294
-    checksum: sha256:24c8c654b822abf1cb43e346e8982251711bce7263c3869e30f71ff5564d9b23
+    size: 2746135
+    checksum: sha256:20188dcfb556615bec0bcfd34b7bc8b2c3bf79a37d7b7187bc637a5f2d9226e9
     name: openssh
-    evr: 10.5p1-1.1.hum1
+    evr: 10.5p1-1.2.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/o/openssl-3.5.9-0.3.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 54117253
