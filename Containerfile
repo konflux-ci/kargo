@@ -25,7 +25,7 @@ RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
 ####################################################################################################
 # back-end-builder
 ####################################################################################################
-FROM registry.access.redhat.com/hi/go:1.27@sha256:cef6cd0158f837223150bd2ecb0e38e9cd98875f60f71127d943fd6d73223f8a AS back-end-builder
+FROM registry.access.redhat.com/hi/go:1.27@sha256:4194d758108275e600477b9a72974b63407f6cb98dc26a97329a21f26b12bbb4 AS back-end-builder
 
 ARG KARGO_VERSION
 ARG CGO_ENABLED=0
@@ -73,7 +73,7 @@ RUN go build \
 # Use 'builder' version of core-runtime so 'dnf' is available for installing
 # the tools and assembling the Git runtime payload.
 ####################################################################################################
-FROM registry.access.redhat.com/hi/core-runtime:latest-builder@sha256:784876005ba8fddb518be9089b708c14d73d9f7b6b837e51f0e97b82239be676 AS tools
+FROM registry.access.redhat.com/hi/core-runtime:latest-builder@sha256:8bf8cbd93e924fe239d4dc5b25177dd9d58b6a2d97e089af9e8c54b393b46068 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -89,26 +89,27 @@ WORKDIR /tools
 RUN dnf install -y tar gzip && \
     dnf clean all
 
-# Install Git and its complete RPM dependency closure into a separate root.
-# Copy the resulting filesystem rather than hardcoding Git's executable or
-# library paths; this preserves architecture-specific dependencies and links.
+# Install Git, GPG, and their complete RPM dependency closure into a separate
+# root. Copy the resulting filesystem rather than hardcoding each tool's
+# executable or library paths; this preserves architecture-specific
+# dependencies and links.
 # Version pinned by Hermeto via rpms.lock.yaml (prefetch), not Containerfile.
 # hadolint ignore=DL3041
-RUN mkdir -p /git-root/etc/pki /git-runtime && \
-    cp -a /etc/pki/rpm-gpg /git-root/etc/pki/ && \
+RUN mkdir -p /pkg-root/etc/pki /pkg-runtime && \
+    cp -a /etc/pki/rpm-gpg /pkg-root/etc/pki/ && \
     case "${TARGETARCH}" in \
       amd64|x86_64) repo_id=public-hummingbird-x86_64-rpms ;; \
       arm64|aarch64) repo_id=public-hummingbird-aarch64-rpms ;; \
       *) echo "unsupported TARGETARCH=${TARGETARCH}" >&2; exit 1 ;; \
     esac && \
-    dnf --installroot=/git-root \
+    dnf --installroot=/pkg-root \
       --use-host-config \
       --setopt="${repo_id}.gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-hummingbird-release" \
       --setopt=install_weak_deps=False \
       --setopt=keepcache=False \
-      install -y git-core && \
+      install -y git-core gnupg2 && \
     dnf clean all && \
-    tar -C /git-root -cf - \
+    tar -C /pkg-root -cf - \
       --exclude='./bin' \
       --exclude='./sbin' \
       --exclude='./lib' \
@@ -128,7 +129,7 @@ RUN mkdir -p /git-root/etc/pki /git-runtime && \
       --exclude='./var/lib/dnf' \
       --exclude='./var/cache/dnf' \
       . | \
-      tar -C /git-runtime -xf -
+      tar -C /pkg-runtime -xf -
 
 
 # Normalize to artifact naming (Go arch). Fail loud if prefetch missing.
@@ -146,7 +147,7 @@ RUN case "${TARGETARCH}" in \
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/hi/core-runtime:latest@sha256:4730fe5f23bec7eb86b9736bc1458d58862372b1d1555ca9da77d21d4fffea17 AS final
+FROM registry.access.redhat.com/hi/core-runtime:latest@sha256:cefdad691990bab9d5371070824c1bb52b9a0a9733eaf543eded2a6964715881 AS final
 
 ARG KARGO_VERSION
 ARG TARGETARCH=amd64
@@ -155,8 +156,9 @@ USER 0
 
 COPY --from=back-end-builder /kargo/bin/ /usr/local/bin/
 COPY --from=tools /tools/ /usr/local/bin/
-COPY --from=tools /git-runtime/ /
+COPY --from=tools /pkg-runtime/ /
 RUN git --version && test -x /usr/bin/git && test -d "$(git --exec-path)"
+RUN gpg --version && test -x /usr/bin/gpg
 RUN case "${TARGETARCH}" in \
       amd64|x86_64) arch=amd64 ;; \
       arm64|aarch64) arch=arm64 ;; \
