@@ -158,8 +158,8 @@ USER 0
 COPY --from=back-end-builder /kargo/bin/ /usr/local/bin/
 COPY --from=tools /tools/ /usr/local/bin/
 COPY --from=tools /pkg-runtime/ /
-RUN git --version && test -x /usr/bin/git && test -d "$(git --exec-path)"
-RUN gpg --version && test -x /usr/bin/gpg
+RUN git --version && test -x /usr/bin/git && test -d "$(git --exec-path)" && \
+    gpg --version && test -x /usr/bin/gpg
 RUN case "${TARGETARCH}" in \
       amd64|x86_64) arch=amd64 ;; \
       arm64|aarch64) arch=arm64 ;; \
