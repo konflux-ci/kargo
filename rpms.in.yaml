@@ -2,6 +2,7 @@
 # Regenerate rpms.lock.yaml with: ./hack/update-rpms-lock.sh
 packages:
 - git-core
+- gnupg2
 - tar
 - gzip
 contentOrigin:
