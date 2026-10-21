@@ -38,7 +38,7 @@ PipelineRuns set `hermetic: "true"`. Prefetch covers:
 | gomod | `kargo/` | Go modules |
 | pnpm | `kargo/ui/` | UI dependencies |
 | generic | `artifacts.lock.yaml` | pnpm CLI, Helm, tini |
-| rpm | `rpms.in.yaml` / `rpms.lock.yaml` | Tools-stage RPMs (`tar`) |
+| rpm | `rpms.in.yaml` / `rpms.lock.yaml` | Tools-stage RPMs (`git-core`, `gnupg2`, `tar`, `gzip`) |
 
 **Containerfile rules for hermetic CI:**
 
