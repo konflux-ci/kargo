@@ -90,26 +90,27 @@ WORKDIR /tools
 RUN dnf install -y tar gzip && \
     dnf clean all
 
-# Install Git and its complete RPM dependency closure into a separate root.
-# Copy the resulting filesystem rather than hardcoding Git's executable or
-# library paths; this preserves architecture-specific dependencies and links.
+# Install Git, GPG, and their complete RPM dependency closure into a separate
+# root. Copy the resulting filesystem rather than hardcoding each tool's
+# executable or library paths; this preserves architecture-specific
+# dependencies and links.
 # Version pinned by Hermeto via rpms.lock.yaml (prefetch), not Containerfile.
 # hadolint ignore=DL3041
-RUN mkdir -p /git-root/etc/pki /git-runtime && \
-    cp -a /etc/pki/rpm-gpg /git-root/etc/pki/ && \
+RUN mkdir -p /pkg-root/etc/pki /pkg-runtime && \
+    cp -a /etc/pki/rpm-gpg /pkg-root/etc/pki/ && \
     case "${TARGETARCH}" in \
       amd64|x86_64) repo_id=public-hummingbird-x86_64-rpms ;; \
       arm64|aarch64) repo_id=public-hummingbird-aarch64-rpms ;; \
       *) echo "unsupported TARGETARCH=${TARGETARCH}" >&2; exit 1 ;; \
     esac && \
-    dnf --installroot=/git-root \
+    dnf --installroot=/pkg-root \
       --use-host-config \
       --setopt="${repo_id}.gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-hummingbird-release" \
       --setopt=install_weak_deps=False \
       --setopt=keepcache=False \
-      install -y git-core && \
+      install -y git-core gnupg2 && \
     dnf clean all && \
-    tar -C /git-root -cf - \
+    tar -C /pkg-root -cf - \
       --exclude='./bin' \
       --exclude='./sbin' \
       --exclude='./lib' \
@@ -129,7 +130,7 @@ RUN mkdir -p /git-root/etc/pki /git-runtime && \
       --exclude='./var/lib/dnf' \
       --exclude='./var/cache/dnf' \
       . | \
-      tar -C /git-runtime -xf -
+      tar -C /pkg-runtime -xf -
 
 
 # Normalize to artifact naming (Go arch). Fail loud if prefetch missing.
@@ -156,8 +157,9 @@ USER 0
 
 COPY --from=back-end-builder /kargo/bin/ /usr/local/bin/
 COPY --from=tools /tools/ /usr/local/bin/
-COPY --from=tools /git-runtime/ /
+COPY --from=tools /pkg-runtime/ /
 RUN git --version && test -x /usr/bin/git && test -d "$(git --exec-path)"
+RUN gpg --version && test -x /usr/bin/gpg
 RUN case "${TARGETARCH}" in \
       amd64|x86_64) arch=amd64 ;; \
       arm64|aarch64) arch=arm64 ;; \
