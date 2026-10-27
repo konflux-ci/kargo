@@ -291,13 +291,13 @@ arches:
     name: libattr
     evr: 2.6.0-9.1.hum1
     sourcerpm: attr-2.6.0-9.1.hum1.src.rpm
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libbrotli-1.2.0-6.1.hum1.aarch64.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libbrotli-1.2.1-0.1.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
-    size: 364085
-    checksum: sha256:2cdfab11c5161a3a81a8613be5bbb226160dacc4ba7a3735e51fa26f8e78b18b
+    size: 364018
+    checksum: sha256:44f8579fdff2d4ce000eea80c018c9cd2ca1e28922e4c67fc979cc011e4bdb93
     name: libbrotli
-    evr: 1.2.0-6.1.hum1
-    sourcerpm: brotli-1.2.0-6.1.hum1.src.rpm
+    evr: 1.2.1-0.1.hum1
+    sourcerpm: brotli-1.2.1-0.1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libcap-2.78-2.1.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
     size: 101825
@@ -403,13 +403,13 @@ arches:
     name: libksba
     evr: 1.8.1-1.1.hum1
     sourcerpm: libksba-1.8.1-1.1.hum1.src.rpm
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libnghttp2-1.69.0-6.1.hum1.aarch64.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libnghttp2-1.70.0-0.1.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
-    size: 82834
-    checksum: sha256:3cd1ea5742821e88121b54f9de11a4c24ecabc96f2ef27a179f90371a6e93264
+    size: 82769
+    checksum: sha256:360c7a3cb90f43f75a0913a56950455ccf11ced605fa1ea264d9df0daad67b7c
     name: libnghttp2
-    evr: 1.69.0-6.1.hum1
-    sourcerpm: nghttp2-1.69.0-6.1.hum1.src.rpm
+    evr: 1.70.0-0.1.hum1
+    sourcerpm: nghttp2-1.70.0-0.1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/aarch64/Packages/l/libnghttp3-1.18.0-1.1.hum1.aarch64.rpm
     repoid: public-hummingbird-aarch64-rpms
     size: 77147
@@ -751,12 +751,12 @@ arches:
     checksum: sha256:75189ae91aab0f78d116d3265c6ce1d7c2eeb109ed5411197df4ae2eed3c7cbb
     name: bash
     evr: 5.3.20-1.hum1
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/brotli-1.2.0-6.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/brotli-1.2.1-0.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
-    size: 692037
-    checksum: sha256:f5071d40fd8f3b4637d9173ff632f943dd90b389a892abca083b6195908bee0a
+    size: 692775
+    checksum: sha256:6d348917bcfbbc63c0710f0d7af095fbd1cbbf463cd5748ca8c6204b07598566
     name: brotli
-    evr: 1.2.0-6.1.hum1
+    evr: 1.2.1-0.1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/bzip2-1.0.8-24.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 855587
@@ -1063,12 +1063,12 @@ arches:
     checksum: sha256:9ffe45a679156f2284dfac351721e2572377b8e18665d78a5af24d70a79b9871
     name: nettle
     evr: 4.0-5.5.hum1
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp2-1.69.0-6.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp2-1.70.0-0.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
-    size: 1769014
-    checksum: sha256:a102e689b1b1553254a68342a9a7bd2c8f557142facf20545bd38980c9a32f79
+    size: 2087317
+    checksum: sha256:e6e2b1a883c4169037ee355cf315de92e172d18f16da7ed165b210d79612c668
     name: nghttp2
-    evr: 1.69.0-6.1.hum1
+    evr: 1.70.0-0.1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp3-1.18.0-1.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 436854
@@ -1509,13 +1509,13 @@ arches:
     name: libattr
     evr: 2.6.0-9.1.hum1
     sourcerpm: attr-2.6.0-9.1.hum1.src.rpm
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libbrotli-1.2.0-6.1.hum1.x86_64.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libbrotli-1.2.1-0.1.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
-    size: 363647
-    checksum: sha256:2b7cc780aa6a14fd557cc02055034001db468db26543150eec5a9b100e3f4342
+    size: 363407
+    checksum: sha256:bdf42b4f458e4c0168e4dd3c414ee497b17a24d7710de769463d52aeeab9306e
     name: libbrotli
-    evr: 1.2.0-6.1.hum1
-    sourcerpm: brotli-1.2.0-6.1.hum1.src.rpm
+    evr: 1.2.1-0.1.hum1
+    sourcerpm: brotli-1.2.1-0.1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libcap-2.78-2.1.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
     size: 102173
@@ -1621,13 +1621,13 @@ arches:
     name: libksba
     evr: 1.8.1-1.1.hum1
     sourcerpm: libksba-1.8.1-1.1.hum1.src.rpm
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libnghttp2-1.69.0-6.1.hum1.x86_64.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libnghttp2-1.70.0-0.1.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
-    size: 85628
-    checksum: sha256:132be5529dfac16e939e5c919ab0aa2592fd60b0a90b4fbe9859789683d0eb9a
+    size: 86019
+    checksum: sha256:1526440410b7d7d7bad97543ad22f0fbe4e6239d2df37567f732206f20b8bc6b
     name: libnghttp2
-    evr: 1.69.0-6.1.hum1
-    sourcerpm: nghttp2-1.69.0-6.1.hum1.src.rpm
+    evr: 1.70.0-0.1.hum1
+    sourcerpm: nghttp2-1.70.0-0.1.hum1.src.rpm
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/x86_64/Packages/l/libnghttp3-1.18.0-1.1.hum1.x86_64.rpm
     repoid: public-hummingbird-x86_64-rpms
     size: 82415
@@ -1969,12 +1969,6 @@ arches:
     checksum: sha256:75189ae91aab0f78d116d3265c6ce1d7c2eeb109ed5411197df4ae2eed3c7cbb
     name: bash
     evr: 5.3.20-1.hum1
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/brotli-1.2.0-6.1.hum1.src.rpm
-    repoid: public-hummingbird-source-rpms
-    size: 692037
-    checksum: sha256:f5071d40fd8f3b4637d9173ff632f943dd90b389a892abca083b6195908bee0a
-    name: brotli
-    evr: 1.2.0-6.1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/b/bzip2-1.0.8-24.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 855587
@@ -2281,12 +2275,12 @@ arches:
     checksum: sha256:9ffe45a679156f2284dfac351721e2572377b8e18665d78a5af24d70a79b9871
     name: nettle
     evr: 4.0-5.5.hum1
-  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp2-1.69.0-6.1.hum1.src.rpm
+  - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp2-1.70.0-0.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
-    size: 1769014
-    checksum: sha256:a102e689b1b1553254a68342a9a7bd2c8f557142facf20545bd38980c9a32f79
+    size: 2087317
+    checksum: sha256:e6e2b1a883c4169037ee355cf315de92e172d18f16da7ed165b210d79612c668
     name: nghttp2
-    evr: 1.69.0-6.1.hum1
+    evr: 1.70.0-0.1.hum1
   - url: https://packages.redhat.com/api/pulp-content/public-hummingbird/source/Packages/n/nghttp3-1.18.0-1.1.hum1.src.rpm
     repoid: public-hummingbird-source-rpms
     size: 436854
