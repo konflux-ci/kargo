@@ -6,7 +6,7 @@ ARG KARGO_VERSION
 ####################################################################################################
 # ui-builder
 ####################################################################################################
-FROM registry.access.redhat.com/hi/nodejs:26@sha256:e1af1f03cf25d76305c1a49d7358035afde2d15f91d7548a8d1b599474917a9e AS ui-builder
+FROM registry.access.redhat.com/hi/nodejs:26@sha256:b32f0fcf592ba3cb9a278141e048cdaf0af4d425492b091f2f5d2efd66cd08f3 AS ui-builder
 
 ARG PNPM_VERSION=11.13.0
 USER 0
