@@ -25,7 +25,7 @@ RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
 ####################################################################################################
 # back-end-builder
 ####################################################################################################
-FROM registry.access.redhat.com/hi/go:1.27@sha256:4f64134d9fabdf432297a05dd845d0f5df4184dc600937568ffcf9c0056d12a8 AS back-end-builder
+FROM registry.access.redhat.com/hi/go:1.27@sha256:845549c9eb4151443416a5441bd06823669aacd74e14fb65a4b9cd2694651233 AS back-end-builder
 
 ARG KARGO_VERSION
 ARG CGO_ENABLED=0
