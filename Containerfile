@@ -74,7 +74,7 @@ RUN go build \
 # Use 'builder' version of core-runtime so 'dnf' is available for installing
 # the tools and assembling the Git runtime payload.
 ####################################################################################################
-FROM registry.access.redhat.com/hi/core-runtime:latest-builder@sha256:bddeb26585ba099db204c5feaaacbf78d4224cab660597dd7e42cd20b3bac242 AS tools
+FROM registry.access.redhat.com/hi/core-runtime:latest-builder@sha256:4a25abae7c3221e0d1138b0331c12cb66afe5382d617888cbe37df96494baa03 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
