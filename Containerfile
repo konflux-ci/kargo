@@ -6,7 +6,7 @@ ARG KARGO_VERSION
 ####################################################################################################
 # ui-builder
 ####################################################################################################
-FROM registry.access.redhat.com/hi/nodejs:26@sha256:e1af1f03cf25d76305c1a49d7358035afde2d15f91d7548a8d1b599474917a9e AS ui-builder
+FROM registry.access.redhat.com/hi/nodejs:26@sha256:d787826100473222aea4e428d794776b9336e11e34b5a321655e2c441edd9b94 AS ui-builder
 
 ARG PNPM_VERSION=11.13.0
 USER 0
@@ -25,7 +25,7 @@ RUN NODE_ENV='production' VERSION=${KARGO_VERSION} pnpm run build
 ####################################################################################################
 # back-end-builder
 ####################################################################################################
-FROM registry.access.redhat.com/hi/go:1.27@sha256:4f64134d9fabdf432297a05dd845d0f5df4184dc600937568ffcf9c0056d12a8 AS back-end-builder
+FROM registry.access.redhat.com/hi/go:1.27@sha256:845549c9eb4151443416a5441bd06823669aacd74e14fb65a4b9cd2694651233 AS back-end-builder
 
 ARG KARGO_VERSION
 ARG CGO_ENABLED=0
@@ -74,7 +74,7 @@ RUN go build \
 # Use 'builder' version of core-runtime so 'dnf' is available for installing
 # the tools and assembling the Git runtime payload.
 ####################################################################################################
-FROM registry.access.redhat.com/hi/core-runtime:latest-builder@sha256:bddeb26585ba099db204c5feaaacbf78d4224cab660597dd7e42cd20b3bac242 AS tools
+FROM registry.access.redhat.com/hi/core-runtime:latest-builder@sha256:4a25abae7c3221e0d1138b0331c12cb66afe5382d617888cbe37df96494baa03 AS tools
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -148,7 +148,7 @@ RUN case "${TARGETARCH}" in \
 ####################################################################################################
 # final
 ####################################################################################################
-FROM registry.access.redhat.com/hi/core-runtime:latest@sha256:4163796d8b7f28021178093d31cb97c05336fd3f3a4d7006603a7fef29e997e7 AS final
+FROM registry.access.redhat.com/hi/core-runtime:latest@sha256:33539044661f70521596967ee6581b12cc49c30c9f93bf5c52b622d2e9aa8b01 AS final
 
 ARG KARGO_VERSION
 ARG TARGETARCH=amd64
